@@ -1,0 +1,194 @@
+/* Styling a background image */
+/*
+html.img-right div.slide-background.present {
+   background-position: right;
+}
+*/
+
+	iframe.full-frame {
+		width:1100px;
+		height:640px;
+		border:4px solid black;
+	}
+	pre.half-code {
+		width:500px;
+	}
+	p.img-credit {
+		margin-top:0em;
+		font-size:0.75em;
+	}
+
+	p.project-history {
+		font-size:1.2em;
+	}
+	p.img-reference {
+		font-family:Helvetica, Arial, sans-serif;
+		text-align:right;
+		font-size:0.6em;
+		margin-right:2em;
+	}
+	.custom h1, .custom h2, .custom h3, .custom h4, .custom h5 {
+		font-family:Futura;
+		text-transform:none;
+		font-variant:small-caps;
+	}
+	.custom figure {
+		margin-left:auto;
+		margin-right:auto;
+	}
+	.custom figcaption {
+		font-family:Helvetica, Arial, sans-serif;
+		font-size:0.8em;
+		margin-top:-0.5em;
+	}
+	.custom img.opaque {
+		background-color:#FFFFFF;
+	}
+	.custom embed.ggplot {
+		height:700px;
+	}
+	.custom code.figcode {
+		font-size:2em;
+	}
+	.custom .highlight1 {
+		color:#ffff00;
+	}
+	.custom .highlight2 {
+		color:#ffffCC;
+	}
+	.custom .span480 {
+		width:480px;
+	}
+	.custom .comparison-table > tbody > tr > td {
+		border-bottom: 0px solid;
+	}
+	.custom .comparison-table > tbody > tr > td:first-child {
+			width:360px;
+			color:#999999;
+			text-align:right;
+			border-right: 1px solid white;
+			font-weight:bold;
+	}
+	.custom .comparison-table > tbody > tr > th:first-child {
+			border-right: 1px solid white;
+	}
+	.custom .comparison-table > tbody > tr > th:nth-child(2) {
+			width:400px;
+			text-align:center;
+	}
+	.custom .comparison-table > tbody > tr > td:nth-child(2) {
+			width:400px;
+			text-align:center;
+	}
+	.custom .comparison-table > tbody > tr > th:nth-child(3) {
+			width:400px;
+			text-align:center;
+	}
+	.custom .comparison-table > tbody > tr > td:nth-child(3) {
+			width:400px;
+			text-align:center;
+	}
+	.custom .sql-table > tbody > tr > th:nth-child(1) {
+			border-right:1px solid;
+	}
+	.custom .sql-table > tbody > tr > td:nth-child(1) {
+			border-right:1px solid;
+	}
+	.custom .quote {
+		font-size:1.5em;
+		font-family:Century Gothic;
+	}
+	.valign {
+		height:720px;
+		vertical-align:top;
+	}
+	table.example-table {
+		font-size:0.75em;
+	}
+	table.example-table-small {
+		font-size:0.5em;
+	}
+	span.scientific-name {
+		font-style:italic;
+	}
+	span.affiliation {
+		font-size:0.6em;
+		font-style:italic;
+	}
+	span.smalltext {
+		font-size:0.6em;
+	}
+	p.acknowledgments {
+		font-size:0.5em;
+		margin-top:0.25em;
+		margin-bottom:0.25em;
+	}
+	span.expanded-note {
+		font-size:0.67em;
+	}
+	.custom .vs-table > tbody > tr > th {
+		text-align:center;
+		border-bottom: 0px solid;
+	}
+	.custom .vs-table > tbody > tr > th:nth-child(1) {
+		width:45%;
+	}
+	.custom .vs-table > tbody > tr > th:nth-child(2) {
+		width:10%;
+	}
+	.custom .vs-table > tbody > tr > th:nth-child(3) {
+		width:45%;
+	}
+	.custom .vs-table > tbody > tr > td {
+		text-align:center;
+		font-size:1.2em;
+		border-bottom: 0px solid;
+	}
+	.custom .triple-table {
+		border:2px solid black;
+	}
+	.custom .triple-table > tbody > tr > td {
+		font-family:Consolas, Monaco, Menlo, monospace;
+		font-size:1em;
+		text-align:center;
+		border-bottom: 0px solid;
+	}
+	.custom .triple-table > tbody > tr > td:nth-child(1) {
+		width:200px;
+	}
+	.custom .triple-table > tbody > tr > td:nth-child(2) {
+		width:200px;
+	}
+	.custom .triple-table > tbody > tr > td:nth-child(3) {
+		width:200px;
+	}
+	.custom ul.two-columns {
+		height:7.2em;
+		width:960px;
+		list-style-type: disc;
+		columns: 2;
+		-webkit-columns: 2;
+		-moz-columns: 2;
+		list-style-position: inside;
+    }
+    .custom span.emph {
+    	font-style:italic;
+    }
+    .custom span.semibold {
+    	/* font-style:italic; */
+    	font-family:Myriad Pro;
+		font-size:0.8em;
+		font-weight:bold;
+    }
+    .custom .big-point {
+    	font-size:1.2em;
+    }
+    .custom .bigger-point {
+    	font-size:1.5em;
+    }
+    .custom .biggerer-point {
+    	font-size:1.8em;
+    }
+    .custom .biggest-point {
+    	font-size:2em;
+    }

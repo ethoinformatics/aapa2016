@@ -1,0 +1,1156 @@
+<!doctype html>
+<html lang="en">
+
+<!--
+Presentation outline
+
+Title
+Hypothetical data example: merging datasets
+	Depth and diversity of primatological data collection
+What is the Ethoinformatics Project?
+Project History
+
+Introduction to Web technology
+	What is the Semantic Web?
+
+Introduction to alternative data representations (breaking the table)
+
+Introduction to RDF and linked data
+
+Introduction to the Etho Core vocabulary
+
+What is possible?
+
+Strategic thinking: what do I personally expect will happen?
+	Patience/compassion/no judgment/safe space
+
+Acknowledgments
+
+-->
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>The Primatological Web</title>
+
+		<meta name="description" content="">
+		<meta name="author" content="kenny chiou">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+		<link rel="stylesheet" href="css/style.css">
+
+		<!-- JQuery -->
+		<script src="js/jquery.js"></script>
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		
+		<!-- Canvas drawing -->
+		<script src="js/sketch.js"></script>
+		<script src="js/dazzleSketch.js"></script>
+
+		<!-- Slide-specific scripts -->
+		<script type="text/javascript" src="custom-js/fossil-hominins.js"></script>
+		<script type="text/javascript" src="custom-js/xml-hominins.js"></script>
+		<script type="text/javascript" src="custom-js/json-hominins.js"></script>
+		<script type="text/javascript" src="custom-js/url-info.js"></script>
+		<script type="text/javascript" src="custom-js/triples-info.js"></script>
+		<script type="text/javascript" src="custom-js/sql-join.js"></script>
+		<script type="text/javascript" src="custom-js/sql-schema.js"></script>
+
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+<!--
+	ctrl-` (next to the 1) erase and turn off drawing
+	ctrl-P Switch between a white canvas and transparent canvas
+	ctrl-1 Yellow Pen
+	ctrl-2 Green Pen
+	ctrl-3 Cyan Pen
+	ctrl-4 Red Pen
+	ctrl-5 White Pen
+	ctrl-6 Blue Pen
+	ctrl-7 Magenta Pen
+	ctrl-8 Black Pen
+	ctrl-- Make pen narrower
+	ctrl-= Make pen wider
+-->
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="reveal custom">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section id="title">
+					<h1 style="margin-top:-0.25em; margin-bottom:0em;">Comparative primatology on the Web(s)<br><span>🐒</span></h1>
+					<p style="font-size:1.5em;">Kenny Chiou</p>
+					<p>Bioanth Journal Club<br>February 24, 2016</p>
+				</section>
+				<section>
+					<h1>Slide 2</h1>
+					<ul>
+						<li>Item 1</li>
+						<li>Item 2</li>
+					</ul>
+				</section>
+				<section>
+					<section>
+						<h1>Imagine . . .</h1>
+					</section>
+					<section>
+						<iframe id="imagine" class="full-frame" src="/html/imagine.html"></iframe>
+					</section>
+					<section>
+						<p style="font-weight:bold; font-size:2em;">This is obviously fake.</p>
+						<p class="fragment bigger-point">But what's in our way?</p>
+					</section>
+					<section>
+						<h2>Our data are really really complex</h2>
+						<p style="font-size:1.1em; font-weight:bold;">On a typical day, we might be concerned with:</p>
+						<ul>
+							<li><span class="semibold">activities</span> and <span class="semibold">social interactions</span> of animals</li>
+							<li><span class="semibold">locations</span>, <span class="semibold">identities</span>, and <span class="semibold">availability patterns</span> of key resources</li>
+							<li><span class="semibold">meteorological</span> or <span class="semibold">climatological patterns</span> of occupied sites</li>
+							<li><span class="semibold">size</span>, <span class="semibold">composition</span>, and <span class="semibold">spatial arrangement</span> of social aggregations</li>
+							<li><span class="semibold">life histories</span> of study animals</li>
+							<li><span class="semibold">morphological measurements</span> of study animals</li>
+							<li><span class="semibold">molecular information</span> derived from biomaterials</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Technical obstacles</h2>
+						<ul>
+							<li>Research data are geographically disjunct</li>
+							<li>Datasets are organized and managed using different practices</li>
+							<ul>
+								<li><strong>terminology</strong></strong></li>
+								<li><strong>relationships/schemas</strong></li>
+								<li><strong>software platforms</strong></li>
+								<li><strong>quality control</strong></li>
+							</ul>
+							<li><strong>Metadata</strong> are seldom documented</li>
+							<li>A community generally trained poorly in information science</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Cultural obstacles</h2>
+						<ul>
+							<li>Concerns about <strong>data ownership</strong></li>
+							<ul>
+								<li class="fragment" data-fragment-index="1">"A lot of work went into this; I won't just give it to you"</li>
+								<li class="fragment" data-fragment-index="2">"I can't share the data because they don't belong only to me"</li>
+							</ul>
+							<li>Concerns about <strong>usage of data</strong></li>
+							<ul>
+								<li class="fragment" data-fragment-index="3">"You don't know the data like I do"</li>
+								<li class="fragment" data-fragment-index="4">"Why should I expend effort just so you can scoop me?"</li>
+							</ul>
+						</ul>
+						<p class="fragment" data-fragment-index="5" style="font-size:1.2em;">"The system will be taken over by <a href="http://www.nejm.org/doi/full/10.1056/NEJMe1516564" target="_blank"><strong>research parasites</strong></a>"</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Ethoinformatics</h1>
+						<p class="bigger-point">2013-present</p>
+						<figure>
+							<img src="/images/utaustin.png" style="height:160px; border:0px; box-shadow:0 0 0px;" />
+							<img src="/images/wustl.png" style="height:160px; border:0px; box-shadow:0 0 0px;" />
+							<img src="/images/nyu.png" style="height:160px; border:0px; box-shadow:0 0 0px;" />
+						</figure>
+						<p class="project-history">Collaboration with Anthony Di Fiore (UT Austin)<br>and Tom Igoe (NYU)</p>
+					</section>
+					<section>
+						<h1>Goal of Ethoinformatics</h1>
+						<p class="project-history">To build capacity for <strong>data discovery</strong>, <strong>data reuse</strong>, and <strong>data comparison</strong> for behavioral research</p>
+						<p>(with particular emphasis on field primatology)</p>
+					</section>
+				</section>
+				<section>
+					<h1>Project goals</h1>
+					<ol style="font-size:1.2em;">
+						<li class="fragment" data-fragment-index="1"><span class="fragment highlight-red" data-fragment-index="6">Establish a community-derived standard vocabulary</span></li>
+						<li class="fragment" data-fragment-index="2">Create compatible database tools</li>
+						<li class="fragment" data-fragment-index="3">Create compatible data collection tools</li>
+						<li class="fragment" data-fragment-index="4">Create tools for translating existing databases</li>
+						<li class="fragment" data-fragment-index="5">Formulate a framework for long-term data archiving</li>
+					</ol>
+				</section>
+				<section>
+					<section>
+						<h1>Summary of working group meetings findings</h1>
+						<figure>
+							<img src="/images/ewg2013_panorama.jpg" style="width:1200px;" />
+							<figcaption>Ethoinformatics Working Group 2013, Olin Library, Washington University<p class="img-credit">(image credit: <a href="https://www.flickr.com/photos/tigoe/11972791073" target="_blank">Tom Igoe</a>)</p></figcaption>
+						</figure>
+					</section>
+					<section>
+						<h2>Databases: points of difference</h2>
+						<p class="big-point">We see a lot of variation in data management and archiving practices</p>
+						<p class="big-point">Some of the variation is related to differences in <strong>foci</strong>, <strong>scale</strong>, and <strong>longevity</strong> of research projects</p>
+					</section>
+					<section>
+						<h2>Databases: points of commonality</h2>
+						<p class="big-point">Convergence in the ideas of <em>observer</em>, <em>individual</em>, and <em>group</em> as central data collection concepts</p>
+						<p class="big-point">Common data structures often emerge from analogous practices</p>
+					</section>
+					<section>
+						<p class="bigger-point">Overall, however, behavioral information are structured inconsistently and these differences are a source of shared frustration</p>
+					</section>
+					<section>
+						<h2>Tools shape our mental models</h2>
+						<p class="big-point">Our thinking about data is highly influenced by a few dominant tools with outsized influence</p>
+						<p class="fragment big-point">Our thinking about data is <strong>shaped in tables</strong></p>
+					</section>
+					<section>
+						<p class="bigger-point">It is extremely difficult for many to think about the <strong>data model</strong> independently of the <strong>database</strong></p>
+					</section>
+					<section>
+						<h2>Access</h2>
+						<p class="big-point">We are vigilant in maintaining and preserving our data, but not about documenting and providing <strong>metadata</strong></p>
+						<p class="fragment big-point">Ownership, sharing, and privacy are common sources of concern, but there are a range of perspectives within our community</p>
+					</section>
+					<section>
+						<p class="big-point">A vast majority of participants reported knowledge of or interest in learning:</p>
+						<figure><img class="fragment" src="/images/R.png" style="width:200px; border:0px; box-shadow:0 0 0px;"/></figure>
+						<ul class="big-point">
+							<li>relational databases (e.g., MS Access, MySQL, PostgreSQL)</li>
+							<li>statistical computing (e.g., R, Python, Julia)</li>
+						</ul>
+					</section>
+					<section>
+						<p class="bigger-point">There is a less prevalent interest in learning Web technologies</p>
+						<p class="fragment big-point">This is creating a disconnect with rapidly maturing technologies and communities that are increasingly integrated into the Web</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Introduction to Web technologies</h1>
+					</section>
+					<section>
+						<h1>The Internet</h1>
+					</section>
+					<section>
+						<h2>What is the Internet?</h2>
+						<ul>
+							<li>Independent local networks interlinked by a <strong>global communications infrastructure</strong></li>
+							<li>Information transfers follow the <strong>TCP/IP</strong> standard</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Submarine cable map</h2>
+						<figure>
+							<img src="/images/submarine-cable-map_wide.jpg" style="height:500px;" />
+							<figcaption><p class="img-credit">Image credit: <a href="http://www.submarinecablemap.com/#/" target="_blank">TeleGeography</a></p></figcaption>
+						</figure>
+					</section>
+					<section>
+						<h2>TCP/IP</h2>
+						<figure>
+							<embed src="/images/tcpip.svg" style="height:540px;"></embed>
+							<figcaption>Packets move from origin to destination router by router</figcaption>
+						</figure>
+					</section>
+					<section>
+						<h2>IP addresses</h2>
+						<figure>
+							<embed src="/images/ip.svg" style="height:540px;"></embed>
+							<figcaption>Networks and devices are identified by globally unique IP addresses</figcaption>
+						</figure>
+					</section>
+					<section>
+						<p class="quote"><strong>Computers</strong> are interesting, not the <em>cables</em> that connect them</p>
+					</section>
+					<section>
+						<h1>The World Wide Web</h1>
+						<figure style="height:500px;">
+							<img src="/images/timbernerslee.jpg" />
+							<figcaption>Tim Berners-Lee<p class="img-credit">(image credit: <a href="https://commons.wikimedia.org/wiki/File%3ASir_Tim_Berners-Lee.jpg">Paul Clarke</a>)</p></figcaption>
+						</figure>
+					</section>
+					<section>
+						<h2>A Web of Documents</h2>
+						<figure>
+							<embed src="/images/www.svg" style="height:540px;"></embed>
+							<figcaption>A web of documents connected by hyperlinks</figcaption>
+						</figure>
+					</section>
+					<section>
+						<h2>What is the Web?</h2>
+						<ul>
+							<li>Documents written in <strong>HTML</strong> <span class="expanded-note">(hypertext markup language)</span></li>
+							<li>Documents identified by <strong>URI</strong> <span class="expanded-note">(uniform resource identifiers)</span></li>
+							<li>Documents served by <strong>HTTP</strong> <span class="expanded-note">(hypertext transfer protocol)</span></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Hypertext Markup Language (HTML)</h2>
+						<figure style="position:absolute; width:600px; left:0px">
+							<pre class="html" style="width:600px; height:360px; background-color:#3F4040;"><code>&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;This is a title&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Primate relatives&lt;/h1&gt;
+    &lt;p&gt;Primates are closely related to:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;colugos&lt;/li&gt;
+      &lt;li&gt;treeshrews&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+							<figcaption>HTML code</figcaption>
+						</figure>
+						<figure style="position:absolute; width:600px; right:0px">
+							<iframe style="border:2px solid black; width:600px; height:358px; margin-top:19px; margin-bottom:5px;" src="html/example-html.html"></iframe>
+							<figcaption>HTML rendered</figcaption>
+						</figure>
+					</section>
+					<section>
+						<h2>Uniform Resource Identifiers (URI)</h2>
+						<figure>
+							<p style="background-color:lightgray; font-size:1.2em; border:1px solid black; margin:50px;">en.wikipedia.org/wiki/Anthropology</p>
+							<figcaption>Wikipedia page on "Anthropology"</figcaption>
+						</figure>
+					</section>
+					<section>
+						<h2>Uniform Resource Locator (URL)</h2>
+						<figure>
+							<p style="background-color:lightgray; font-size:1.2em; border:1px solid black; margin:50px;"><span id="wikiProtocol" onmouseover="url('wikiProtocol',1)" onmouseout="url('wikiProtocol',0)">https://</span><span id="wikiDomain" onmouseover="url('wikiDomain',1)" onmouseout="url('wikiDomain',0)">en.wikipedia.org</span><span id="wikiPath" onmouseover="url('wikiPath',1)" onmouseout="url('wikiPath',0)">/wiki/Anthropology</span></p>
+							<figcaption id="urlInfo">&nbsp;</figcaption>
+						</figure>
+					</section>
+					<section>
+						<p class="quote"><strong>Documents</strong> are interesting, not the <em>computers</em> that host them</p>
+					</section>
+					<section>
+						<h1>What's next for the Web?</h1>
+					</section>
+					<section>
+						<p class="quote"><strong>Data</strong> are interesting, not the <em>documents</em> that contain them</p>
+					</section>
+					<section>
+						<figure>
+							<img src="/images/bernerslee2001.png" style="height:600px;" />
+							<figcaption class="img-reference">Berners-Lee <em>et al.</em> 2001<p class="img-credit" style="font-style:italic;"><a href="http://dx.doi.org/10.1038/scientificamerican0501-34" target="_blank">Scientific American</a></p></figcaption>
+						</figure>
+					</section>
+					<section>
+						<h2>What is the Semantic Web?</h2>
+						<ul>
+							<li>Extension of the <strong>World Wide Web</strong></li>
+							<li>Data expressed in <strong>RDF</strong> <span class="expanded-note">(resource description framework)</span></li>
+							<li>Entities and concepts identified by <strong>URI</strong> <span class="expanded-note">(uniform resource identifiers)</span></li>
+							<!--<li>Data queried by <strong>SPARQL</strong> <span class="expanded-note">(SPARQL Protocol and RDF Query Language)</span></li>-->
+						</ul>
+					</section>
+					<section>
+						<p class="bigger-point">The <strong>Semantic Web</strong> envisions that webpages serve dual roles in <span class="emph">publishing documents for humans</span> and <span class="emph">serving data for machines</span><!--The links between data will revolutionize web experience just as links between documents did in the early days of the World Wide Web.--></p>
+					</section>
+					<section>
+						<p class="bigger-point">The links between data will revolutionize web experience just as links between documents did in the early days of the World Wide Web</p>
+					</section>
+					<section>
+						<p class="bigger-point"><strong>Linked data</strong> refers to structured data shared on the Web to be read by machines</p>
+						<p class="big-point">It uses the same technologies and principles as the Semantic Web, but focuses on linking datasets</p>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Breaking the Table</h1>
+					</section>
+					<section>
+						<h2>Famous fossils <span onmouseover="row(0,1)" onmouseout="row(0,0)">💀</span></h2>
+						<table id="fossil-hominins" class="example-table">
+							<tr class="row0"><th class="col1" onmouseover="col(1,1)" onmouseout="col(1,0)">ID</th><th class="col2" onmouseover="col(2,1)" onmouseout="col(2,0)">Nickname</th><th class="col3" onmouseover="col(3,1)" onmouseout="col(3,0)">ScientificName</th></tr>
+							<tr class="row1"><td class="col1" onmouseover="row(1,1)" onmouseout="row(1,0)">1</td><td class="col2">Lucy</td><td class="col3"><span class="scientific-name">Australopithecus afarensis</span></td></tr>
+							<tr class="row2"><td class="col1" onmouseover="row(2,1)" onmouseout="row(2,0)">2</td><td class="col2">Taung Child</td><td class="col3"><span class="scientific-name">Australopithecus africanus</span></td></tr>
+							<tr class="row3"><td class="col1" onmouseover="row(3,1)" onmouseout="row(3,0)">3</td><td class="col2">Zinj</td><td class="col3"><span class="scientific-name">Paranthropus boisei</span></td></tr>
+							<tr class="row4"><td class="col1" onmouseover="row(4,1)" onmouseout="row(4,0)">4</td><td class="col2">Nariokotome Boy</td><td class="col3"><span class="scientific-name">Homo ergaster</span></td></tr>
+							<tr class="row5"><td class="col1" onmouseover="row(5,1)" onmouseout="row(5,0)">5</td><td class="col2">The Old Man</td><td class="col3"><span class="scientific-name">Homo neanderthalensis</span></td></tr>
+						</table>
+						<pre id="array-view" style="display:none; word-wrap:break-word; white-space:pre-wrap;"><code id="array-code"></code></pre>
+					</section>
+					<section>
+						<h2>The same table in plaintext</h2>
+						<figure class="fragment fade-out" data-fragment-index="1">
+							<pre class="html"><code data-noescape>ID,Nickname,ScientificName
+1,Lucy,Australopithecus afarensis
+2,Taung Child,Australopithecus africanus
+3,Zinj,Paranthropus boisei
+4,Nariokotome Boy,Homo ergaster
+5,The Old Man,Homo neanderthalensis</code></pre>
+							<figcaption>Comma-separated values</figcaption>
+						</figure>
+						<figure class="fragment" data-fragment-index="1">
+							<pre class="html"><code data-noescape>ID	Nickname	ScientificName
+1	Lucy	Australopithecus afarensis
+2	Taung Child	Australopithecus africanus
+3	Zinj	Paranthropus boisei
+4	Nariokotome Boy	Homo ergaster
+5	The Old Man	Homo neanderthalensis</code></pre>
+							<figcaption>Tab-separated values</figcaption>
+						</figure>
+					</section>
+					<!--
+					<section>
+						<h2>Hierarchical data model in XML</h2>
+						<pre><code data-noescape>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;famous-fossils&gt;
+<span id="xml-row1">  &lt;fossil <span class="xml-col1">id=&quot;1&quot;</span>&gt;
+    <span class="xml-col2">&lt;nickname&gt;Lucy&lt;/nickname&gt;</span>
+    <span class="xml-col3">&lt;scientific-name&gt;Australopithecus afarensis&lt;/scientific-name&gt;</span>
+  &lt;/fossil&gt;
+</span><span id="xml-row2">  &lt;fossil <span class="xml-col1">id=&quot;2&quot;</span>&gt;
+    <span class="xml-col2">&lt;nickname&gt;Taung Child&lt;/nickname&gt;</span>
+    <span class="xml-col3">&lt;scientific-name&gt;Australopithecus africanus&lt;/scientific-name&gt;</span>
+  &lt;/fossil&gt;
+</span>  <span id="xml-row3">...</span>
+&lt;/famous-fossils&gt;</code></pre>
+						<table class="example-table fragment">
+							<tr id="table-row0"><th class="col1" onmouseover="xmlcol(1,1)" onmouseout="xmlcol(1,0)">ID</th><th class="col2" onmouseover="xmlcol(2,1)" onmouseout="xmlcol(2,0)">Nickname</th><th class="col3" onmouseover="xmlcol(3,1)" onmouseout="xmlcol(3,0)">ScientificName</th></tr>
+							<tr id="table-row1"><td class="col1" onmouseover="xmlrow(1,1)" onmouseout="xmlrow(1,0)">1</td><td class="col2">Lucy</td><td class="col3"><span class="scientific-name">Australopithecus afarensis</span></td></tr>
+							<tr id="table-row2"><td class="col1" onmouseover="xmlrow(2,1)" onmouseout="xmlrow(2,0)">2</td><td class="col2">Taung Child</td><td class="col3"><span class="scientific-name">Australopithecus africanus</span></td></tr>
+							<tr id="table-row3"><td onmouseover="xmlrow(3,1)" onmouseout="xmlrow(3,0)" colspan="3">...</td></tr>
+						</table>
+					</section>
+					-->
+					<section>
+						<h2>Hierarchical data model in JSON</h2>
+						<pre><code data-noescape>{
+  "fossils" : [
+    <span id="json-row1">{
+      <span class="json-col1">"id" : 1</span>,
+      <span class="json-col2">"nickname" : "Lucy"</span>,
+      <span class="json-col3">"scientificName" : "Australopithecus afarensis"</span>
+    }</span>,<span id="json-row2">{
+      <span class="json-col1">"id" : 2</span>,
+      <span class="json-col2">"nickname" : "Taung Child"</span>,
+      <span class="json-col3">"scientificName" : "Australopithecus africanus"</span>
+    }</span>,<span id="json-row3">{
+      ...
+    }</span>
+  ]
+}</code></pre>
+						<table class="example-table fragment">
+							<tr id="table-row0"><th class="col1" onmouseover="jsoncol(1,1)" onmouseout="jsoncol(1,0)">ID</th><th class="col2" onmouseover="jsoncol(2,1)" onmouseout="jsoncol(2,0)">Nickname</th><th class="col3" onmouseover="jsoncol(3,1)" onmouseout="jsoncol(3,0)">ScientificName</th></tr>
+							<tr id="table-row1"><td class="col1" onmouseover="jsonrow(1,1)" onmouseout="jsonrow(1,0)">1</td><td class="col2">Lucy</td><td class="col3"><span class="scientific-name">Australopithecus afarensis</span></td></tr>
+							<tr id="table-row2"><td class="col1" onmouseover="jsonrow(2,1)" onmouseout="jsonrow(2,0)">2</td><td class="col2">Taung Child</td><td class="col3"><span class="scientific-name">Australopithecus africanus</span></td></tr>
+							<tr id="table-row3"><td onmouseover="jsonrow(3,1)" onmouseout="jsonrow(3,0)" colspan="3">...</td></tr>
+						</table>
+					</section>
+					<!--
+					<section>
+						<h2>Merging data: an example</h2>
+						<div style="position:absolute; width:560px; left:0px; height:400px;">
+							<h3 style="font-variant:normal;">Lucy</h3>
+							<ul>
+								<li class="factoid">Belongs to <strong><em>Australopithecus afarensis</em></strong></p>
+								<li class="factoid">Discovered by <strong>Donald Johanson</strong> at <strong>Hadar</strong> (<strong>Ethiopia</strong>)</p>
+								<li class="factoid">Named after <strong>Beatles</strong> song</p>
+							</ul>
+						</div>
+						<div style="position:absolute; width:560px; right:0px; height:400px;">
+							<h3 style="font-variant:normal;">Taung Child</h3>
+							<ul>
+								<li class="factoid">Belongs to <strong><em>Australopithecus africanus</em></strong></p>
+								<li class="factoid">Discovered in <strong>1924</strong></p>
+								<li class="factoid">Resides at the <strong>University of the Witwatersrand</strong></p>
+							</ul>
+						</div>
+					</section>
+					<section>
+						<h2>Represented as a table</h2>
+						<table class="example-table-small">
+							<tr><th>ID</th><th>Nickname</th><th>ScientificName</th><th>DisoveredBy</th><th>DiscoveredWhere</th><th>DiscoveredCountry</th><th>DiscoveredYear</th><th>NamedBy</th><th>Residence</th></tr>
+							<tr><td style="border-bottom:0px;">1</td><td style="border-bottom:0px;">Lucy</td><td style="border-bottom:0px;"><em>Australopithecus afarensis</em></td><td style="border-bottom:0px;">Donald Johanson</td><td style="border-bottom:0px;">Hadar</td><td style="border-bottom:0px;">Ethiopia</td><td style="border-bottom:0px;"></td><td style="border-bottom:0px;">Beatles</td><td style="border-bottom:0px;"></td></tr>
+							<tr><td style="border-bottom:0px;">2</td><td style="border-bottom:0px;">Taung Child</td><td style="border-bottom:0px;"><em>Australopithecus africanus</em></td><td style="border-bottom:0px;"></td><td style="border-bottom:0px;"></td><td style="border-bottom:0px;"></td><td style="border-bottom:0px;">1924</td><td style="border-bottom:0px;"></td><td style="border-bottom:0px;">University of the Witwatersrand</td></tr>
+						</table>
+					</section>
+					<section>
+						<h2>Represented as JSON</h2>
+						<pre style="font-size:0.48em;"><code data-noescape>{
+  "fossils" : [
+    {
+      "id" : 1,
+      "nickname" : "Lucy",
+      "scientificName" : "Australopithecus afarensis",
+      "discoveredBy" : "Donald Johanson",
+      "discoveredWhere" : "Hadar",
+      "discoveredCountry" : "Ethiopia",
+      "namedBy" : "Beatles"
+    },{
+      "id" : 2,
+      "nickname" : "Taung Child",
+      "scientificName" : "Australopithecus africanus",
+      "discoveredYear" : 1924,
+      "residence" : "University of the Witwatersrand"
+    }
+  ]
+}</code></pre>
+					</section>
+					<section>
+						<h2>Represented as XML</h2>
+						<pre style="font-size:0.52em;"><code data-noescape>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;famous-fossils&gt;
+<span id="xml-row1">  &lt;fossil <span class="xml-col1">id=&quot;1&quot;</span>&gt;
+    <span class="xml-col2">&lt;nickname&gt;Lucy&lt;/nickname&gt;</span>
+    <span class="xml-col3">&lt;scientific-name&gt;Australopithecus afarensis&lt;/scientific-name&gt;</span>
+    <span class="xml-col4">&lt;discovered-by&gt;Donald Johanson&lt;/discovered-by&gt;</span>
+    <span class="xml-col5">&lt;discovered-where&gt;Hadar&lt;/discovered-where&gt;</span>
+    <span class="xml-col6">&lt;discovered-country&gt;Ethiopia&lt;/discovered-country&gt;</span>
+    <span class="xml-col8">&lt;named-by&gt;Beatles&lt;/named-by&gt;</span>
+  &lt;/fossil&gt;
+</span><span id="xml-row2">  &lt;fossil <span class="xml-col1">id=&quot;2&quot;</span>&gt;
+    <span class="xml-col2">&lt;nickname&gt;Taung Child&lt;/nickname&gt;</span>
+    <span class="xml-col3">&lt;scientific-name&gt;Australopithecus africanus&lt;/scientific-name&gt;</span>
+    <span class="xml-col7">&lt;discovered-year&gt;1924&lt;/discovered-year&gt;</span>
+    <span class="xml-col9">&lt;residence&gt;University of the Witwatersrand&lt;/residence&gt;</span>
+  &lt;/fossil&gt;
+</span>&lt;/famous-fossils&gt;</code></pre>
+					</section>
+					-->
+					<!--
+					<section>
+						<h2>Relational Databases</h2>
+						<div style="position:absolute; width:560px; left:0px; height:400px;">
+							<table>
+								<h3>Evolutionary biologists</h3>
+								<tr><th>ID</th><th>Scientist</th></tr>
+								<tr><td style="border-bottom:0px;">1</td><td style="border-bottom:0px;">Marie Curie</td></tr>
+								<tr><td style="border-bottom:0px;">2</td><td style="border-bottom:0px;">Charles Darwin</td></tr>
+								<tr><td style="border-bottom:0px;">1</td><td style="border-bottom:0px;">Marie Curie</td></tr>
+							</table>
+						</div>
+						<div style="position:absolute; width:560px; right:0px; height:400px;">
+							
+						</div>
+					</section>
+					-->
+					<section>
+						<h2>The relational database</h2>
+						<ul>
+							<li>Data are stored in tables, also called "relations"</li>
+							<li>Data conform to strict types and constraints</li>
+							<li>Data can be queried, most often using <strong>structured query language</strong> (SQL)</li>
+							<li>Indexing and querying follow relational logic</li>
+							<li>Records can be joined together using queries</li>
+						</ul>
+					</section>
+					<section>
+						<h2>SQL queries</h2>
+						<input id="sql-input" type="text" style="width:1024px; font-size:0.75em;" onkeyup="sql()" onkeydown="enter(event)"/>
+						<button style="font-size:0.75em;" onclick="join()">Run</button>
+						<br>
+						<div style="height:250px;">
+						<table id="specimens" class="example-table" style="position:absolute; left:5%; width:500px; border:4px solid white;">
+							<tr><th>specimen_id</th><th class="nickname">nickname</th><th class="taxon_id">taxon_id</th></tr>
+							<tr><td>1</td><td class="nickname">Lucy</td><td class="id_one">1</td></tr>
+							<tr><td>6</td><td class="nickname">Mrs. Ples</td><td class="id_two">2</td></tr>
+							<tr><td style="border-bottom:0px;">8</td><td class="nickname" style="border-bottom:0px;">Little Foot</td><td class="id_two" style="border-bottom:0px;">2</td></tr>
+							<tr><td colspan="3" style=" text-align:center; font-size:1.2em;"><strong>specimens</strong></td></tr>
+						</table>
+						<table id="taxa" class="example-table" style="position:absolute; right:5%; width:500px; border:4px solid white;">
+							<tr><th class="taxon_id">taxon_id</th><th class="scientific_name">scientific_name</th></tr>
+							<tr><td class="id_one">1</td><td class="scientific_name"><em>Australopithecus afarensis</em></td></tr>
+							<tr><td class="id_two" style="border-bottom:0px;">2</td><td class="scientific_name" style="border-bottom:0px;"><em>Australopithecus africanus</em></td></tr>
+							<tr><td colspan="2" style="border-bottom:0px;">&nbsp;</td></tr>
+							<tr><td colspan="2" style="border-bottom:0px; text-align:center; font-size:1.2em;"><strong>taxa</strong></td></tr>
+						</table>
+						</div>
+						<div id="join-container" style="margin-top:0.5em; height:200px; border: 2px solid white;"></div>
+						<div id="join-results" style="margin-top:0.5em; height:200px; border:2px solid black; display:none;">
+							<table class="example-table" style="">
+								<tr><th>specimen_id</th><th>nickname</th><th>taxon_id</th><th>scientific_name</th></tr>
+								<tr><td>1</td><td>Lucy</td><td style="background-color:#00ffff;">1</td><td><em>Australopithecus afarensis</em></td></tr>
+								<tr><td>6</td><td>Mrs. Ples</td><td style="background-color:#ff00ff;">2</td><td><em>Australopithecus africanus</em></td></tr>
+								<tr><td style="border-bottom:0px;">8</td><td style="border-bottom:0px;">Little Foot</td><td style="background-color:#ff00ff;">2</td><td style="border-bottom:0px;"><em>Australopithecus africanus</em></td></tr>
+							</table>
+						</div>
+					</section>
+					<section>
+						<figure>
+							<img src="/images/rdbms.png" style="height:600px;" />
+							<figcaption class="img-reference">Relational database management systems</figcaption>
+						</figure>
+					</section>
+					<section>
+						<figure>
+							<img src="/images/nosql.png" style="height:600px;" />
+							<figcaption class="img-reference">NoSQL database systems</figcaption>
+						</figure>
+					</section>
+					<section>
+						<p class="bigger-point"><strong>NoSQL</strong> rejects the dominance of the relational data model</p>
+					</section>
+					<section>
+						<h2>Distributed data: relational model</h2>
+						<table class="example-table sql-table">
+							<tr><th>Organism</th><th>Body weight</th><th>Age of maturation</th><th>Daily path length</th></tr>
+							<tr style="border-bottom:0px;"><td>Bat</td><td class="sources1"></td><td class="sources1"></td><td class="sources1 sources2"></td></tr>
+							<tr style="border-bottom:0px;"><td>Capuchin</td><td class="sources3"></td><td class="sources3"></td><td class="sources2"></td></tr>
+							<tr style="border-bottom:0px;"><td>Baboon</td><td class="sources3"></td><td class="sources3"></td><td class="sources2 sources4"></td></tr>
+							<tr style="border-bottom:0px;"><td>Chimpanzee</td><td class="sources3"></td><td class="sources3"></td><td class="sources2"></td></tr>
+						</table>
+						<p style="margin-bottom:0em; font-size:0.75em; font-weight:bold;">Data sources</p>
+						<ul style="font-size:0.75em;">
+							<li><a onmouseover="reveal_sources(1,1)" onmouseout="reveal_sources(1,0)">SBDN/NEBWG Bat Database</li>
+							<li><a onmouseover="reveal_sources(2,1)" onmouseout="reveal_sources(2,0)">Movebank</a></li>
+							<li><a onmouseover="reveal_sources(3,1)" onmouseout="reveal_sources(3,0)">Primate Life History Database</a></li>
+							<li><a onmouseover="reveal_sources(4,1)" onmouseout="reveal_sources(4,0)">Dryad</a> (Strandburg-Peshkin et al. 2015)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Distributed data: key-value model</h2>
+						<pre style="font-size:0.48em;"><code data-noescape><span class="providers1">{
+  1 : { "organism":"bat" , bodyWeight , ageOfMaturation , dailyPathLength }
+}</span>,<span class="providers2">{
+  2 : { "organism":"bat" , dailyPathLength }
+},{
+  3 : { "organism":"capuchin" , dailyPathLength }
+},{
+  4 : { "organism":"baboon" , dailyPathLength }
+},{
+  5 : { "organism":"chimpanzee" , dailyPathLength }
+}</span>,<span class="providers3">{
+  6 : { "organism":"capuchin" , bodyWeight , ageOfMaturation }
+},{
+  7 : { "organism":"baboon" , bodyWeight , ageOfMaturation }
+},{
+  8 : { "organism":"chimpanzee" , bodyWeight , ageOfMaturation }
+}</span>,<span class="providers4">{
+  9 : { "organism":"baboon" , dailyPathLength }
+}</span></code></pre>
+						<p style="margin-bottom:0em; font-size:0.75em; font-weight:bold;">Data sources</p>
+						<ul style="font-size:0.75em;">
+							<li><a onmouseover="reveal_providers(1,1)" onmouseout="reveal_providers(1,0)">SBDN/NEBWG Bat Database</a></li>
+							<li><a onmouseover="reveal_providers(2,1)" onmouseout="reveal_providers(2,0)">Movebank</a></li>
+							<li><a onmouseover="reveal_providers(3,1)" onmouseout="reveal_providers(3,0)">Primate Life History Database</a></li>
+							<li><a onmouseover="reveal_providers(4,1)" onmouseout="reveal_providers(4,0)">Dryad (Strandburg-Peshkin et al. 2015)</a></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Distributed data: document-based model</h2>
+						<table>
+						<tr>
+						<td style="border-bottom:0px;">
+						<pre style="font-size:0.48em; width:300px;"><code data-noescape><span class="providers1">{
+  "_id" : 1 ,
+  "organism" : "bat" ,
+  bodyWeight ,
+  ageOfMaturation ,
+  dailyPathLength
+}</span></code></pre>
+						</td>
+						<td style="border-bottom:0px;">
+						<pre style="font-size:0.48em; width:300px;"><code data-noescape><span class="providers2">{
+  "_id" : 2 ,
+  "organism" : "bat" ,
+  dailyPathLength
+}
+
+
+</span></code></pre>
+						</td>
+						<td style="border-bottom:0px;">
+						<pre style="font-size:0.48em; width:300px;"><code data-noescape><span class="providers2">{
+  "_id" : 3 ,
+  "organism" : "capuchin" ,
+  dailyPathLength
+}
+
+
+</span></code></pre>
+						</td>
+						</tr>
+						<tr>
+						<td style="border-bottom:0px;">
+						<pre style="font-size:0.48em; width:300px;"><code data-noescape><span class="providers3">{
+  "_id" : 6 ,
+  "organism" : "capuchin" ,
+  bodyWeight ,
+  ageoOfMaturation
+}
+
+</span></code></pre>
+						</td>
+						<td style="border-bottom:0px;">
+						<pre style="font-size:0.48em; width:300px;"><code data-noescape><span class="providers3">{
+  "_id" : 7 ,
+  "organism" : "baboon" ,
+  bodyWeight ,
+  ageoOfMaturation
+}
+
+</span></code></pre>
+						</td>
+						<td style="border-bottom:0px;">
+						<pre style="font-size:0.48em; width:300px;"><code data-noescape><span class="providers4">{
+  "_id" : 9 ,
+  "organism" : "baboon" ,
+  dailyPathLength
+}
+
+
+</span></code></pre>
+						</td>
+						</tr>
+						</table>
+						<p style="margin-bottom:0em; font-size:0.75em; font-weight:bold;">Data sources</p>
+						<ul style="font-size:0.75em;">
+							<li><a onmouseover="reveal_providers(1,1)" onmouseout="reveal_providers(1,0)">SBDN/NEBWG Bat Database</a></li>
+							<li><a onmouseover="reveal_providers(2,1)" onmouseout="reveal_providers(2,0)">Movebank</a></li>
+							<li><a onmouseover="reveal_providers(3,1)" onmouseout="reveal_providers(3,0)">Primate Life History Database</a></li>
+							<li><a onmouseover="reveal_providers(4,1)" onmouseout="reveal_providers(4,0)">Dryad (Strandburg-Peshkin et al. 2015)</a></li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Back to Linked Data</h1>
+					</section>
+					<section>
+						<table class="vs-table">
+							<tr><th><h2>Syntax</h2></th><th rowspan="2"><span>vs.</span></th><th><h2>Semantics</h2></th></tr>
+							<tr><td class="fragment">concerned with symbols and structure</td><td class="fragment">concerned with meaning</td></tr>
+						</table>
+					</section>
+					<section>
+						<h2>What is a primate?</h2>
+						<div style="height:600px;">
+						<figure style="position:absolute; width:600px; left:0px">
+							<img src="/images/primate1.jpg" style="height:480px;" />
+							<figcaption>A primate<p class="img-credit">(via <a href="https://pixabay.com/en/lemurs-lemur-animal-mammal-monkey-824894/">Pixabay</a>)</p></figcaption>
+						</figure>
+						<figure style="position:absolute; width:600px; right:0px;">
+							<img src="/images/primate2.jpg" style="height:480px;" />
+							<figcaption>Both a primate and a primate<p class="img-credit">(via <a href="https://commons.wikimedia.org/wiki/File:BernardMaciejowski.jpg">Wikimedia Commons</a>)</p></figcaption>
+						</figure>
+						</div>
+					</section>
+					<section>
+						<h2>Species concepts?</h2>
+						<div style="height:600px;">
+						<figure style="position:absolute; width:600px; left:0px">
+							<img src="/images/hamadryas1.jpg" style="height:480px;" />
+							<figcaption><em>Papio hamadryas</em> (BSC & PSC)<p class="img-credit">(via <a href="https://pixabay.com/en/baboon-monkey-zoo-animal-primate-455324/">Pixabay</a>)</p></figcaption>
+						</figure>
+						<figure style="position:absolute; width:600px; right:0px;">
+							<img src="/images/hamadryas2.jpg" style="height:480px;" />
+							<figcaption><em>Papio hamadryas</em> (BSC only)<p class="img-credit">(via <a href="https://pixabay.com/en/africa-south-africa-wild-life-210086/">Pixabay</a>)</p></figcaption>
+						</figure>
+						</div>
+					</section>
+					<section>
+						<h2>What is grooming?</h2>
+						<div style="height:540px;">
+						<figure style="position:absolute; height:600px; left:0px">
+							<img src="/images/groom1.jpg" style="height:360px;" />
+							<figcaption>This is grooming<p class="img-credit">(via <a href="https://pixabay.com/en/baboons-wildlife-africa-nature-689610/">Pixabay</a>)</p></figcaption>
+						</figure>
+						<figure style="position:absolute; width:600px; right:0px;">
+							<img src="/images/groom2.jpg" style="height:360px;" />
+							<figcaption>Also grooming<p class="img-credit">(via <a href="https://pixabay.com/en/white-dog-grooming-pet-1019003/">Pixabay</a>)</p></figcaption>
+						</figure>
+						</div>
+					</section>
+					<section>
+						<figure>
+							<img src="/images/phdcomics.gif" style="height:400px;" />
+							<figcaption><p class="img-credit">via <a href="http://www.phdcomics.com/comics/archive.php?comicid=405">PhD Comics</a></p></figcaption>
+						</figure>
+					</section>
+					<section>
+						<h2>Encoding semantics</h2>
+						<ul>
+							<li>Entities, concepts, and relationships identified by <strong>URI</strong></li>
+							<li>Data are expressed as <strong>triples</strong></li>
+						</ul>
+					</section>
+					<section>
+						<figure>
+							<p style="font-size:2em;">subject &middot; predicate &middot; object</p>
+							<figcaption>Triple structure</figcaption>
+						</figure>
+					</section>
+					<section>
+						<h2>Our data again . . .</h2>
+						<table class="example-table sql-table">
+							<tr><th>Organism</th><th>Body weight</th><th>Age of maturation</th><th>Daily path length</th></tr>
+							<tr><td style="border-bottom:0px;">Bat</td><td class="sources1">0.04 kg</td><td class="sources1">2 years</td><td class="sources1">30 km</td></tr>
+						</table>
+						<p style="margin-bottom:0em; font-size:0.75em; font-weight:bold;">Data sources</p>
+						<ul style="font-size:0.75em;">
+							<li><a onmouseover="reveal_sources(1,1)" onmouseout="reveal_sources(1,0)">Bat Database</a> (SBDN)</li>
+						</ul>
+					</section>
+					<section>
+						<h2>. . . expressed as triples . . .</h2>
+						<figure style="height:600px;">
+							<table class="triple-table">
+								<tr><td style="border-bottom:0px;">record1</td><td style="border-bottom:0px;">isOrganism</td><td style="border-bottom:0px;">Bat</td></tr>
+								<tr><td style="border-bottom:0px;">record1</td><td style="border-bottom:0px;">hasWeight</td><td style="border-bottom:0px;">"0.04 kg"</td></tr>
+								<tr><td style="border-bottom:0px;">record1</td><td style="border-bottom:0px;">maturesAt</td><td style="border-bottom:0px;">"2 years"</td></tr>
+								<tr><td style="border-bottom:0px;">record1</td><td style="border-bottom:0px;">hasDailyPathLength</td><td style="border-bottom:0px;">"30 km"</td></tr>
+								<tr><td style="border-bottom:0px;">record1</td><td style="border-bottom:0px;">publisher</td><td style="border-bottom:0px;">SBDN</td></tr>
+							</table>
+							<br>
+							<table class="example-table sql-table" style="color:gray;">
+								<tr><th>Organism</th><th>Body weight</th><th>Age of maturation</th><th>Daily path length</th></tr>
+								<tr><td style="border-bottom:0px;">Bat</td><td class="sources1">0.04 kg</td><td class="sources1">2 years</td><td class="sources1">30 km</td></tr>
+							</table>
+						</figure>
+					</section>
+					<section>
+						<h2>. . . with URIs</h2>
+						<figure style="height:600px;">
+							<div style="height:400px;">
+							<table class="triple-table">
+								<tr><td id="tripleSubject0" onmouseover="tripleInfo('Subject',1,0)" onmouseout="tripleInfo('Subject',0,0)">record1</td><td id="triplePredicate0" onmouseover="tripleInfo('Predicate',1,0)" onmouseout="tripleInfo('Predicate',0,0)">isOrganism</td><td id="tripleObject0" onmouseover="tripleInfo('Object',1,0)" onmouseout="tripleInfo('Object',0,0)">Bat</td></tr>
+								<tr><td id="tripleSubject1" onmouseover="tripleInfo('Subject',1,1)" onmouseout="tripleInfo('Subject',0,1)">record1</td><td id="triplePredicate1" onmouseover="tripleInfo('Predicate',1,1)" onmouseout="tripleInfo('Predicate',0,1)">hasWeight</td><td id="tripleObject1" onmouseover="tripleInfo('Object',1,1)" onmouseout="tripleInfo('Object',0,1)">"0.04 kg"</td></tr>
+								<tr><td id="tripleSubject2" onmouseover="tripleInfo('Subject',1,2)" onmouseout="tripleInfo('Subject',0,2)">record1</td><td id="triplePredicate2" onmouseover="tripleInfo('Predicate',1,2)" onmouseout="tripleInfo('Predicate',0,2)">maturesAt</td><td id="tripleObject2" onmouseover="tripleInfo('Object',1,2)" onmouseout="tripleInfo('Object',0,2)">"2 years"</td></tr>
+								<tr><td id="tripleSubject3" onmouseover="tripleInfo('Subject',1,3)" onmouseout="tripleInfo('Subject',0,3)">record1</td><td id="triplePredicate3" onmouseover="tripleInfo('Predicate',1,3)" onmouseout="tripleInfo('Predicate',0,3)">hasDailyPathLength</td><td id="tripleObject3" onmouseover="tripleInfo('Object',1,3)" onmouseout="tripleInfo('Object',0,3)">"30 km"</td></tr>
+								<tr><td id="tripleSubject4" onmouseover="tripleInfo('Subject',1,4)" onmouseout="tripleInfo('Subject',0,4)">record1</td><td id="triplePredicate4" onmouseover="tripleInfo('Predicate',1,4)" onmouseout="tripleInfo('Predicate',0,4)">publisher</td><td id="tripleObject4" onmouseover="tripleInfo('Object',1,4)" onmouseout="tripleInfo('Object',0,4)">SBDN</td></tr>
+							</table>
+							</div>
+							<figcaption id="tripleDisplay">&nbsp;</figcaption>
+						</figure>
+					</section>
+					<section>
+						<figure>
+							<iframe src="http://purl.org/dc/terms/" style="width:1100px; height:560px; border:4px solid black;"></iframe>
+							<figcaption><span class="fragment highlight-red" data-fragment-index="1">dc:</span>publisher (<span class="fragment highlight-red" data-fragment-index="1">http://purl.org/dc/terms/</span>publisher)</figcaption>
+						</figure>
+					</section>
+					<section>
+						<figure>
+							<embed src="/images/webofbats.svg" style="margin-top:-40px; height:720px;"></embed>
+							<figcaption>Our bat data</figcaption>
+						</figure>
+					</section>
+					<section>
+						<figure>
+							<embed src="/images/webofmeaning.svg" style="margin-top:-40px; height:720px;"></embed>
+							<figcaption>A meaningful "web of data"</figcaption>
+						</figure>
+					</section>
+					<section>
+						<h2>Two final linked data components</h2>
+						<ul>
+							<li>Ontologies encoded in <strong>OWL</strong> <span class="expanded-note">(Web Ontology Language)</span></li>
+							<li>Data queried by <strong>SPARQL</strong> <span class="expanded-note">(SPARQL Protocol and RDF Query Language)</span></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Summary (so far)</h2>
+						<ul>
+							<li>Tables have a place, but know their limitations</li>
+							<li>Use the right tools for the job</li>
+							<li>Globally unique identifiers (URIs) facilitate data linking</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>EthoCore</h1>
+					</section>
+					<section>
+						<h2>EthoCore</h2>
+						<p style="font-size:1.2em;">Metadata initiative for behavior modeled on Darwin Core</p>
+					</section>
+					<section>
+						<h2>Darwin Core</h2>
+						<ul>
+							<li>Metadata initiative for biodiversity informatics</li>
+							<li>maintained by <strong>Biodiversity Information Standards</strong> (TDWG)</li>
+							<li>extension of <strong>Dublin Core</strong></li>
+						</ul>
+					</section>
+					<section>
+						<h2>EthoCore</h2>
+						<p style="font-size:1.2em;">Currently 148 metadata terms in ten classes</p>
+					</section>
+					<section>
+						<h2>EthoCore classes</h2>
+						<div style="height:7.6em;">
+						<ul class="two-columns" style="width:1200px;">
+							<li>MeasurementOrObservation</li>
+							<li>Animal</li>
+							<li>Patch</li>
+							<li>MaterialSample</li>
+							<li>Event</li>
+							<li>Activity</li>
+							<li>Location</li>
+							<li>Identification</li>
+							<li>Taxon</li>
+							<li>ResourceRelationship</li>
+						</ul>
+						</div>
+					</section>
+					<section>
+						<figure>
+							<iframe src="http://ethoinformatics.org/ethocore" style="width:1100px; height:560px; border:4px solid black;">EthoCore</iframe>
+							<figcaption><a href="http://ethoinformatics.org/ethocore" target="_blank">http://ethoinformatics.org/ethocore</a></figcaption>
+						</figure>
+					</section>
+					<section>
+						<h2>MeasurementOrObservation</h2>
+						<p>Measurements or observations have a <strong>type</strong> and a <strong>value</strong></p>
+					</section>
+					<section>
+						<h2>Morphometric examples</h2>
+						<ul>
+							<li>Weight</li>
+							<li>Minimum Girth</li>
+							<li>Glabella-Opisthocranion</li>
+						</ul>
+					</section>
+					<section>
+						<embed src="/images/measurements.svg" style="height:640px;"></embed>
+					</section>
+					<section>
+						<h2>Behavioral examples</h2>
+						<ul>
+							<li>Nearest neighbor observation</li>
+							<li>Focal observation</li>
+						</ul>
+					</section>
+					<section>
+						<embed src="/images/observations1.svg" style="height:700px;"></embed>
+					</section>
+					<section>
+						<embed src="/images/observations2.svg" style="height:700px;"></embed>
+					</section>
+					<section>
+						<embed src="/images/fullweb.svg" style="height:640px;"></embed>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h1>Roadmap</h1>
+					</section>
+					<section>
+						<h2>What we can't do for you</h2>
+						<ul>
+							<li class="fragment">Fix bad data</li>
+							<li class="fragment">Reshape your data</li>
+							<li class="fragment">Document and annotate your data</li>
+							<li class="fragment">Write your code for you</li>
+						</ul>
+					</section>
+					<section>
+						<p style="font-size:2em;">What are we doing?</p>
+					</section>
+					<section>
+						<p class="big-point">Maintaining and expanding our metadata initiative</p>
+						<figure>
+							<img src="/images/ethocore.png" style="height:400px;"/>
+						</figure>
+						<p class="fragment big-point">Developing data models (ontologies) for key domains</p>
+					</section>
+					<section>
+						<p class="big-point">Building wider capabilities with the greater Linked Data community</p>
+						<figure>
+							<table style="text-align:center;">
+							<tr>
+								<td style="border:0px; text-align:center;">
+									<a href="http://paleocore.org" target="_blank"><img src="/images/paleocore.png" style="height:200px;"/></a>
+								</td>
+								<td style="border:0px; text-align:center;">
+									<a href="http://gbif.org" target="_blank"><img src="/images/gbif.png" style="height:200px;"/></a>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" style="text-align:center;">
+									<a href="http://movebank.org" target="_blank"><img src="/images/movebank.png" style="height:120px;"/></a>
+								</td>
+							</tr>
+							</table>
+						</figure>
+					</section>
+					<section>
+						<p class="big-point">As a proof-of-concept, build a small consortium of projects committed to merging data</p>
+						<figure>
+							<img src="/images/propithecus.jpg" style="height:240px;"/>
+							<img src="/images/pan.jpg" style="height:240px;"/>
+							<img src="/images/cebus.jpg" style="height:240px;"/>
+							<img src="/images/lagothrix.jpg" style="height:240px;"/>
+							<img src="/images/brachyteles.jpg" style="height:240px;"/>
+							<figcaption><p class="img-credit">Image credits: <a href="https://www.flickr.com/photos/33037982@N04/3452674727/" target="_blank">Leonora Enking</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Gombe_Stream_NP_Mutter_und_Kind.jpg" target="_blank">Ikiwaner</a> &middot; <a href="https://www.flickr.com/photos/amaynez/3332049655/" target="_blank">Armando Maynez</a> &middot; <a href="https://www.flickr.com/photos/7631803@N04/445038264/" target="_blank">Mike LaBarbera</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Brachyteles_hypoxanthus2.jpg" target="_blank">Paulo Chaves</a></p></figcaption>
+						</figure>
+						<p class="big-point fragment">Link data, analyze data, address a question, publish as a consortium</p>
+					</section>
+					<section>
+						<p class="big-point">Developing open source data collection software</p>
+						<figure style="height:520px;">
+							<!--
+							<iframe src="http://localhost:8001" style="position:absolute; right:640px; width:338px; height:600px; border:2px solid black;"></iframe>
+							-->
+							<ul style="position:absolute; width:300px; left:640px; top:200px;">
+								<li class="fragment" data-fragment-index="2">uses a standard framework that is extensible and customizable</li>
+								<li class="fragment" data-fragment-index="3">building specialized (project-specific) modules</li>
+							</ul>
+						</figure>
+					</section>
+					<section>
+						<p class="big-point">Developing an infrastructure for the larger anthropological community</p>
+						<p class="fragment" style="font-size:3em;">AnthroCore</p>
+						<p class="fragment">(PaleoCore + Ethoinformatics + TARL)</p>
+						<p class="fragment">Focus on geospatial database tools, linked data, and outreach</p>
+					</section>
+					<section>
+						<p class="bigger-point">Promoting web and programming skills</p>
+						<p class="fragment">Organizing training workshops</p>
+						<p class="fragment">Web documentation</p>
+					</section>
+					<section>
+						<h2>Junior vs. senior scientists</h2>
+						<ul>
+							<li class="fragment">Junior scientists are more code-savvy</li>
+							<li class="fragment">Junior scientists have more to gain from "big data"</li>
+							<li class="fragment">Junior scientists have the incentive to use and extend technology</li>
+							<li class="fragment">Senior scientists have unique knowledge of their data</li>
+							<li class="fragment">Senior scientists are gatekeepers for some the largest and most impactful datasets</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Two-pronged long-term strategy</h2>
+						<ol class="big-point">
+							<li class="fragment">Foster an ecosystem of users and technologies that embrace linked data</li>
+							<ul><li class="fragment">Invest in building tools that people actually want to use</li></ul>
+							<li class="fragment">Actively work with curators of major long-term datasets to make their data compatible</li>
+							<ul><li class="fragment">Analyze and publish collaboratively</li></ul>
+						</ol>
+						<p style="font-size:1.5em; font-family:Myriad Pro; font-weight:bold;" class="fragment">Incentivize others to follow our footsteps</p>
+					</section>
+					<section>
+						<p class="bigger-point">Ultimately, annotating and reshaping data will require substantial knowledge and investment from project or database managers</p>
+						<p class="fragment">Coding is crucial, and some may need to find coding assistance</p>
+					</section>
+					<section>
+						<h1>Closing thoughts</h1>
+					</section>
+					<section>
+						<p class="biggerer-point">Data published for human consumption limits machine function, which hinders discovery and reuse</p>
+					</section>
+					<section>
+						<p class="biggerer-point">Diversity of data management tools and practices is a <strong>strength</strong>, not a problem</p>
+						<p class="fragment big-point">Researchers should be empowered to use technologies and data structures that are suited for their purposes</p>
+					</section>
+					<section>
+						<p class="biggerer-point">Undocumented data = lost data</p>
+						<p class="fragment big-point">Metadata are important<br>(your librarians think about this a lot more than you do)</p>
+					</section>
+					<section>
+						<p class="biggerer-point">Technology becomes obsolete</p>
+						<p class="fragment big-point">The process is forever (documentation is critical)</p>
+						<p class="fragment big-point">We can mitigate obsolescence by committing to open-source technologies with strong user and developer communities</p>
+					</section>
+					<section>
+						<p class="biggerer-point">Creating linked capabilities does not itself address data access issues</p>
+						<p class="fragment big-point">The broader community ultimately must resolve sharing and licensing concerns</p>
+					</section>
+					<section>
+						<p class="biggerer-point">But when the benefits materialize, the culture will change</p>
+					</section>
+<!--
+
+Data published for human consumption limits machine function, which limits reuse
+
+
+					<section>
+						<h2>Trends and realities</h2>
+						<p>Data can be centralized, but to some extent it will always be distributed</p>
+						<p>Junior scientists are increasingly code-literate</p>
+						<p>Technologies are moving into the Web and into the Cloud</p>
+					</section>
+-->
+						<!--
+							Trends in Web Tech
+							Internet of Things
+							Cloud technology
+						-->
+						<!--
+							non judgmental attitude
+							promote web and data literacy
+							build tools for data collection and data management that employ these standards that people will want to use
+								newer generations
+							sign on stakeholder to commit to translating data and build (initially) small collaborations
+								document the process
+								while technologies will die out, the process is forever
+							build linked data capabilities
+							create incentive to annotate and archive old data
+
+							some groups can build repositories and work out issues of ownership and access
+							This can build upon this work
+
+							Groups should be empowered to use the databases and platforms designed for their purposes
+							Archiving is important, and to some extent this effort will stay distributed
+							This is the cloud model
+							
+						-->
+				</section>
+				<section>
+					<h1>Acknowledgments</h1>
+					<ul>
+						<li><strong>Jennifer Moore</strong>, <strong>Cynthia Hudson</strong>, & <strong>Aaron Addison</strong> <span class="affiliation">Washington University Libraries</span></li>
+						<li><strong>Jane Phillips-Conroy</strong> <span class="affiliation">Washington University &middot; Neuroscience / Anthropology</span></li>
+						<li><strong>2013</strong> <span class="smalltext">St. Louis</span> & <strong>2015</strong> <span class="smalltext">Austin</span> <strong> working group meetings participants</strong><br><p class="acknowledgments">Laura Abondano &middot; Colin Addis &middot; Elizabeth Archie &middot; Louise Barrett &middot; Thore Bergman &middot; Maryjka Blaszczyk &middot; Damien Caillaud &middot; Shahrina Chowdhury &middot; Kelsey Ellis &middot; Gideon Erkenswick &middot; Eduardo Fernandez-Duque &middot; Steffen Foerster &middot; Paul Garber &middot; Peter Henzi &middot; Katharine Jack &middot; Clifford Jolly &middot; Andreas Koenig &middot; Kara Leimberger &middot; Rebecca Lewis &middot; Katie MacKinnon &middot; Amely Martins &middot; Monica McDonald &middot; Amanda Melin &middot; Mike Montague &middot; Stephanie Musgrave &middot; Joseph Orkin &middot; Katie Ortiz &middot; Steve Phelps &middot; Denné Reed &middot; Crickette Sanz &middot; Clara Scarry &middot; Christopher Schmitt &middot; Christopher Shaffer &middot; Joan Silk &middot; Karen Strier &middot; Robert Sussman &middot; Stacey Tecot &middot; Claudia Valeggia &middot; Sarie Van Belle &middot; Anna Weyher</p></li>
+						<li><strong>National Science Foundation</strong> <span class="smalltext"> SMA 1338524 &middot; SMA 1338467 &middot; SMA 1338452</span></li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				
+				width:1200,
+				height:700,
+
+				transition: 'fade', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
