@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>test</title>
+    <link rel="stylesheet"
+          href="js/chartist.min.css">
+  </head>
+  <body>
+    <!-- Site content goes here !-->
+    <script src="js/chartist.min.js"></script>
+    <div class="ct-chart ct-perfect-fourth"></div>
+	<label for="range1" style="position:absolute; top:620px; left:000px">Mon</label><input id="range1" type="range" style="position:absolute; top:640px; left:000px" min="0" max="10" value="5" oninput="update(1)"/><span id="lab1" style="position:absolute; top:640px; left:140px">5</span>
+	<label for="range2" style="position:absolute; top:620px; left:200px">Tue</label><input id="range2" type="range" style="position:absolute; top:640px; left:200px" min="0" max="10" value="2" oninput="update(2)"/><span id="lab2" style="position:absolute; top:640px; left:340px">2</span>
+	<label for="range3" style="position:absolute; top:620px; left:400px">Wed</label><input id="range3" type="range" style="position:absolute; top:640px; left:400px" min="0" max="10" value="4" oninput="update(3)"/><span id="lab3" style="position:absolute; top:640px; left:540px">4</span>
+	<label for="range4" style="position:absolute; top:620px; left:600px">Thu</label><input id="range4" type="range" style="position:absolute; top:640px; left:600px" min="0" max="10" value="2" oninput="update(4)"/><span id="lab4" style="position:absolute; top:640px; left:740px">2</span>
+	<label for="range5" style="position:absolute; top:620px; left:800px">Fri</label><input id="range5" type="range" style="position:absolute; top:640px; left:800px" min="0" max="10" value="0" oninput="update(5)"/><span id="lab5" style="position:absolute; top:640px; left:940px">0</span>
+	<script>
+
+function update(which) {
+	label = document.getElementById('lab'+which);
+	range = document.getElementById('range'+which);
+	label.innerHTML = range.value;
+	data['series'][0][which-1] = range.value;
+	new Chartist.Line('.ct-chart', data, options);
+}
+
+var data = {
+  // A labels array that can contain any sort of values
+  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+  // Our series array that contains series objects or in this case series data arrays
+  series: [
+    [5, 2, 4, 2, 0]
+  ]
+};
+
+var options = {
+  width: 900,
+  height: 600,
+  high:12.5,
+  low:0
+};
+
+// Create a new line chart object where as first parameter we pass in a selector
+// that is resolving to our chart container element. The Second parameter
+// is the actual data object.
+new Chartist.Line('.ct-chart', data, options);
+	</script>
+  </body>
+</html>
