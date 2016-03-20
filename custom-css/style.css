@@ -4,7 +4,18 @@ html.img-right div.slide-background.present {
    background-position: right;
 }
 */
-
+	@font-face {
+		font-family: Inconsolata;
+		src: url(../lib/font/inconsolata/Inconsolata-Regular.ttf) format('truetype');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: Inconsolata;
+		src: url(../lib/font/inconsolata/Inconsolata-Bold.ttf) format('truetype');
+		font-weight: bold;
+		font-style: normal;
+	}
 	iframe.full-frame {
 		width:1100px;
 		height:640px;
@@ -148,7 +159,7 @@ html.img-right div.slide-background.present {
 		border:2px solid black;
 	}
 	.custom .triple-table > tbody > tr > td {
-		font-family:Consolas, Monaco, Menlo, monospace;
+		font-family:Consolas, Inconsolata, Monaco, Menlo, monospace;
 		font-size:1em;
 		text-align:center;
 		border-bottom: 0px solid;
