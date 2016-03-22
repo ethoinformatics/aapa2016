@@ -5,6 +5,84 @@ html.img-right div.slide-background.present {
 }
 */
 	@font-face {
+		font-family: Open Sans;
+		src: url(../lib/font/muli/OpenSans-Regular.ttf) format('truetype');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: Open Sans;
+		src: url(../lib/font/muli/OpenSans-Italic.ttf) format('truetype');
+		font-weight: normal;
+		font-style: italic;
+	}
+	@font-face {
+		font-family: Open Sans;
+		src: url(../lib/font/muli/OpenSans-Bold.ttf) format('truetype');
+		font-weight: 700;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: Open Sans;
+		src: url(../lib/font/muli/OpenSans-BoldItalic.ttf) format('truetype');
+		font-weight: 700;
+		font-style: italic;
+	}
+	@font-face {
+		font-family: Open Sans;
+		src: url(../lib/font/muli/OpenSans-Light.ttf) format('truetype');
+		font-weight: 300;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: Open Sans;
+		src: url(../lib/font/muli/OpenSans-LightItalic.ttf) format('truetype');
+		font-weight: 300;
+		font-style: italic;
+	}
+	@font-face {
+		font-family: Open Sans;
+		src: url(../lib/font/muli/OpenSans-Semibold.ttf) format('truetype');
+		font-weight: 600;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: Open Sans;
+		src: url(../lib/font/muli/OpenSans-SemiboldItalic.ttf) format('truetype');
+		font-weight: 600;
+		font-style: italic;
+	}
+	@font-face {
+		font-family: Open Sans;
+		src: url(../lib/font/muli/OpenSans-ExtraBold.ttf) format('truetype');
+		font-weight: 800;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: Open Sans;
+		src: url(../lib/font/muli/OpenSans-ExtraBoldItalic.ttf) format('truetype');
+		font-weight: 800;
+		font-style: italic;
+	}
+	@font-face {
+		font-family: Open Sans Condensed;
+		src: url(../lib/font/muli/OpenSans-CondBold.ttf) format('truetype');
+		font-weight: 700;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: Open Sans Condensed;
+		src: url(../lib/font/muli/OpenSans-CondLight.ttf) format('truetype');
+		font-weight: 300;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: Open Sans Condensed;
+		src: url(../lib/font/muli/OpenSans-CondLightItalic.ttf) format('truetype');
+		font-weight: 300;
+		font-style: italic;
+	}
+	@font-face {
 		font-family: Inconsolata;
 		src: url(../lib/font/inconsolata/Inconsolata-Regular.ttf) format('truetype');
 		font-weight: normal;
@@ -15,6 +93,48 @@ html.img-right div.slide-background.present {
 		src: url(../lib/font/inconsolata/Inconsolata-Bold.ttf) format('truetype');
 		font-weight: bold;
 		font-style: normal;
+	}
+	@font-face {
+		font-family: Droid Sans;
+		src: url(../lib/font/droid-sans/DroidSans.ttf) format('truetype');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: Droid Sans;
+		src: url(../lib/font/droid-sans/DroidSans-Bold.ttf) format('truetype');
+		font-weight: bold;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: Didact Gothic;
+		src: url(../lib/font/didact-gothic/DidactGothic.ttf) format('truetype');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: Muli;
+		src: url(../lib/font/muli/Muli-Regular.ttf) format('truetype');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: Muli;
+		src: url(../lib/font/muli/Muli-Italic.ttf) format('truetype');
+		font-weight: normal;
+		font-style: italic;
+	}
+	@font-face {
+		font-family: Muli;
+		src: url(../lib/font/muli/Muli-Light.ttf) format('truetype');
+		font-weight: 300;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: Muli;
+		src: url(../lib/font/muli/Muli-LightItalic.ttf) format('truetype');
+		font-weight: 300;
+		font-style: italic;
 	}
 	iframe.full-frame {
 		width:1100px;
@@ -39,7 +159,7 @@ html.img-right div.slide-background.present {
 		margin-right:2em;
 	}
 	.custom h1, .custom h2, .custom h3, .custom h4, .custom h5 {
-		font-family:Futura;
+		font-family:Futura, Droid Sans, Open Sans, sans-serif;
 		text-transform:none;
 		font-variant:small-caps;
 	}
@@ -159,7 +279,7 @@ html.img-right div.slide-background.present {
 		border:2px solid black;
 	}
 	.custom .triple-table > tbody > tr > td {
-		font-family:Consolas, Inconsolata, Monaco, Menlo, monospace;
+		font-family:Consolas, Inconsolata, monospace;
 		font-size:1em;
 		text-align:center;
 		border-bottom: 0px solid;
@@ -187,7 +307,7 @@ html.img-right div.slide-background.present {
     }
     .custom span.semibold {
     	/* font-style:italic; */
-    	font-family:Myriad Pro;
+    	font-family:Myriad Pro, Droid Sans, sans-serif;
 		font-size:0.8em;
 		font-weight:bold;
     }
