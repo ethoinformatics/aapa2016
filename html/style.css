@@ -92,10 +92,10 @@
     color:#F7F2E9;
 }
 
-.main-content{
+.main-content {
 	color:#5B4521;
 	font-family:Oxygen, Arial, Helvetica, sans-serif;
-	position:fixed; top:64px; width:94%; left:3%; margin-right:3%;
+	position:absolute; top:64px; width:94%; left:3%; margin-right:3%;
 }
 
 .main-content h1 {
@@ -104,10 +104,23 @@
 	margin-top:1em;
 }
 
+.main-content h2 {
+	font-size:1.625em;
+	margin-top:1.5em;
+}
+
 .main-content h1.top {
 	font-size:2em;
 	margin-top:0.5em;
 	margin-left:0em;
+}
+
+.main-content p.message {
+	font-size:1.25em;
+}
+
+.main-content p.help-text {
+	margin-top:-0.5em;
 }
 
 .main-content p.body-content {
@@ -119,6 +132,20 @@
 .main-content legend {
 	font-size:2em;
 	margin-top:0.5em;
+}
+
+.main-content div.publisher {
+	margin: 0.5em 0em;
+	padding: 0.25em 1em;
+	border: 1px solid #5B4521;
+}
+
+.main-content a.fake {
+	cursor:pointer;
+}
+
+.ct-label {
+	font-size:0.5em;
 }
 
 .menu li a:link {		text-decoration: none; 		color: #F7F2E9;}

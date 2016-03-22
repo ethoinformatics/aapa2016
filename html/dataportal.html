@@ -22,6 +22,7 @@
   	</header>
 
 	<script src="script.js"></script>
+	<script src="../lib/js/chartist.min.js"></script>
   	<section id="page1" class="main-content" style="display:block;">
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
@@ -108,73 +109,52 @@
   </fieldset>
   <fieldset id="results-display" style="display:none;">
 	  <h1 class="top">Matching data</h1>
-	  <p>23 datasets found.</p>
+	  <p class="message">1,694 records found matching 4 datasets.</p>
+	  <div id="publishers" style="display:block;">
+		  <h2>Data publishers</h2>
+		  <p class="help-text"><a style="cursor:pointer;" onclick="merge()">Merge records</a></p>
+		  <div class="publisher">
+			<h4><a style="color:black; cursor:pointer;">Awash Baboon Project</a> <span style="font-weight:normal;"> &middot; Microsoft Excel spreadsheet (<a class="fake">See host information</a>)</span></h4>
+			<p><a style="font-size:1.25em; cursor:pointer;">1,270 records</a> &middot; <a class="fake">View metadata</a> &middot; <a class="fake">View license</a></p>
+		  </div>
+		  <div class="publisher">
+			<h4><a style="color:black; cursor:pointer;">Ethoinformatics Database</a> <span style="font-weight:normal;"> &middot; PostgreSQL database (<a class="fake">See host information</a>)</span></h4>
+			<p><a style="font-size:1.25em; cursor:pointer;">202 records</a> &middot; <a class="fake">View metadata</a> &middot; <a class="fake">View license</a></p>
+		  </div>
+		  <div class="publisher">
+			<h4><a style="color:black; cursor:pointer;">Proyecto Primates</a> <span style="font-weight:normal;"> &middot; Microsoft Access database (<a class="fake">See host information</a>)</span></h4>
+			<p><a style="font-size:1.25em; cursor:pointer;">193 records</a> &middot; <a class="fake">View metadata</a> &middot; <a class="fake">View license</a></p>
+		  </div>
+		  <div class="publisher">
+			<h4><a style="color:black; cursor:pointer;">Kafue Baboon Project</a> <span style="font-weight:normal;"> &middot; MySQL database (<a class="fake">See host information</a>)</span></h4>
+			<p><a style="font-size:1.25em; cursor:pointer;">29 records</a> &middot; <a class="fake">View metadata</a> &middot; <a class="fake">View license</a></p>
+		  </div>
+      </div>
+      <div id="records" style="display:none;">
+      	<h2 id="results-title">Merged records (preview)</h2>
+		<p class="help-text form-inline">Visualize by <select id="visualize-by" class="form-control input-xs" style="height:80%;"><option>genus</option><option>species</option></select> <button class="btn btn-default btn-xs" onclick="visualize()">Go</button></p>
+      	<div id="merged-records">
+			<table class="table">
+				<tr><th>ScientificName</th><th>Locality</th><th>Sex</th><th>LifeStage</th><th>MeasurementType</th><th>MeasurementValue</th><th>MeasurementMethod</th><th>Host</th><th>Details</th></tr>
+				<tr><td><em>Lagothrix poeppigii</em> (Schinz, 1844)</td><td>Yasuní National Park, Ecuador</td><td>Female</td><td>Adult</td><td><a class="fake">morpho:BodyWeight</a></td><td>8.5 kg</td><td><a class="fake">pp:MainProtocol</a></td><td><a class="fake">utexas.edu</a></td><td><a class="fake">23 additional fields</a></td></tr>
+				<tr><td><em>Papio hamadryas</em> (Linnaeus, 1758)</td><td>Awash National Park, Ethiopia</td><td>Female</td><td>Adult</td><td><a class="fake">morpho:BodyWeight</a></td><td>15.1 kg</td><td><a class="fake">babdat:Main</a></td><td><a class="fake">wustl.edu</a></td><td><a class="fake">28 additional fields</a></td></tr>
+				<tr><td><em>Lagothrix poeppigii</em> (Schinz, 1844)</td><td>Yasuní National Park, Ecuador</td><td>Male</td><td>Subadult</td><td><a class="fake">morpho:BodyWeight</a></td><td>6.6 kg</td><td><a class="fake">pp:MainProtocol</a></td><td><a class="fake">utexas.edu</a></td><td><a class="fake">23 additional fields</a></td></tr>
+				<tr><td><em>Papio anubis</em> (Lesson, 1827)</td><td>Awash National Park, Ethiopia</td><td>Female</td><td>Adult</td><td><a class="fake">morpho:BodyWeight</a></td><td>17.8 kg</td><td><a class="fake">babdat:Main</a></td><td><a class="fake">wustl.edu</a></td><td><a class="fake">28 additional fields</a></td></tr>
+				<tr><td><em>Papio kindae</em> (Lönnberg, 1919)</td><td>Kafue National Park, Zambia</td><td>Female</td><td>Adult</td><td><a class="fake">morpho:BodyWeight</a></td><td>10.2 kg</td><td><a class="fake">babdat:Main</a></td><td><a class="fake">wustl.edu</a></td><td><a class="fake">32 additional fields</a></td></tr>
+				<tr><td><em>Ateles belzebuth</em> (É. Geoffroy, 1806)</td><td>Yasuní National Park, Ecuador</td><td>Male</td><td>Subadult</td><td><a class="fake">morpho:BodyWeight</a></td><td>7.9 kg</td><td><a class="fake">bb:IMP</a></td><td><a class="fake">ethoinformatics.org</a></td><td><a class="fake">34 additional fields</a></td></tr>
+				<tr><td><em>Papio cynocephalus</em> (Linnaeus, 1766)</td><td>Mikumi National Park, Tanzania</td><td>Female</td><td>Adult</td><td><a class="fake">morpho:BodyWeight</a></td><td>14.9 kg</td><td><a class="fake">babdat:Main</a></td><td><a class="fake">wustl.edu</a></td><td><a class="fake">28 additional fields</a></td></tr>
+				<tr><td><em>Papio hamadryas</em> (Linnaeus, 1758)</td><td>Awash National Park, Ethiopia</td><td>Male</td><td>Adult</td><td><a class="fake">morpho:BodyWeight</a></td><td>24.8 kg</td><td><a class="fake">babdat:Main</a></td><td><a class="fake">wustl.edu</a></td><td><a class="fake">28 additional fields</a></td></tr>
+				<tr><td><em>Callicebus discolor</em> (I. Geoffroy and Deville, 1848)</td><td>Yasuní National Park, Ecuador</td><td>Female</td><td>Subadult</td><td><a class="fake">morpho:BodyWeight</a></td><td>2.9 kg</td><td><a class="fake">bb:IMP</a></td><td><a class="fake">ethoinformatics.org</a></td><td><a class="fake">34 additional fields</a></td></tr>
+				<tr><td><em>Papio ursinus griseipes</em> (Pocock, 1911)</td><td>Kafue National Park, Zambia</td><td>Male</td><td>Adult</td><td><a class="fake">morpho:BodyWeight</a></td><td>29.4 kg</td><td><a class="fake">babdat:Main</a></td><td><a class="fake">wustl.edu</a></td><td><a class="fake">32 additional fields</a></td></tr>
+			</table>
+		</div>
+		<div id="results-visualization" style="display:none;">
+			<div class="ct-chart ct-perfect-fourth" style="font-size:2em;"></div>
+			<script>
+			</script>
+		</div>
+      </div>
   </fieldset>
-    <!-- Site content goes here !-->
-    <!--
-    <script src="js/chartist.min.js"></script>
-    <div class="ct-chart ct-perfect-fourth"></div>
-    <div style="position:absolute; top:420px;">
-	<label for="range1">Mon</label><input id="range1" type="range" min="0" max="10" value="5" oninput="update(1)"/><span id="lab1">5</span>
-	<label for="range2">Tue</label><input id="range2" type="range" min="0" max="10" value="2" oninput="update(2)"/><span id="lab2">2</span>
-	<label for="range3">Wed</label><input id="range3" type="range" min="0" max="10" value="4" oninput="update(3)"/><span id="lab3">4</span>
-	<label for="range4">Thu</label><input id="range4" type="range" min="0" max="10" value="2" oninput="update(4)"/><span id="lab4">2</span>
-	<label for="range5">Fri</label><input id="range5" type="range" min="0" max="10" value="0" oninput="update(5)"/><span id="lab5">0</span>
-	<script>
-
-function update(which) {
-	label = document.getElementById('lab'+which);
-	range = document.getElementById('range'+which);
-	label.innerHTML = range.value;
-	data['series'][0][which-1] = range.value;
-	new Chartist.Bar('.ct-chart', data, options);
-}
-
-var data = {
-  labels: ['W1', 'W2', 'W3', 'W4', 'W5'],
-  series: [
-    [1, 2, 4, 8, 6]
-  ]
-};
-
-var options = {
-  width: 600,
-  height: 400,
-  high: 10,
-  low: 0,
-  axisX: {
-    labelInterpolationFnc: function(value, index) {
-      return index % 1 === 0 ? value : null;
-    }
-  }
-};
-
-new Chartist.Bar('.ct-chart', data, options);
-
-/*
-var data = {
-  // A labels array that can contain any sort of values
-  labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
-  // Our series array that contains series objects or in this case series data arrays
-  series: [
-    [5, 2, 4, 2, 0]
-  ]
-};
-
-var options = {
-  width: 900,
-  height: 600,
-  high:12.5,
-  low:0
-};
-*/
-
-// Create a new line chart object where as first parameter we pass in a selector
-// that is resolving to our chart container element. The Second parameter
-// is the actual data object.
-// new Chartist.Line('.ct-chart', data, options);
-	</script>
-	-->
 	</section>
 	<section id="page2" class="main-content" style="display:none;">
 		<h1>Documentation</h1>

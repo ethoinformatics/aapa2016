@@ -47,11 +47,13 @@ function nav(id) {
 
 function filter() {
 	var input = document.getElementById('filter-input');
-	var filters = document.getElementById('filters');
-	if (filters.innerHTML === '') {
-		filters.innerHTML = '<p style="cursor:pointer; margin:0em;" onclick="remove()">' + namespaces[input.value] + input.value + '&nbsp;<img src="images/x.png" style="height:1em;"/></p>';
-	} else {
-		filters.innerHTML += '<p style="cursor:pointer; margin:0em;" onclick="remove()">' + namespaces[input.value] + input.value + '&nbsp;<img src="images/x.png" style="height:1em;"/></p>';
+	if (input.value !== '')  {
+		var filters = document.getElementById('filters');
+		if (filters.innerHTML === '') {
+			filters.innerHTML = '<p style="cursor:pointer; margin:0em;" onclick="remove()">' + namespaces[input.value] + input.value + '&nbsp;<img src="images/x.png" style="height:1em;"/></p>';
+		} else {
+			filters.innerHTML += '<p style="cursor:pointer; margin:0em;" onclick="remove()">' + namespaces[input.value] + input.value + '&nbsp;<img src="images/x.png" style="height:1em;"/></p>';
+		}
 	}
 	input.value = '';
 }
@@ -81,3 +83,79 @@ function submit() {
 	var results = document.getElementById('results-display');
 	results.style.display = 'block';
 }
+
+function merge() {
+	var publishers = document.getElementById('publishers');
+	var records = document.getElementById('records');
+	publishers.style.display = 'none';
+	records.style.display = 'block';
+}
+
+function visualize() {
+	var visualization = document.getElementById('results-visualization');
+	var title = document.getElementById('results-title');
+	var records = document.getElementById('merged-records');
+	var level = document.getElementById('visualize-by');
+	for (i=0; i<level.childNodes.length ; i++) {
+		if (level.childNodes[i].selected == true) {
+			var which = level.childNodes[i].value
+		}
+	}
+	records.style.display = 'none';
+	title.innerHTML = 'Body weight by ' + which + ' (mean)';
+	visualization.style.display = 'block';
+
+	if (which == 'species') {
+		var data = {
+		  labels: ['Papio hamadryas','Papio anubis', 'Papio cynocephalus','Papio kindae', 'Papio ursinus', 'Lagothrix poeppigii', 'Ateles belzebuth', 'Pithecia aequatorialis', 'Callicebus discolor'],
+		  series: [
+			[17.2, 15.6, 16.4, 12.1, 19.5, 9.2, 8.8, 4.6, 3.1]
+		  ]
+		};
+	} else if (which == 'genus') {
+		var data = {
+		  labels: ['Papio', 'Lagothrix', 'Ateles', 'Pithecia', 'Callicebus'],
+		  series: [
+			[17.4, 9.2, 8.8, 4.6, 3.1]
+		  ]
+		};
+	}
+
+	var options = {
+	  width: 960,
+	  height: 320,
+	  high: 30,
+	  low: 0,
+	  axisX: {
+		labelInterpolationFnc: function(value, index) {
+		  return index % 1 === 0 ? value : null;
+		}
+	  }
+	};
+
+	new Chartist.Bar('.ct-chart', data, options);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
