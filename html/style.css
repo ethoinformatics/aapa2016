@@ -31,19 +31,16 @@
 }
 
 #mapid {
-	height: 11.7em;
-	width:100%;
+	height: 14em;
+	width:21em;
 	border:1px solid #453D3F;
-	/*
-	border-left:2px solid #453D3F;
-	*/
 }
 
 #filters {
 	padding:0.5em;
 	resize:none;
 	width:100%;
-	height:10.1em;
+	height:12.1em;
 	background-color: #fff;
 	border:1px solid #453D3F;
 }
@@ -107,6 +104,10 @@
 .main-content h2 {
 	font-size:1.625em;
 	margin-top:1.5em;
+}
+
+.main-content h3 {
+	font-size:1.375em;
 }
 
 .main-content h1.top {

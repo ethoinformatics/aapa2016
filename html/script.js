@@ -1,3 +1,4 @@
+
 var namespaces = {
 	'BodyWeight':'morpho:',
 	'BodyHeight':'morpho:',
@@ -200,7 +201,7 @@ function visualize() {
 
 function file() {
 	var display = document.getElementById('file-display');
-	display.innerHTML = 'grooming_data.csv';
+	display.innerHTML = 'focal_data.csv';
 	var upload = document.getElementById('upload');
 	upload.disabled = null;
 }
@@ -212,14 +213,79 @@ function upload() {
 	data.style.display = 'block';
 }
 
+function corresponding() {
+	var corresponding = document.getElementsByClassName('corresponding-data');
+	var hide = document.getElementsByClassName('hide-from-preview');
+	var merge = document.getElementById('merge-corresponding');
+	var title = document.getElementById('my-data-title');
+	var checkbox = document.getElementById('highlight-checkbox');
+	for (i=0;i<corresponding.length;i++) corresponding[i].style.display = null;
+	for (i=0;i<hide.length;i++) hide[i].style.display = 'none';
+	checkbox.style.display = 'block';
+	merge.style.display = 'none';
+	title.innerHTML = '<span>Merged records (preview)</span> <span class="download">[<a class="fake">Download</a>]<span id="download-options"><a class="fake">CSV</a> &middot; <a class="fake">XML</a> &middot; <a class="fake">JSON</a> &middot; <a class="fake">RDF</a> &middot; <a class="fake">HTML</a> &middot; <a class="fake">LaTeX</a> &middot; <a class="fake">Excel</a></span></span>';
+}
+
+function incompatibles() {
+	var checkbox = document.getElementById('highlight-incompatibles');
+	var incompatibles = document.getElementsByClassName('incompatible');
+	if (checkbox.checked) {
+		for (i=0; i<incompatibles.length; i++) incompatibles[i].style.backgroundColor = '#F4C63C';
+	} else {
+		for (i=0; i<incompatibles.length; i++) incompatibles[i].style.backgroundColor = null;
+	}
+}
+
+function gbif() {
+	var repositories = document.getElementById('repositories');
+	var map = document.getElementById('linkmap');
+	repositories.style.display = 'none';
+	map.style.display = 'block';
+
+	var linkmap = L.map('linkmap').setView([0, 0], 1);
+
+	L.tileLayer('https://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png', {
+		maxZoom: 18,
+		attribution: '',
+		id: 'mapbox.streets'
+	}).addTo(linkmap);
+
+	L.marker([-0.6261, -76.1153]).addTo(linkmap).bindPopup("<strong>Proyecto Primates</strong><br>Tiputini Biodiversity Station<br><a href=\"#\">Anthony Di Fiore</a>");
+	L.marker([-15.8693117,25.8792078]).addTo(linkmap).bindPopup("<strong>Kafue Baboons</strong><br>Kafue National Park<br><a href=\"#\">Kenneth Chiou</a>");
+	L.marker([9.0833386,39.9978113]).addTo(linkmap).bindPopup("<strong>Awash Baboon Project</strong><br>Awash National Park<br><a href=\"#\">Jane Phillips-Conroy</a> &middot; <a href=\"#\">Clifford Jolly</a>");
+	L.marker([-20.7397663,44.1698379]).addTo(linkmap).bindPopup("Kirindy Mitea National Park");
+	L.marker([-19.7225586,-41.8083155]).addTo(linkmap).bindPopup("Estação Biológica de Caratinga");
+	L.marker([-4.6678867,29.588965]).addTo(linkmap).bindPopup("Gombe National Park");
+	L.marker([-2.6527,37.1205043]).addTo(linkmap).bindPopup("Amboseli National Park");
+	L.marker([10.8379361,-85.7073003]).addTo(linkmap).bindPopup("Parque Nacional Santa Rosa");
+	L.marker([-32.3656884,24.8308207]).addTo(linkmap).bindPopup("Samara Private Game Reserve");
+	L.marker([-24.6429482,-62.1966825]).addTo(linkmap).bindPopup("Formosa");
+/*
+	L.circle([51.508, -0.11], 500, {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.5
+	}).addTo(linkmap).bindPopup("I am a circle.");
+
+	L.polygon([
+		[51.509, -0.08],
+		[51.503, -0.06],
+		[51.51, -0.047]
+	]).addTo(linkmap).bindPopup("I am a polygon.");
 
 
+	var popup = L.popup();
 
+	function onMapClick(e) {
+		popup
+			.setLatLng(e.latlng)
+			.setContent("You clicked the map at " + e.latlng.toString())
+			.openOn(linkmap);
+	}
 
-
-
-
-
+	linkmap.on('click', onMapClick);
+*/
+}
 
 
 
