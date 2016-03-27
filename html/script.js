@@ -26,7 +26,17 @@ var namespaces = {
 	'NippleLength':'morpho:',
 	'TesticularLength':'morpho:',
 	'TesticularBreadth':'morpho:',
-	'TesticularVolume':'morpho:'
+	'TesticularVolume':'morpho:',
+	'Hominidae':'family:',
+	'Felidae':'family:',
+	'Hyaenidae':'family:',
+	'Eupleridae':'family:',
+	'Canidae':'family:',
+	'Mustelidae':'family:',
+	'Pythonidae':'family:',
+	'Boidae':'family:',
+	'Crocodylidae':'family:',
+	'Accipitridae':'family:'
 }
 
 function nav(id) {
@@ -54,7 +64,11 @@ function filter() {
 		if (filters.innerHTML === '') {
 			filters.innerHTML = '<p style="cursor:pointer; margin:0em;" onclick="remove(); rm();">' + namespaces[input.value] + input.value + '&nbsp;<img src="images/x.png" style="height:1em;"/></p>';
 		} else {
-			filters.innerHTML += '<p style="cursor:pointer; margin:0em;" onclick="remove(); rm();">' + namespaces[input.value] + input.value + '&nbsp;<img src="images/x.png" style="height:1em;"/></p>';
+			var repeat = false;
+			for (i=0;i<filters.childNodes.length; i++) {
+				if (filters.childNodes[i].innerHTML === namespaces[input.value] + input.value + '&nbsp;<img src="images/x.png" style="height:1em;">') repeat = true;
+			}
+			if (!repeat) filters.innerHTML += '<p style="cursor:pointer; margin:0em;" onclick="remove(); rm();">' + namespaces[input.value] + input.value + '&nbsp;<img src="images/x.png" style="height:1em;"/></p>';
 		}
 		submit.disabled = null;
 	}
@@ -238,11 +252,11 @@ function incompatibles() {
 
 function gbif() {
 	var repositories = document.getElementById('repositories');
-	var map = document.getElementById('linkmap');
+	var links = document.getElementById('set-linked-data');
 	repositories.style.display = 'none';
-	map.style.display = 'block';
+	links.style.display = 'block';
 
-	var linkmap = L.map('linkmap').setView([0, 0], 1);
+	linkmap = L.map('linkmap').setView([0, 0], 1);
 
 	L.tileLayer('https://{s}.tile.thunderforest.com/outdoors/{z}/{x}/{y}.png', {
 		maxZoom: 18,
@@ -253,13 +267,29 @@ function gbif() {
 	L.marker([-0.6261, -76.1153]).addTo(linkmap).bindPopup("<strong>Proyecto Primates</strong><br>Tiputini Biodiversity Station<br><a href=\"#\">Anthony Di Fiore</a>");
 	L.marker([-15.8693117,25.8792078]).addTo(linkmap).bindPopup("<strong>Kafue Baboons</strong><br>Kafue National Park<br><a href=\"#\">Kenneth Chiou</a>");
 	L.marker([9.0833386,39.9978113]).addTo(linkmap).bindPopup("<strong>Awash Baboon Project</strong><br>Awash National Park<br><a href=\"#\">Jane Phillips-Conroy</a> &middot; <a href=\"#\">Clifford Jolly</a>");
-	L.marker([-20.7397663,44.1698379]).addTo(linkmap).bindPopup("Kirindy Mitea National Park");
 	L.marker([-19.7225586,-41.8083155]).addTo(linkmap).bindPopup("Estação Biológica de Caratinga");
+	L.marker([-20.7397663,44.1698379]).addTo(linkmap).bindPopup("Kirindy Mitea National Park");
 	L.marker([-4.6678867,29.588965]).addTo(linkmap).bindPopup("Gombe National Park");
-	L.marker([-2.6527,37.1205043]).addTo(linkmap).bindPopup("Amboseli National Park");
-	L.marker([10.8379361,-85.7073003]).addTo(linkmap).bindPopup("Parque Nacional Santa Rosa");
-	L.marker([-32.3656884,24.8308207]).addTo(linkmap).bindPopup("Samara Private Game Reserve");
+	L.marker([10.8379361,-85.7073003]).addTo(linkmap).bindPopup("Santa Rosa National Park");
 	L.marker([-24.6429482,-62.1966825]).addTo(linkmap).bindPopup("Formosa");
+	L.marker([-2.6527,37.1205043]).addTo(linkmap).bindPopup("Amboseli National Park");
+	L.marker([-32.3656884,24.8308207]).addTo(linkmap).bindPopup("Samara Private Game Reserve");
+	L.marker([13.3064495,38.2619511]).addTo(linkmap).bindPopup("Simien Mountains National Park");
+	L.marker([2.54,16.535]).addTo(linkmap).bindPopup("Goualougo Triangle");
+	L.marker([-1.4883568,29.4512604]).addTo(linkmap).bindPopup("Karisoke Research Center");
+	L.marker([3.5003323,-58.810315]).addTo(linkmap).bindPopup("Upper Essequibo Conservation Concession");
+	L.marker([-12.3691389,-70.6762887]).addTo(linkmap).bindPopup("Los Amigos Biological Station");
+	L.marker([-12.5909156,30.2509832]).addTo(linkmap).bindPopup("Kasanka National Park");
+	L.marker([27.6166667,99.364478]).addTo(linkmap).bindPopup("Baimaxueshan National Nature Reserve");
+	L.marker([30.0736389,118.1476169]).addTo(linkmap).bindPopup("Huangshan National Park");
+	L.marker([-34.4222324,20.543326]).addTo(linkmap).bindPopup("De Hoop Nature Reserve");
+	L.marker([16.3378691,101.5449357]).addTo(linkmap).bindPopup("Phu Khieo Wildlife Sanctuary");
+	L.marker([27.7333333,84.4478113]).addTo(linkmap).bindPopup("Ramnagar");
+	L.marker([17.4862177,-92.0451188]).addTo(linkmap).bindPopup("Palenque National Park");
+	L.marker([-21.320077,47.2563173]).addTo(linkmap).bindPopup("Ranomafana National Park");
+	L.marker([-23.6765974,44.5638727]).addTo(linkmap).bindPopup("Beza Mahafaly Reserve");
+	// L.marker([]).addTo(linkmap).bindPopup("");
+
 /*
 	L.circle([51.508, -0.11], 500, {
 		color: 'red',
@@ -289,12 +319,106 @@ function gbif() {
 
 
 
+function predation() {
+	var input = document.getElementById('add-predators');
+	var submit = document.getElementById('finish');
+	if (input.value !== '')  {
+		var filters = document.getElementById('predators');
+		var repeat = false;
+		if (filters.innerHTML === '') {
+			filters.innerHTML = '<p style="cursor:pointer; margin:0em;" onclick="remove(); rem(\''+input.value+'\');">' + namespaces[input.value] + input.value + '&nbsp;<img src="images/x.png" style="height:1em;"/></p>';
+		} else {
+			for (i=0;i<filters.childNodes.length; i++) {
+				if (filters.childNodes[i].innerHTML === namespaces[input.value] + input.value + '&nbsp;<img src="images/x.png" style="height:1em;">') repeat = true;
+			}
+			if (!repeat) filters.innerHTML += '<p style="cursor:pointer; margin:0em;" onclick="remove(); rem(\''+input.value+'\');">' + namespaces[input.value] + input.value + '&nbsp;<img src="images/x.png" style="height:1em;"/></p>';
+		}
+		submit.disabled = null;
+		if (!repeat && occurrences[input.value]) addTaxon(input.value);
+	}
+	input.value = '';
+}
 
+function predate(event) {
+	if (event.keyCode == 13) {
+		predation();
+	}
+}
 
+function rem(which) {
+	var filters = document.getElementById('predators');
+	var submit = document.getElementById('finish');
+	if (occurrences[which]) {
+		linkmap.removeLayer(layer_groups[which]);
+	}
+	if (filters.innerHTML === '')  {
+		submit.disabled = true;
+	}
+}
 
+layer_groups = {};
+lyrs = {};
 
+function addTaxon(which) {
+	lyrs[which] = [];
+	for (i=0;i<occurrences[which].length;i++) {
+		lyrs[which][i] = L.circleMarker([occurrences[which][i][1],occurrences[which][i][0]], {color:predatorColors[which], fillColor:predatorColors[which], radius:2}).bindPopup(namespaces[which] + which);
+	}
+	layer_groups[which] = L.layerGroup(lyrs[which]);
+	layer_groups[which].addTo(linkmap);
+}
 
+function showhidelink() {
+	var command = document.getElementById('show-hide-link');
+	var div = document.getElementById('linkedsearch');
+	if (command.innerHTML === '[Hide search]') {
+		command.innerHTML ='[Show search]';
+		div.style.display = 'none';
+	} else if (command.innerHTML === '[Show search]') {
+		command.innerHTML = '[Hide search]';
+		div.style.display = 'block';
+	}
+}
 
+function finish() {
+	var search = document.getElementById('toggle-link');
+	search.style.display = 'block';
+	showhidelink();
+	var results = document.getElementById('linked-data-results');
+	results.style.display = 'block';
+
+	var locales = document.getElementById('locales-predators');
+	var filters = document.getElementById('predators');
+	var taxa = [];
+	for (i=0; i<filters.childNodes.length; i++) {
+		taxa[i] = filters.childNodes[i].innerHTML.match('family:[A-z]*');
+	}
+
+	for (i=0; i<locales.childNodes[1].childNodes.length / 2; i++) {
+		if (!i) {
+			for (j=0; j<taxa.length; j++) {
+				var textnode = document.createTextNode(taxa[j][0].replace(/family:/g,''));
+				var node = document.createElement("TH");
+				node.appendChild(textnode);
+				locales.childNodes[1].childNodes[i].appendChild(node);
+			}
+		} else {
+			for (j=0; j<taxa.length; j++) {
+				var value = presences[taxa[j]][i-1];
+				if (value === 0) {
+					var score = 'absent';
+				} else if (value) {
+					var score = 'present';
+				}
+				var textnode = document.createTextNode(score);
+				var node = document.createElement("TD");
+				node.appendChild(textnode);
+				locales.childNodes[1].childNodes[i*2].appendChild(node);
+			}
+		}
+	}
+	
+}
 
 
 

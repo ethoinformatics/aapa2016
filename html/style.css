@@ -45,6 +45,15 @@
 	border:1px solid #453D3F;
 }
 
+#predators {
+	padding:0.5em;
+	resize:none;
+	width:100%;
+	height:12.1em;
+	background-color: #fff;
+	border:1px solid #453D3F;
+}
+
 .menu {
     /* Set width of parent div */
 }
