@@ -40,7 +40,7 @@ var namespaces = {
 }
 
 function nav(id) {
-	for (i=1;i<=5;i++) {
+	for (var i=1;i<=5;i++) {
 		var page = document.getElementById('page' + i);
 		if (i===id) {
 			page.style.display = 'block';
@@ -65,7 +65,7 @@ function filter() {
 			filters.innerHTML = '<p style="cursor:pointer; margin:0em;" onclick="remove(); rm();">' + namespaces[input.value] + input.value + '&nbsp;<img src="images/x.png" style="height:1em;"/></p>';
 		} else {
 			var repeat = false;
-			for (i=0;i<filters.childNodes.length; i++) {
+			for (var i=0;i<filters.childNodes.length; i++) {
 				if (filters.childNodes[i].innerHTML === namespaces[input.value] + input.value + '&nbsp;<img src="images/x.png" style="height:1em;">') repeat = true;
 			}
 			if (!repeat) filters.innerHTML += '<p style="cursor:pointer; margin:0em;" onclick="remove(); rm();">' + namespaces[input.value] + input.value + '&nbsp;<img src="images/x.png" style="height:1em;"/></p>';
@@ -126,12 +126,12 @@ function visualize() {
 
 	download_options.innerHTML = '<a class="fake">SVG</a> &middot; <a class="fake">PNG</a> &middot; <a class="fake">GIF</a> &middot; <a class="fake">JPEG</a> &middot; <a class="fake">TIFF</a> &middot; <a class="fake">EPS</a> &middot; <a class="fake">PDF</a>';
 
-	for (i=0; i<level.childNodes.length ; i++) {
+	for (var i=0; i<level.childNodes.length ; i++) {
 		if (level.childNodes[i].selected == true) {
 			var which = level.childNodes[i].value
 		}
 	}
-	for (i=0; i<sublevel.childNodes.length ; i++) {
+	for (var i=0; i<sublevel.childNodes.length ; i++) {
 		if (sublevel.childNodes[i].selected == true) {
 			var andwhich = sublevel.childNodes[i].value
 		}
@@ -233,8 +233,8 @@ function corresponding() {
 	var merge = document.getElementById('merge-corresponding');
 	var title = document.getElementById('my-data-title');
 	var checkbox = document.getElementById('highlight-checkbox');
-	for (i=0;i<corresponding.length;i++) corresponding[i].style.display = null;
-	for (i=0;i<hide.length;i++) hide[i].style.display = 'none';
+	for (var i=0;i<corresponding.length;i++) corresponding[i].style.display = null;
+	for (var i=0;i<hide.length;i++) hide[i].style.display = 'none';
 	checkbox.style.display = 'block';
 	merge.style.display = 'none';
 	title.innerHTML = '<span>Merged records (preview)</span> <span class="download">[<a class="fake">Download</a>]<span id="download-options"><a class="fake">CSV</a> &middot; <a class="fake">XML</a> &middot; <a class="fake">JSON</a> &middot; <a class="fake">RDF</a> &middot; <a class="fake">HTML</a> &middot; <a class="fake">LaTeX</a> &middot; <a class="fake">Excel</a></span></span>';
@@ -244,9 +244,9 @@ function incompatibles() {
 	var checkbox = document.getElementById('highlight-incompatibles');
 	var incompatibles = document.getElementsByClassName('incompatible');
 	if (checkbox.checked) {
-		for (i=0; i<incompatibles.length; i++) incompatibles[i].style.backgroundColor = '#F4C63C';
+		for (var i=0; i<incompatibles.length; i++) incompatibles[i].style.backgroundColor = '#F4C63C';
 	} else {
-		for (i=0; i<incompatibles.length; i++) incompatibles[i].style.backgroundColor = null;
+		for (var i=0; i<incompatibles.length; i++) incompatibles[i].style.backgroundColor = null;
 	}
 }
 
@@ -267,7 +267,7 @@ function gbif() {
 	L.marker([-0.6261, -76.1153]).addTo(linkmap).bindPopup("<strong>Proyecto Primates</strong><br>Tiputini Biodiversity Station<br><a href=\"#\">Anthony Di Fiore</a>");
 	L.marker([-15.8693117,25.8792078]).addTo(linkmap).bindPopup("<strong>Kafue Baboons</strong><br>Kafue National Park<br><a href=\"#\">Kenneth Chiou</a>");
 	L.marker([9.0833386,39.9978113]).addTo(linkmap).bindPopup("<strong>Awash Baboon Project</strong><br>Awash National Park<br><a href=\"#\">Jane Phillips-Conroy</a> &middot; <a href=\"#\">Clifford Jolly</a>");
-	L.marker([-19.7225586,-41.8083155]).addTo(linkmap).bindPopup("Estação Biológica de Caratinga");
+	L.marker([-19.7225586,-41.8083155]).addTo(linkmap).bindPopup("Esta&ccedil;&atilde;o Biol&oacute;gica de Caratinga");
 	L.marker([-20.7397663,44.1698379]).addTo(linkmap).bindPopup("Kirindy Mitea National Park");
 	L.marker([-4.6678867,29.588965]).addTo(linkmap).bindPopup("Gombe National Park");
 	L.marker([10.8379361,-85.7073003]).addTo(linkmap).bindPopup("Santa Rosa National Park");
@@ -328,7 +328,7 @@ function predation() {
 		if (filters.innerHTML === '') {
 			filters.innerHTML = '<p style="cursor:pointer; margin:0em;" onclick="remove(); rem(\''+input.value+'\');">' + namespaces[input.value] + input.value + '&nbsp;<img src="images/x.png" style="height:1em;"/></p>';
 		} else {
-			for (i=0;i<filters.childNodes.length; i++) {
+			for (var i=0;i<filters.childNodes.length; i++) {
 				if (filters.childNodes[i].innerHTML === namespaces[input.value] + input.value + '&nbsp;<img src="images/x.png" style="height:1em;">') repeat = true;
 			}
 			if (!repeat) filters.innerHTML += '<p style="cursor:pointer; margin:0em;" onclick="remove(); rem(\''+input.value+'\');">' + namespaces[input.value] + input.value + '&nbsp;<img src="images/x.png" style="height:1em;"/></p>';
@@ -361,7 +361,7 @@ lyrs = {};
 
 function addTaxon(which) {
 	lyrs[which] = [];
-	for (i=0;i<occurrences[which].length;i++) {
+	for (var i=0;i<occurrences[which].length;i++) {
 		lyrs[which][i] = L.circleMarker([occurrences[which][i][1],occurrences[which][i][0]], {color:predatorColors[which], fillColor:predatorColors[which], radius:2}).bindPopup(namespaces[which] + which);
 	}
 	layer_groups[which] = L.layerGroup(lyrs[which]);
@@ -390,20 +390,30 @@ function finish() {
 	var locales = document.getElementById('locales-predators');
 	var filters = document.getElementById('predators');
 	var taxa = [];
-	for (i=0; i<filters.childNodes.length; i++) {
+	for (var i=0; i<filters.childNodes.length; i++) {
 		taxa[i] = filters.childNodes[i].innerHTML.match('family:[A-z]*');
 	}
 
-	for (i=0; i<locales.childNodes[1].childNodes.length / 2; i++) {
+	if (locales.childNodes[1].childNodes[0].childNodes.length > 1) {
+		var ncols = locales.childNodes[1].childNodes[0].childNodes.length;
+		for (var i=0; i<locales.childNodes[1].childNodes.length / 2; i++) {
+			for (var j=1; j<ncols; j++) {
+				var child = locales.childNodes[1].childNodes[i*2].childNodes[1];
+				child.parentNode.removeChild(child);
+			}
+		}
+	}
+
+	for (var i=0; i<locales.childNodes[1].childNodes.length / 2; i++) {
 		if (!i) {
-			for (j=0; j<taxa.length; j++) {
+			for (var j=0; j<taxa.length; j++) {
 				var textnode = document.createTextNode(taxa[j][0].replace(/family:/g,''));
 				var node = document.createElement("TH");
 				node.appendChild(textnode);
 				locales.childNodes[1].childNodes[i].appendChild(node);
 			}
 		} else {
-			for (j=0; j<taxa.length; j++) {
+			for (var j=0; j<taxa.length; j++) {
 				var value = presences[taxa[j]][i-1];
 				if (value === 0) {
 					var score = 'absent';
