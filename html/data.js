@@ -13,13 +13,13 @@ occurrences = {
 predatorColors = {'Felidae':'red','Accipitridae':'green','Crocodylidae':'yellow','Boidae':'white','Hyaenidae':'magenta','Canidae':'purple','Mustelidae':'cyan','Eupleridae':'brown','Hominidae':'orange'};
 
 presences = {
-	'family:Felidae':[1,0,0,1,0,0,1,0,0,0],
-	'family:Accipitridae':[1,1,1,0,0,0,0,1,0,0],
-	'family:Crocodylidae':[1,0,1,0,0,0,0,0,0,0],
-	'family:Boidae':[0,0,0,0,0,0,0,0,0,0],
-	'family:Hyaenidae':[0,0,1,0,0,0,0,0,0,0],
-	'family:Canidae':[0,0,0,0,0,0,0,0,0,0],
-	'family:Mustelidae':[0,0,0,0,0,0,0,0,0,0],
-	'family:Eupleridae':[0,0,0,0,0,0,0,1,0,0],
-	'family:Hominidae':[0,0,0,0,0,0,0,0,1,1]
+	'family:Felidae':      [1,0,0,1,0,0,1,0,0,0],
+	'family:Accipitridae': [1,1,1,0,0,0,0,1,0,0],
+	'family:Crocodylidae': [1,0,1,0,0,0,0,0,0,0],
+	'family:Boidae':       [0,0,0,0,0,0,0,0,0,0],
+	'family:Hyaenidae':    [0,0,1,0,0,0,0,0,0,0],
+	'family:Canidae':      [0,0,0,0,0,0,0,0,0,0],
+	'family:Mustelidae':   [0,0,0,0,0,0,0,0,0,0],
+	'family:Eupleridae':   [0,0,0,0,0,0,0,1,0,0],
+	'family:Hominidae':    [0,0,0,0,0,0,0,0,1,1]
 }

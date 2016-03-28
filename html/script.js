@@ -59,7 +59,7 @@ function nav(id) {
 function filter() {
 	var input = document.getElementById('filter-input');
 	var submit = document.getElementById('submit');
-	if (input.value !== '')  {
+	if (input.value !== '' && namespaces[input.value])  {
 		var filters = document.getElementById('filters');
 		if (filters.innerHTML === '') {
 			filters.innerHTML = '<p style="cursor:pointer; margin:0em;" onclick="remove(); rm();">' + namespaces[input.value] + input.value + '&nbsp;<img src="images/x.png" style="height:1em;"/></p>';
@@ -154,8 +154,8 @@ function visualize() {
 			var data = {
 			  labels: ['Papio hamadryas','Papio anubis', 'Papio cynocephalus','Papio kindae', 'Papio ursinus', 'Lagothrix poeppigii', 'Ateles belzebuth', 'Pithecia aequatorialis', 'Callicebus discolor'],
 			  series: [
-				[20.2, 19.0, 20.8, 15.4, 23.1, 8.5, 10.1, 1.8, 1.1],
-				[15.2, 14.5, 15.4, 11.1, 16.3, 6.6, 8.1, 1.3, 0.85]
+				[15.2, 14.5, 15.4, 11.1, 16.3, 6.6, 8.1, 1.3, 0.85],
+				[20.2, 19.0, 20.8, 15.4, 23.1, 8.5, 10.1, 1.8, 1.1]
 			  ]
 			};
 		} else if (andwhich === 'life stage') {
@@ -181,8 +181,8 @@ function visualize() {
 			var data = {
 			  labels: ['Papio', 'Lagothrix', 'Ateles', 'Pithecia', 'Callicebus'],
 			  series: [
-				[21.3, 8.5, 9.1, 1.8, 0.95],
-				[14.4, 6.9, 8.1, 1.3, 0.85]
+				[14.4, 6.9, 8.1, 1.3, 0.85],
+				[21.3, 8.5, 9.1, 1.8, 0.95]
 			  ]
 			};
 		} else if (andwhich === 'life stage') {
@@ -215,7 +215,7 @@ function visualize() {
 
 function file() {
 	var display = document.getElementById('file-display');
-	display.innerHTML = 'focal_data.csv';
+	display.innerHTML = 'focal_samples.csv';
 	var upload = document.getElementById('upload');
 	upload.disabled = null;
 }
@@ -264,30 +264,30 @@ function gbif() {
 		id: 'mapbox.streets'
 	}).addTo(linkmap);
 
-	L.marker([-0.6261, -76.1153]).addTo(linkmap).bindPopup("<strong>Proyecto Primates</strong><br>Tiputini Biodiversity Station<br><a href=\"#\">Anthony Di Fiore</a>");
-	L.marker([-15.8693117,25.8792078]).addTo(linkmap).bindPopup("<strong>Kafue Baboons</strong><br>Kafue National Park<br><a href=\"#\">Kenneth Chiou</a>");
-	L.marker([9.0833386,39.9978113]).addTo(linkmap).bindPopup("<strong>Awash Baboon Project</strong><br>Awash National Park<br><a href=\"#\">Jane Phillips-Conroy</a> &middot; <a href=\"#\">Clifford Jolly</a>");
-	L.marker([-19.7225586,-41.8083155]).addTo(linkmap).bindPopup("Esta&ccedil;&atilde;o Biol&oacute;gica de Caratinga");
-	L.marker([-20.7397663,44.1698379]).addTo(linkmap).bindPopup("Kirindy Mitea National Park");
-	L.marker([-4.6678867,29.588965]).addTo(linkmap).bindPopup("Gombe National Park");
-	L.marker([10.8379361,-85.7073003]).addTo(linkmap).bindPopup("Santa Rosa National Park");
-	L.marker([-24.6429482,-62.1966825]).addTo(linkmap).bindPopup("Formosa");
-	L.marker([-2.6527,37.1205043]).addTo(linkmap).bindPopup("Amboseli National Park");
-	L.marker([-32.3656884,24.8308207]).addTo(linkmap).bindPopup("Samara Private Game Reserve");
-	L.marker([13.3064495,38.2619511]).addTo(linkmap).bindPopup("Simien Mountains National Park");
-	L.marker([2.54,16.535]).addTo(linkmap).bindPopup("Goualougo Triangle");
-	L.marker([-1.4883568,29.4512604]).addTo(linkmap).bindPopup("Karisoke Research Center");
-	L.marker([3.5003323,-58.810315]).addTo(linkmap).bindPopup("Upper Essequibo Conservation Concession");
-	L.marker([-12.3691389,-70.6762887]).addTo(linkmap).bindPopup("Los Amigos Biological Station");
-	L.marker([-12.5909156,30.2509832]).addTo(linkmap).bindPopup("Kasanka National Park");
-	L.marker([27.6166667,99.364478]).addTo(linkmap).bindPopup("Baimaxueshan National Nature Reserve");
-	L.marker([30.0736389,118.1476169]).addTo(linkmap).bindPopup("Huangshan National Park");
-	L.marker([-34.4222324,20.543326]).addTo(linkmap).bindPopup("De Hoop Nature Reserve");
-	L.marker([16.3378691,101.5449357]).addTo(linkmap).bindPopup("Phu Khieo Wildlife Sanctuary");
-	L.marker([27.7333333,84.4478113]).addTo(linkmap).bindPopup("Ramnagar");
-	L.marker([17.4862177,-92.0451188]).addTo(linkmap).bindPopup("Palenque National Park");
-	L.marker([-21.320077,47.2563173]).addTo(linkmap).bindPopup("Ranomafana National Park");
-	L.marker([-23.6765974,44.5638727]).addTo(linkmap).bindPopup("Beza Mahafaly Reserve");
+	L.marker([-0.6261, -76.1153]).addTo(linkmap).bindPopup("<strong>Proyecto Primates</strong><br>Tiputini Biodiversity Station<br><em>Ecuador</em><br><a href=\"#\">Anthony Di Fiore</a>");
+	L.marker([-15.8693117,25.8792078]).addTo(linkmap).bindPopup("<strong>Kafue Baboons</strong><br>Kafue National Park<br><em>Zambia</em><br><a href=\"#\">Kenneth Chiou</a>");
+	L.marker([9.0833386,39.9978113]).addTo(linkmap).bindPopup("<strong>Awash Baboon Project</strong><br>Awash National Park<br><em>Ethiopia</em><br><a href=\"#\">Jane Phillips-Conroy</a> &middot; <a href=\"#\">Clifford Jolly</a>");
+	L.marker([-19.7225586,-41.8083155]).addTo(linkmap).bindPopup("Esta&ccedil;&atilde;o Biol&oacute;gica de Caratinga<br><em>Brazil</em>");  // Karen Strier
+	L.marker([-20.7397663,44.1698379]).addTo(linkmap).bindPopup("Kirindy Mitea National Park<br><em>Madagascar</em>");                       // Rebecca Lewis
+	L.marker([-4.6678867,29.588965]).addTo(linkmap).bindPopup("Gombe National Park<br><em>Tanzania</em>");                                   // Steffen Foerster | Anne Pusey
+	L.marker([10.8379361,-85.7073003]).addTo(linkmap).bindPopup("Santa Rosa National Park<br><em>Costa Rica</em>");                          // Katharine Jack, Amanda Melin | Linda Fedigan
+	L.marker([-24.6429482,-62.1966825]).addTo(linkmap).bindPopup("Formosa<br><em>Argentina</em>");                                           // Eduardo Fernandez-Duque, Claudia Valeggia
+	L.marker([2.54,16.535]).addTo(linkmap).bindPopup("Goualougo Triangle<br><em>Republic of Congo</em>");                                    // Crickette Sanz | David Morgan
+	L.marker([-2.6527,37.1205043]).addTo(linkmap).bindPopup("Amboseli National Park<br><em>Kenya</em>");                                     // Elizabeth Archie | Susan Alberts, Jeanne Altmann, Jenny Tung
+	L.marker([-1.4883568,29.4512604]).addTo(linkmap).bindPopup("Karisoke Research Center<br><em>Rwanda</em>");                               // Damien Caillaud | Tara Stoinski
+	L.marker([-32.3656884,24.8308207]).addTo(linkmap).bindPopup("Samara Private Game Reserve<br><em>South Africa</em>");                     // Louise Barrett, Peter Henzi
+	L.marker([-34.4222324,20.543326]).addTo(linkmap).bindPopup("De Hoop Nature Reserve<br><em>South Africa</em>");                           // Louise Barrett, Peter Henzi
+	L.marker([13.3064495,38.2619511]).addTo(linkmap).bindPopup("Simien Mountains National Park<br><em>Ethiopia</em>");                       // Thore Bergman | Jacinta Beehner
+	L.marker([3.5003323,-58.810315]).addTo(linkmap).bindPopup("Upper Essequibo Conservation Concession<br><em>Guyana</em>");                 // Christopher Shaffer
+	L.marker([-12.5909156,30.2509832]).addTo(linkmap).bindPopup("Kasanka National Park<br><em>Zambia</em>");                                 // Anna Weyher
+	L.marker([-12.3691389,-70.6762887]).addTo(linkmap).bindPopup("Los Amigos Biological Station<br><em>Peru</em>");                          // Gideon Erkenswick | Mrinalini Watsa
+	L.marker([27.6166667,99.364478]).addTo(linkmap).bindPopup("Baimaxueshan National Nature Reserve<br><em>China</em>");                     // Paul Garber
+	L.marker([30.0736389,118.1476169]).addTo(linkmap).bindPopup("Huangshan National Park<br><em>China</em>");                                // Paul Garber
+	L.marker([16.3378691,101.5449357]).addTo(linkmap).bindPopup("Phu Khieo Wildlife Sanctuary<br><em>Thailand</em>");                        // Andreas Koenig
+	L.marker([27.7333333,84.4478113]).addTo(linkmap).bindPopup("Ramnagar<br><em>Nepal</em>");                                                // Andreas Koenig
+	L.marker([17.4862177,-92.0451188]).addTo(linkmap).bindPopup("Palenque National Park<br><em>Mexico</em>");                                // Sarie Van Belle
+	L.marker([-21.320077,47.2563173]).addTo(linkmap).bindPopup("Ranomafana National Park<br><em>Madagascar</em>");                           // Stacey Tecot
+	L.marker([-23.6765974,44.5638727]).addTo(linkmap).bindPopup("Beza Mahafaly Reserve<br><em>Madagascar</em>");                             // Robert Sussman
 	// L.marker([]).addTo(linkmap).bindPopup("");
 
 /*
@@ -322,7 +322,7 @@ function gbif() {
 function predation() {
 	var input = document.getElementById('add-predators');
 	var submit = document.getElementById('finish');
-	if (input.value !== '')  {
+	if (input.value !== '' && namespaces[input.value])  {
 		var filters = document.getElementById('predators');
 		var repeat = false;
 		if (filters.innerHTML === '') {
