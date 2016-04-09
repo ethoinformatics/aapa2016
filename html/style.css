@@ -200,14 +200,101 @@ span.download:hover span#download-options {
     display: block;
 }
 
+table.custom-size1 > tbody > tr:first-child > :first-child {
+	width:12%;
+}
+table.custom-size1 > tbody > tr:first-child > :nth-child(2) {
+	width:12%;
+}
+table.custom-size1 > tbody > tr:first-child > :nth-child(3) {
+	width:6%;
+}
+table.custom-size1 > tbody > tr:first-child > :nth-child(4) {
+	width:7%;
+}
+table.custom-size1 > tbody > tr:first-child > :nth-child(5) {
+	width:13.5%;
+}
+table.custom-size1 > tbody > tr:first-child > :nth-child(6) {
+	width:13%;
+}
+table.custom-size1 > tbody > tr:first-child > :nth-child(7) {
+	width:14.5%;
+}
+table.custom-size1 > tbody > tr:first-child > :nth-child(8) {
+	width:12.5%;
+}
+table.custom-size1 > tbody > tr:first-child > :nth-child(9) {
+	width:11.5%;
+}
 
+table.custom-size1 {
+	width:100%;
+	table-layout: fixed;
+}
 
+table.inner-table1 > tbody > tr > td {
+	padding:0.5em;
+}
 
+table.outer-table1 > tbody > tr > th {
+	padding:0.5em;
+}
 
+div.inner-div1 {
+	width:100%;
+	height:22em; overflow:auto;
+}
 
+table.custom-size2 > tbody > tr:first-child > :first-child {
+	width:15.5%;
+}
+table.custom-size2 > tbody > tr:first-child > :nth-child(2) {
+	width:11%;
+}
+table.custom-size2 > tbody > tr:first-child > :nth-child(3) {
+	width:8.75%;
+}
+table.custom-size2 > tbody > tr:first-child > :nth-child(4) {
+	width:12%;
+}
+table.custom-size2 > tbody > tr:first-child > :nth-child(5) {
+	width:13.25%;
+}
+table.custom-size2 > tbody > tr:first-child > :nth-child(6) {
+	width:7.5%;
+}
+table.custom-size2 > tbody > tr:first-child > :nth-child(7) {
+	width:7%;
+}
+table.custom-size2 > tbody > tr:first-child > :nth-child(8) {
+	width:7.5%;
+}
+table.custom-size2 > tbody > tr:first-child > :nth-child(9) {
+	width:8%;
+}
+table.custom-size2 > tbody > tr:first-child > :nth-child(10) {
+	width:9.5%;
+}
 
+table.custom-size2 {
+	width:100%;
+	table-layout: fixed;
+}
 
+table.inner-table2 > tbody > tr > td {
+	padding:0.5em;
+}
 
-
-
-
+table.outer-table2 > tbody > tr > th {
+	padding:0.5em;
+}
+div.inner-div2 {
+	height:26.75em; overflow:auto;
+}
+div.inner-div3 {
+	height:5.4em; overflow:auto;
+}
+div.inner-div4 {
+	height:18em; overflow:auto;
+}

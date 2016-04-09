@@ -207,6 +207,9 @@ function visualize() {
 		labelInterpolationFnc: function(value, index) {
 		  return index % 1 === 0 ? value : null;
 		}
+	  },
+	  axisY: {
+	    onlyInteger: true
 	  }
 	};
 
@@ -228,6 +231,18 @@ function upload() {
 }
 
 function corresponding() {
+	var groom1 = document.getElementById('groom-table1');
+	var groom2 = document.getElementById('groom-table2');
+	var merge = document.getElementById('merge-corresponding');
+	var title = document.getElementById('my-data-title');
+	var checkbox = document.getElementById('highlight-checkbox');
+	groom1.style.display = 'none';
+	groom2.style.display = null;
+	checkbox.style.display = 'block';
+	merge.style.display = 'none';
+	title.innerHTML = '<span>Merged records (preview)</span> <span class="download">[<a class="fake">Download</a>]<span id="download-options"><a class="fake">CSV</a> &middot; <a class="fake">XML</a> &middot; <a class="fake">JSON</a> &middot; <a class="fake">RDF</a> &middot; <a class="fake">HTML</a> &middot; <a class="fake">LaTeX</a> &middot; <a class="fake">Excel</a></span></span>';
+
+/*
 	var corresponding = document.getElementsByClassName('corresponding-data');
 	var hide = document.getElementsByClassName('hide-from-preview');
 	var merge = document.getElementById('merge-corresponding');
@@ -238,6 +253,7 @@ function corresponding() {
 	checkbox.style.display = 'block';
 	merge.style.display = 'none';
 	title.innerHTML = '<span>Merged records (preview)</span> <span class="download">[<a class="fake">Download</a>]<span id="download-options"><a class="fake">CSV</a> &middot; <a class="fake">XML</a> &middot; <a class="fake">JSON</a> &middot; <a class="fake">RDF</a> &middot; <a class="fake">HTML</a> &middot; <a class="fake">LaTeX</a> &middot; <a class="fake">Excel</a></span></span>';
+*/
 }
 
 function incompatibles() {
@@ -416,7 +432,7 @@ function finish() {
 			for (var j=0; j<taxa.length; j++) {
 				var value = presences[taxa[j]][i-1];
 				if (value === 0) {
-					var score = 'absent';
+					var score = 'not present';
 				} else if (value) {
 					var score = 'present';
 				}
@@ -429,7 +445,5 @@ function finish() {
 	}
 	
 }
-
-
 
 
