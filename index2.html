@@ -22,7 +22,7 @@
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
-		
+
 		<!-- Canvas drawing -->
 		<script src="lib/js/sketch.js"></script>
 		<script src="lib/js/dazzleSketch.js"></script>
@@ -56,54 +56,120 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-<!--
-
-###############################################################################################
-
-          __                 __    .__                          
-  _______/  |______ ________/  |_  |  |__   ___________   ____  
- /  ___/\   __\__  \\_  __ \   __\ |  |  \_/ __ \_  __ \_/ __ \ 
- \___ \  |  |  / __ \|  | \/|  |   |   Y  \  ___/|  | \/\  ___/ 
-/____  > |__| (____  /__|   |__|   |___|  /\___  >__|    \___  >
-     \/            \/                   \/     \/            \/ 
-
-					  __                       
-					_/  |_  ____   ____ ___.__.
-					\   __\/  _ \ /    <   |  |
-					 |  | (  <_> )   |  \___  |
-					 |__|  \____/|___|  / ____|
-									  \/\/     
-
-###############################################################################################
-
--->
-
-				<section>
-					<!-- first branch -->
-					<section>
-						<!-- first slide -->
-						<h1>Start here</h1>
-						<!-- here is an image (commented out): be sure to place image in images/ folder -->
-
-						<!-- <img src="images/{FILENAME}" />-->
+					<section id="title">
+						<h1 style="margin-top:-0.25em; margin-bottom:0em;">Ethoinformatics II</h1>
+						<h2 style="margin-top:+0.25em; margin-bottom:0em;">Developing Open-Source Digital Data Services for Behavioral Field Research</h2>
+						<p style="font-size:+1.5em;">Anthony Di Fiore &middot; Kenneth L. Chiou &middot; Mike Chevett &middot; Robyn Overstreet &middot; Tom Igoe</p>
 					</section>
-					<section>
-						<!-- second slide -->
-						<h2>Here is some content</h2>
-						<ul>
-							<li>Here is</li>
-							<li>a</li>
-							<li>list</li>
-						</ul>
+					<section id="intro">
+						<section>
+							<h2>What's Currently Available</h2>
+								<ul>
+									<li>Noldus Observer</li>
+									<li>HanDBase</li>
+									<li>Mangold Obansys</li>
+									<li>prime8</li>
+									<li>Various database/form apps for structured note taking</li>
+								</ul>
+						</section>
+						<section>
+							<h2>Limitations?</h2>
+								<ul>
+									<li>Many are proprietary</li>
+									<li>Limited data streams</li>
+									<li>No emphasis on standard ontology</li>
+									<li>Not automatically geotagged</li>
+								</ul>
+						</section>
 					</section>
-				</section>
-				<section>
-					<!-- new branch -->
-					<section>
-						<!-- first slide of new branch -->
-						<h1>New topic</h1>
-					</section>
-				</section>
+					<section id="the app">
+						<section>
+							<h2>Goal - An APP for Handhelds That Is...</h2>
+								<ul>
+									<li>Modular</li>
+									<li>Open source</li>
+									<li>Configurable</li>
+									<li>Allows multiple data streams</li>
+									<li>Runs on multiple platforms</li>
+									<li>Schemaless and supports existing schemas</li>
+									<li>EthoCore compliant</li>
+									<li>Automatic geotagging and time stamping</li>
+									<li>Can run on cheaper and older devices</li>
+									<li>Does not require continuous internet coverage</li>
+								</ul>
+						</section>
+						<section>
+							<h2>General Idea</h2>
+								<ul>
+									<li>App generates <span class="semibold">documents</span> that are made up of EthoCore terms</li>
+									<li>Each <span class="semibold">document</span> is a resource with a URI</li>
+									<li>Documents can be decomposed to <span class="semibold">triple-stores</span> and used as linked data</li>
+									<li>Documents can link to one or more other documents via standard <span class="semibold">predicates</span>, each of which has a URI (taken within, belongs to, child of, associates with)</li>
+									<li>Media (pictures, audio recordings) can be linked by a predicate to one or more documents</li>
+									<li>Every document has key <span class="semibold">metadata</span></li>
+										<ul>
+											<li>Who made it</li>
+											<li>When it was created</li>
+											<li>Time (point or series)</li>
+											<li>Geolocation (point or series)</li>
+										</ul>
+									<li>History of <span class="semibold">revisions</span> of documents is preserved</li>
+								</ul>
+							</section>
+							<section>
+								<h2>Some Design Decisions</h2>
+									<ul>
+										<li>Use HMTL, JavaScript, and CSS to create a mobile app that can be compiled and deployed on a variety of devices</li>
+										<li>Use JSON documents to configure aspects of the application</li>
+										<li>Use local storage and PouchDB on the mobile device to hold data</li>
+										<li>Data in PouchDB stores as JSON documents</li>
+										<li>Sync from PouchDB to CouchDB on a local server and sync CouchDB on local server to remote server</li>
+										<li>Use data from operating system's <span class="semibold">location services</span> to tag all documents with geolocation</li>
+										<li>This information can be provided by internal GPS, cell towers, external GPS</li>
+										<li>Geolocation data is recorded continuously in background</li>
+									</ul>
+							</section>
+							<section>
+								<h2>User Provides...</h2>
+									<ul>
+									<li>Controlled vocabularies</li>
+									<li>Design for construction of documents</li>
+									<li>Information about on how documents can be be linked</li>
+								</ul>
+							</section>
+							<section>
+								<h2>App Writes Data That...</h2>
+									<ul>
+									<li>Conforms to EthoCore and other community-designed data standards</li>
+									<li>Stores data as documents (linked? nested?)</li>
+									<li>Stores geolocation tag and time stamp tag for all documents</li>
+								</ul>
+							</section>
+							<section>
+								<h2>Suggested Document Types</h2>
+									<ul>
+										<li>diary</li>
+										<li>contact</li>
+										<li>focal sample</li>
+										<li>focal behavior record</li>
+										<li>scan sample</li>
+										<li>scan behavior record</li>
+										<li>ad lib behavior record</li>
+										<li>patch</li>
+										<li>biological samples</li>
+									</ul>
+							</section>
+							<section>
+								<h2>Suggested Predicates</h2>
+									<ul>
+										<li>taken within</li>
+										<li>belongs to</li>
+										<li>child of</li>
+										<li>associated with</li>
+									</ul>
+							</section>
+						</section>
+
 
 			</div>
 		</div>
@@ -120,7 +186,7 @@
 				progress: true,
 				history: true,
 				center: true,
-				
+
 				width:1200,
 				height:700,
 
