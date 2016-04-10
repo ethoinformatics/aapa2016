@@ -128,7 +128,7 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 				<section>
 					<section>
 						<h1>Ethoinformatics</h1>
-						<p class="project-history">To build capacity for<br><strong>data discovery</strong>, <strong>data reuse</strong>, and <strong>data comparison</strong><br>for behavioral research</p>
+						<p class="project-history">Building capacity for<br><strong>data discovery</strong>, <strong>data reuse</strong>, and <strong>data comparison</strong><br>for behavioral research</p>
 						<p>(with particular emphasis on field primatology)</p>
 					</section>
 					<section>
@@ -136,11 +136,11 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 					</section>
 					<section>
 						<figure style="position:absolute; left:0;">
-							<img src="images/ewg2013.jpg" style="height:440px;" />
+							<img src="images/ewg2013.jpg" style="height:444px; width:592px;" />
 							<figcaption>Ethoinformatics 2013<br>Washington University in St. Louis</figcaption>
 						</figure>
 						<figure style="position:absolute; right:0;">
-							<img src="images/ewg2015.jpg" style="height:440px;" />
+							<img src="images/ewg2015.jpg" style="height:444px; width:592px;" />
 							<figcaption>Ethoinformatics 2015<br>University of Texas at Austin</figcaption>
 						</figure>
 					</section>
@@ -337,13 +337,51 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 							</table>
 					</section>
 					<section>
-						<p>Key-value data are well-suited for distributed data</p>
+						<p class="bigger-point"><strong>Key-value data</strong> are well-suited for distributed data problems</p>
 					</section>
 					<section>
 						<figure>
-							<table></table>
+							<table id="distributed-data" class="example-table">
+								<tr>
+									<th style="border-right:1px solid black;">Organism</th><th>Behavior</th><th>Ecology</th><th>Life History</th><th>Anatomy</th><th>Genetics</th>
+								</tr>
+								<tr>
+									<td style="border-right:1px solid black;">Lemurs</td>
+									<td class="dist-primates"></td>
+									<td class="dist-primates"></td>
+									<td class="dist-primates"></td>
+									<td class="dist-morpho"></td>
+									<td class="dist-genbank"></td>
+								</tr>
+								<tr>
+									<td style="border-right:1px solid black;">Gorillas</td>
+									<td class="dist-primates"></td>
+									<td class="dist-primates"></td>
+									<td class="dist-primates"></td>
+									<td class="dist-morpho"></td>
+									<td class="dist-genbank"></td>
+								</tr>
+								<tr>
+									<td style="border-right:1px solid black;">Dogs</td>
+									<td class="dist-dogbehavior"></td>
+									<td class="dist-dogs"></td>
+									<td class="dist-dogs"></td>
+									<td class="dist-dogs"></td>
+									<td class="dist-genbank"></td>
+								</tr>
+								<tr>
+									<td style="border-right:1px solid black;">Birds</td>
+									<td class="dist-birds"></td>
+									<td class="dist-birds"></td>
+									<td class="dist-birds"></td>
+									<td class="dist-morpho"></td>
+									<td class="dist-genbank"></td>
+								</tr>
+							</table>
+							<figcaption>Possible data distribution across domains</figcaption>
 						</figure>
 					</section>
+					<!--
 					<section>
 						<figure>
 							<img src="images/rdbms.png" style="height:600px;" />
@@ -356,224 +394,71 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 							<figcaption class="img-reference">NoSQL database systems</figcaption>
 						</figure>
 					</section>
+					-->
 					<section>
-						<p class="bigger-point"><strong>NoSQL</strong> rejects the dominance of the relational data model</p>
+						<h2>NoSQL</h2>
+						<p class="big-point"><strong>NoSQL</strong> ("not only SQL") rejects the dominance of the relational data model</p>
+						<p class="big-point"><strong>Key-value databases</strong> are one class of NoSQL technologies, but there are others including <strong>document-based</strong> and <strong>graph databases</strong></p>
 					</section>
 					<section>
-						<h2>Distributed data: relational model</h2>
-						<table class="example-table sql-table">
-							<tr><th>Organism</th><th>Body weight</th><th>Age of maturation</th><th>Daily path length</th></tr>
-							<tr style="border-bottom:0px;"><td>Bat</td><td class="sources1"></td><td class="sources1"></td><td class="sources1 sources2"></td></tr>
-							<tr style="border-bottom:0px;"><td>Capuchin</td><td class="sources3"></td><td class="sources3"></td><td class="sources2"></td></tr>
-							<tr style="border-bottom:0px;"><td>Baboon</td><td class="sources3"></td><td class="sources3"></td><td class="sources2 sources4"></td></tr>
-							<tr style="border-bottom:0px;"><td>Chimpanzee</td><td class="sources3"></td><td class="sources3"></td><td class="sources2"></td></tr>
+						<p class="bigger-point">NoSQL databases are built for the Web and generally embrace web technologies such as <strong>HTTP/REST</strong>, <strong>JavaScript</strong>, and <strong>URIs/URLs</strong></p>
+					</section>
+					<section>
+						<p class="bigger-point">The key-value model is sufficiently flexible for generalization across datasets</p>
+					</section>
+					<section>
+						<p class="bigger-point">The missing ingredient hindering data comparison is an ability to encode <strong>semantics</strong></p>
+						<table class="vs-table fragment">
+							<tr><th>Syntax</th><th rowspan="2"><span>vs.</span></th><th>Semantics</th></tr>
+							<tr><td>concerned with symbols and structure</td><td>concerned with meaning</td></tr>
 						</table>
-						<p style="margin-bottom:0em; font-size:0.75em; font-weight:bold;">Data sources</p>
-						<ul style="font-size:0.75em;">
-							<li><a onmouseover="reveal_sources(1,1)" onmouseout="reveal_sources(1,0)">SBDN/NEBWG Bat Database</li>
-							<li><a onmouseover="reveal_sources(2,1)" onmouseout="reveal_sources(2,0)">Movebank</a></li>
-							<li><a onmouseover="reveal_sources(3,1)" onmouseout="reveal_sources(3,0)">Primate Life History Database</a></li>
-							<li><a onmouseover="reveal_sources(4,1)" onmouseout="reveal_sources(4,0)">Dryad</a> (Strandburg-Peshkin et al. 2015)</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Distributed data: key-value model</h2>
-						<pre style="font-size:0.48em;"><code data-noescape><span class="providers1">{
-  1 : { "organism":"bat" , bodyWeight , ageOfMaturation , dailyPathLength }
-}</span>,<span class="providers2">{
-  2 : { "organism":"bat" , dailyPathLength }
-},{
-  3 : { "organism":"capuchin" , dailyPathLength }
-},{
-  4 : { "organism":"baboon" , dailyPathLength }
-},{
-  5 : { "organism":"chimpanzee" , dailyPathLength }
-}</span>,<span class="providers3">{
-  6 : { "organism":"capuchin" , bodyWeight , ageOfMaturation }
-},{
-  7 : { "organism":"baboon" , bodyWeight , ageOfMaturation }
-},{
-  8 : { "organism":"chimpanzee" , bodyWeight , ageOfMaturation }
-}</span>,<span class="providers4">{
-  9 : { "organism":"baboon" , dailyPathLength }
-}</span></code></pre>
-						<p style="margin-bottom:0em; font-size:0.75em; font-weight:bold;">Data sources</p>
-						<ul style="font-size:0.75em;">
-							<li><a onmouseover="reveal_providers(1,1)" onmouseout="reveal_providers(1,0)">SBDN/NEBWG Bat Database</a></li>
-							<li><a onmouseover="reveal_providers(2,1)" onmouseout="reveal_providers(2,0)">Movebank</a></li>
-							<li><a onmouseover="reveal_providers(3,1)" onmouseout="reveal_providers(3,0)">Primate Life History Database</a></li>
-							<li><a onmouseover="reveal_providers(4,1)" onmouseout="reveal_providers(4,0)">Dryad (Strandburg-Peshkin et al. 2015)</a></li>
-						</ul>
-					</section>
-					<section>
-						<h2>Distributed data: document-based model</h2>
-						<table>
-						<tr>
-						<td style="border-bottom:0px;">
-						<pre style="font-size:0.48em; width:300px;"><code data-noescape><span class="providers1">{
-  "_id" : 1 ,
-  "organism" : "bat" ,
-  bodyWeight ,
-  ageOfMaturation ,
-  dailyPathLength
-}</span></code></pre>
-						</td>
-						<td style="border-bottom:0px;">
-						<pre style="font-size:0.48em; width:300px;"><code data-noescape><span class="providers2">{
-  "_id" : 2 ,
-  "organism" : "bat" ,
-  dailyPathLength
-}
-
-
-</span></code></pre>
-						</td>
-						<td style="border-bottom:0px;">
-						<pre style="font-size:0.48em; width:300px;"><code data-noescape><span class="providers2">{
-  "_id" : 3 ,
-  "organism" : "capuchin" ,
-  dailyPathLength
-}
-
-
-</span></code></pre>
-						</td>
-						</tr>
-						<tr>
-						<td style="border-bottom:0px;">
-						<pre style="font-size:0.48em; width:300px;"><code data-noescape><span class="providers3">{
-  "_id" : 6 ,
-  "organism" : "capuchin" ,
-  bodyWeight ,
-  ageoOfMaturation
-}
-
-</span></code></pre>
-						</td>
-						<td style="border-bottom:0px;">
-						<pre style="font-size:0.48em; width:300px;"><code data-noescape><span class="providers3">{
-  "_id" : 7 ,
-  "organism" : "baboon" ,
-  bodyWeight ,
-  ageoOfMaturation
-}
-
-</span></code></pre>
-						</td>
-						<td style="border-bottom:0px;">
-						<pre style="font-size:0.48em; width:300px;"><code data-noescape><span class="providers4">{
-  "_id" : 9 ,
-  "organism" : "baboon" ,
-  dailyPathLength
-}
-
-
-</span></code></pre>
-						</td>
-						</tr>
-						</table>
-						<p style="margin-bottom:0em; font-size:0.75em; font-weight:bold;">Data sources</p>
-						<ul style="font-size:0.75em;">
-							<li><a onmouseover="reveal_providers(1,1)" onmouseout="reveal_providers(1,0)">SBDN/NEBWG Bat Database</a></li>
-							<li><a onmouseover="reveal_providers(2,1)" onmouseout="reveal_providers(2,0)">Movebank</a></li>
-							<li><a onmouseover="reveal_providers(3,1)" onmouseout="reveal_providers(3,0)">Primate Life History Database</a></li>
-							<li><a onmouseover="reveal_providers(4,1)" onmouseout="reveal_providers(4,0)">Dryad (Strandburg-Peshkin et al. 2015)</a></li>
-						</ul>
+						<p class="bigger-point fragment">For that, we need to follow <strong>linked data</strong> principles</p>
 					</section>
 				</section>
 				<section>
 					<section>
-						<h1>Back to Linked Data</h1>
-					</section>
-					<section>
-						<table class="vs-table">
-							<tr><th><h2>Syntax</h2></th><th rowspan="2"><span>vs.</span></th><th><h2>Semantics</h2></th></tr>
-							<tr><td class="fragment">concerned with symbols and structure</td><td class="fragment">concerned with meaning</td></tr>
+						<h1>Linked Data</h1>
+						<p>Linked Data is an extension of the Web</p>
+						<table class="vs-table" style="width:100%;">
+							<tr><th>Web documents are . . .</th><th rowspan="2"></th><th>Linked data are . . . </th></tr>
+							<tr><td><ul><li>identified by URL</li><li>connected by hyperlinks</li><li>accessed via the Internet</li></ul></td><td><ul><li>identified by URI</li><li>connected by RDF triples</li><li>accessed via the Internet</li></ul></td></tr>
 						</table>
-					</section>
-					<section>
-						<h2>What is a primate?</h2>
-						<div style="height:600px;">
-						<figure style="position:absolute; width:600px; left:0px">
-							<img src="images/primate1.jpg" style="height:480px;" />
-							<figcaption>A primate<p class="img-credit">(via <a href="https://pixabay.com/en/lemurs-lemur-animal-mammal-monkey-824894/">Pixabay</a>)</p></figcaption>
-						</figure>
-						<figure style="position:absolute; width:600px; right:0px;">
-							<img src="images/primate2.jpg" style="height:480px;" />
-							<figcaption>Both a primate and a primate<p class="img-credit">(via <a href="https://commons.wikimedia.org/wiki/File:BernardMaciejowski.jpg">Wikimedia Commons</a>)</p></figcaption>
-						</figure>
-						</div>
-					</section>
-					<section>
-						<h2>Species concepts?</h2>
-						<div style="height:600px;">
-						<figure style="position:absolute; width:600px; left:0px">
-							<img src="images/hamadryas1.jpg" style="height:480px;" />
-							<figcaption><em>Papio hamadryas</em> (BSC & PSC)<p class="img-credit">(via <a href="https://pixabay.com/en/baboon-monkey-zoo-animal-primate-455324/">Pixabay</a>)</p></figcaption>
-						</figure>
-						<figure style="position:absolute; width:600px; right:0px;">
-							<img src="images/hamadryas2.jpg" style="height:480px;" />
-							<figcaption><em>Papio hamadryas</em> (BSC only)<p class="img-credit">(via <a href="https://pixabay.com/en/africa-south-africa-wild-life-210086/">Pixabay</a>)</p></figcaption>
-						</figure>
-						</div>
-					</section>
-					<section>
-						<h2>What is grooming?</h2>
-						<div style="height:540px;">
-						<figure style="position:absolute; height:600px; left:0px">
-							<img src="images/groom1.jpg" style="height:360px;" />
-							<figcaption>This is grooming<p class="img-credit">(via <a href="https://pixabay.com/en/baboons-wildlife-africa-nature-689610/">Pixabay</a>)</p></figcaption>
-						</figure>
-						<figure style="position:absolute; width:600px; right:0px;">
-							<img src="images/groom2.jpg" style="height:360px;" />
-							<figcaption>Also grooming<p class="img-credit">(via <a href="https://pixabay.com/en/white-dog-grooming-pet-1019003/">Pixabay</a>)</p></figcaption>
-						</figure>
-						</div>
-					</section>
-					<section>
-						<figure>
-							<img src="images/phdcomics.gif" style="height:400px;" />
-							<figcaption><p class="img-credit">via <a href="http://www.phdcomics.com/comics/archive.php?comicid=405">PhD Comics</a></p></figcaption>
-						</figure>
-					</section>
-					<section>
-						<h2>Encoding semantics</h2>
-						<ul>
-							<li>Entities, concepts, and relationships identified by <strong>URI</strong></li>
-							<li>Data are expressed as <strong>triples</strong></li>
-						</ul>
 					</section>
 					<section>
 						<figure>
 							<p style="font-size:2em;">subject &middot; predicate &middot; object</p>
-							<figcaption>Triple structure</figcaption>
+							<figcaption>The structure of a triple</figcaption>
 						</figure>
 					</section>
 					<section>
+						<p class="big-point">Subjects, predicates, and objects can all be URIs</p>
+						<p class="big-point">URIs serve as unambiguous identifiers. URIs that can be visited on the web (=URLs) provide definitions and documentation that maintain the usage of entities and terms</p>
+						<p class="big-point">Vocabularies provide and maintain terms for respective domains</p>
+					</section>
+					<section>
 						<h2>Our data again . . .</h2>
-						<table class="example-table sql-table">
-							<tr><th>Organism</th><th>Body weight</th><th>Age of maturation</th><th>Daily path length</th></tr>
-							<tr><td style="border-bottom:0px;">Bat</td><td class="sources1">0.04 kg</td><td class="sources1">2 years</td><td class="sources1">30 km</td></tr>
+						<table class="example-table">
+							<tr><th>ID</th><th>Name</th><th>Species</th></tr>
+							<tr><td>1</td><td>Rafiki</td><td>mandrill</td></tr>
+							<tr><td>2</td><td>Curious George</td><td>chimpanzee</td></tr>
+							<tr><td>3</td><td>King Kong</td><td>gorilla</td></tr>
 						</table>
-						<p style="margin-bottom:0em; font-size:0.75em; font-weight:bold;">Data sources</p>
-						<ul style="font-size:0.75em;">
-							<li><a onmouseover="reveal_sources(1,1)" onmouseout="reveal_sources(1,0)">Bat Database</a> (SBDN)</li>
-						</ul>
 					</section>
 					<section>
 						<h2>. . . expressed as triples . . .</h2>
 						<figure style="height:600px;">
 							<table class="triple-table">
-								<tr><td style="border-bottom:0px;">record1</td><td style="border-bottom:0px;">isOrganism</td><td style="border-bottom:0px;">Bat</td></tr>
-								<tr><td style="border-bottom:0px;">record1</td><td style="border-bottom:0px;">hasWeight</td><td style="border-bottom:0px;">"0.04 kg"</td></tr>
-								<tr><td style="border-bottom:0px;">record1</td><td style="border-bottom:0px;">maturesAt</td><td style="border-bottom:0px;">"2 years"</td></tr>
-								<tr><td style="border-bottom:0px;">record1</td><td style="border-bottom:0px;">hasDailyPathLength</td><td style="border-bottom:0px;">"30 km"</td></tr>
-								<tr><td style="border-bottom:0px;">record1</td><td style="border-bottom:0px;">publisher</td><td style="border-bottom:0px;">SBDN</td></tr>
+								<tr><td style="border-bottom:0px;">Rafiki</td><td style="border-bottom:0px;">type</td><td style="border-bottom:0px;">Organism</td></tr>
+								<tr><td style="border-bottom:0px;">Rafiki</td><td style="border-bottom:0px;">organismID</td><td style="border-bottom:0px;">1</td></tr>
+								<tr><td style="border-bottom:0px;">Rafiki</td><td style="border-bottom:0px;">organismName</td><td style="border-bottom:0px;">"Rafiki"</td></tr>
+								<tr><td style="border-bottom:0px;">Rafiki</td><td style="border-bottom:0px;">hasTaxon</td><td style="border-bottom:0px;">Mandrill</td></tr>
+								<tr><td style="border-bottom:0px;">Mandrill</td><td style="border-bottom:0px;">type</td><td style="border-bottom:0px;">Taxon</td></tr>
+								<tr><td style="border-bottom:0px;">Mandrill</td><td style="border-bottom:0px;">vernacularName</td><td style="border-bottom:0px;">"mandrill"</td></tr>
 							</table>
 							<br>
-							<table class="example-table sql-table" style="color:gray;">
-								<tr><th>Organism</th><th>Body weight</th><th>Age of maturation</th><th>Daily path length</th></tr>
-								<tr><td style="border-bottom:0px;">Bat</td><td class="sources1">0.04 kg</td><td class="sources1">2 years</td><td class="sources1">30 km</td></tr>
+							<table class="example-table" style="color:gray;">
+								<tr><th>ID</th><th>Name</th><th>Species</th></tr>
+								<tr><td>1</td><td>Rafiki</td><td>mandrill</td></tr>
 							</table>
 						</figure>
 					</section>
@@ -582,11 +467,12 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 						<figure style="height:600px;">
 							<div style="height:400px;">
 							<table class="triple-table">
-								<tr><td id="tripleSubject0" onmouseover="tripleInfo('Subject',1,0)" onmouseout="tripleInfo('Subject',0,0)">record1</td><td id="triplePredicate0" onmouseover="tripleInfo('Predicate',1,0)" onmouseout="tripleInfo('Predicate',0,0)">isOrganism</td><td id="tripleObject0" onmouseover="tripleInfo('Object',1,0)" onmouseout="tripleInfo('Object',0,0)">Bat</td></tr>
-								<tr><td id="tripleSubject1" onmouseover="tripleInfo('Subject',1,1)" onmouseout="tripleInfo('Subject',0,1)">record1</td><td id="triplePredicate1" onmouseover="tripleInfo('Predicate',1,1)" onmouseout="tripleInfo('Predicate',0,1)">hasWeight</td><td id="tripleObject1" onmouseover="tripleInfo('Object',1,1)" onmouseout="tripleInfo('Object',0,1)">"0.04 kg"</td></tr>
-								<tr><td id="tripleSubject2" onmouseover="tripleInfo('Subject',1,2)" onmouseout="tripleInfo('Subject',0,2)">record1</td><td id="triplePredicate2" onmouseover="tripleInfo('Predicate',1,2)" onmouseout="tripleInfo('Predicate',0,2)">maturesAt</td><td id="tripleObject2" onmouseover="tripleInfo('Object',1,2)" onmouseout="tripleInfo('Object',0,2)">"2 years"</td></tr>
-								<tr><td id="tripleSubject3" onmouseover="tripleInfo('Subject',1,3)" onmouseout="tripleInfo('Subject',0,3)">record1</td><td id="triplePredicate3" onmouseover="tripleInfo('Predicate',1,3)" onmouseout="tripleInfo('Predicate',0,3)">hasDailyPathLength</td><td id="tripleObject3" onmouseover="tripleInfo('Object',1,3)" onmouseout="tripleInfo('Object',0,3)">"30 km"</td></tr>
-								<tr><td id="tripleSubject4" onmouseover="tripleInfo('Subject',1,4)" onmouseout="tripleInfo('Subject',0,4)">record1</td><td id="triplePredicate4" onmouseover="tripleInfo('Predicate',1,4)" onmouseout="tripleInfo('Predicate',0,4)">publisher</td><td id="tripleObject4" onmouseover="tripleInfo('Object',1,4)" onmouseout="tripleInfo('Object',0,4)">SBDN</td></tr>
+								<tr><td id="tripleSubject0" onmouseover="tripleInfo('Subject',1,0)" onmouseout="tripleInfo('Subject',0,0)"><span class="prefix">ex:</span>Rafiki</td><td id="triplePredicate0" onmouseover="tripleInfo('Predicate',1,0)" onmouseout="tripleInfo('Predicate',0,0)"><span class="prefix">dcterms:</span>type</td><td id="tripleObject0" onmouseover="tripleInfo('Object',1,0)" onmouseout="tripleInfo('Object',0,0)"><span class="prefix">dwc:</span>Organism</td></tr>
+								<tr><td id="tripleSubject1" onmouseover="tripleInfo('Subject',1,1)" onmouseout="tripleInfo('Subject',0,1)"><span class="prefix">ex:</span>Rafiki</td><td id="triplePredicate1" onmouseover="tripleInfo('Predicate',1,1)" onmouseout="tripleInfo('Predicate',0,1)"><span class="prefix">dwc:</span>organismID</td><td id="tripleObject1" onmouseover="tripleInfo('Object',1,1)" onmouseout="tripleInfo('Object',0,1)">"1"</td></tr>
+								<tr><td id="tripleSubject2" onmouseover="tripleInfo('Subject',1,2)" onmouseout="tripleInfo('Subject',0,2)"><span class="prefix">ex:</span>Rafiki</td><td id="triplePredicate2" onmouseover="tripleInfo('Predicate',1,2)" onmouseout="tripleInfo('Predicate',0,2)"><span class="prefix">dwc:</span>organismName</td><td id="tripleObject2" onmouseover="tripleInfo('Object',1,2)" onmouseout="tripleInfo('Object',0,2)">"Rafiki"</td></tr>
+								<tr><td id="tripleSubject3" onmouseover="tripleInfo('Subject',1,3)" onmouseout="tripleInfo('Subject',0,3)"><span class="prefix">ex:</span>Rafiki</td><td id="triplePredicate3" onmouseover="tripleInfo('Predicate',1,3)" onmouseout="tripleInfo('Predicate',0,3)"><span class="prefix">ex:</span>hasTaxon</td><td id="tripleObject3" onmouseover="tripleInfo('Object',1,3)" onmouseout="tripleInfo('Object',0,3)"><span class="prefix">ex:</span>Mandrill</td></tr>
+								<tr><td id="tripleSubject4" onmouseover="tripleInfo('Subject',1,4)" onmouseout="tripleInfo('Subject',0,4)"><span class="prefix">ex:</span>Mandrill</td><td id="triplePredicate4" onmouseover="tripleInfo('Predicate',1,4)" onmouseout="tripleInfo('Predicate',0,4)"><span class="prefix">dcterms:</span>type</td><td id="tripleObject4" onmouseover="tripleInfo('Object',1,4)" onmouseout="tripleInfo('Object',0,4)"><span class="prefix">dwc:</span>Taxon</td></tr>
+								<tr><td id="tripleSubject5" onmouseover="tripleInfo('Subject',1,5)" onmouseout="tripleInfo('Subject',0,5)"><span class="prefix">ex:</span>Mandrill</td><td id="triplePredicate5" onmouseover="tripleInfo('Predicate',1,5)" onmouseout="tripleInfo('Predicate',0,5)"><span class="prefix">dwc:</span>vernacularName</td><td id="tripleObject5" onmouseover="tripleInfo('Object',1,5)" onmouseout="tripleInfo('Object',0,5)">"mandrill"</td></tr>
 							</table>
 							</div>
 							<figcaption id="tripleDisplay">&nbsp;</figcaption>
@@ -594,20 +480,18 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 					</section>
 					<section>
 						<figure>
-							<iframe src="http://purl.org/dc/terms/" style="width:1100px; height:560px; border:4px solid black;"></iframe>
-							<figcaption><span class="fragment highlight-red" data-fragment-index="1">dc:</span>publisher (<span class="fragment highlight-red" data-fragment-index="1">http://purl.org/dc/terms/</span>publisher)</figcaption>
+							<iframe src="sites/darwincore/quickreference.html#start-here" style="width:1100px; height:560px; border:4px solid black;"></iframe>
+							<figcaption><span class="prefix">dwc:</span>organismName (<span class="prefix">http://rs.tdwg.org/dwc/terms/</span>organismName)</figcaption>
 						</figure>
 					</section>
 					<section>
 						<figure>
-							<embed src="images/webofbats.svg" style="margin-top:-40px; height:720px;"></embed>
-							<figcaption>Our bat data</figcaption>
+							<embed src="images/conceptmap01.svg" style="margin-top:-40px; height:720px;"></embed>
 						</figure>
 					</section>
 					<section>
 						<figure>
-							<embed src="images/webofmeaning.svg" style="margin-top:-40px; height:720px;"></embed>
-							<figcaption>A meaningful "web of data"</figcaption>
+							<embed src="images/conceptmap02.svg" style="margin-top:-40px; height:720px;"></embed>
 						</figure>
 					</section>
 					<section>
@@ -869,11 +753,16 @@ Data published for human consumption limits machine function, which limits reuse
 				<section>
 					<h1>Acknowledgments</h1>
 					<ul>
+						<!--<li><strong>Nick Sears</strong> & <strong>Jonathan Cousins</strong> <span class="affiliation">Cousins & Sears Creative Technologists</span></li>-->
 						<li><strong>Jennifer Moore</strong>, <strong>Cynthia Hudson</strong>, & <strong>Aaron Addison</strong> <span class="affiliation">Washington University Libraries</span></li>
 						<li><strong>Jane Phillips-Conroy</strong> <span class="affiliation">Washington University &middot; Neuroscience / Anthropology</span></li>
-						<li><strong>2013</strong> <span class="smalltext">St. Louis</span> & <strong>2015</strong> <span class="smalltext">Austin</span> <strong> working group meetings participants</strong><br><p class="acknowledgments">Laura Abondano &middot; Colin Addis &middot; Elizabeth Archie &middot; Louise Barrett &middot; Thore Bergman &middot; Maryjka Blaszczyk &middot; Damien Caillaud &middot; Shahrina Chowdhury &middot; Kelsey Ellis &middot; Gideon Erkenswick &middot; Eduardo Fernandez-Duque &middot; Steffen Foerster &middot; Paul Garber &middot; Peter Henzi &middot; Katharine Jack &middot; Clifford Jolly &middot; Andreas Koenig &middot; Kara Leimberger &middot; Rebecca Lewis &middot; Katie MacKinnon &middot; Amely Martins &middot; Monica McDonald &middot; Amanda Melin &middot; Mike Montague &middot; Stephanie Musgrave &middot; Joseph Orkin &middot; Katie Ortiz &middot; Steve Phelps &middot; Denné Reed &middot; Crickette Sanz &middot; Clara Scarry &middot; Christopher Schmitt &middot; Christopher Shaffer &middot; Joan Silk &middot; Karen Strier &middot; Robert Sussman &middot; Stacey Tecot &middot; Claudia Valeggia &middot; Sarie Van Belle &middot; Anna Weyher</p></li>
+						<li><strong>Denné Reed</strong> <span class="affiliation">University of Texas at Austin &middot; Anthropology</span></li>
+						<li><strong>2013</strong> <span class="smalltext">St. Louis</span> & <strong>2015</strong> <span class="smalltext">Austin</span> <strong> working group meetings participants</strong><br><p class="acknowledgments">Laura Abondano &middot; Colin Addis &middot; Elizabeth Archie &middot; Louise Barrett &middot; Thore Bergman &middot; Maryjka Blaszczyk &middot; Damien Caillaud &middot; Shahrina Chowdhury &middot; Kelsey Ellis &middot; Gideon Erkenswick &middot; Eduardo Fernandez-Duque &middot; Steffen Foerster &middot; Paul Garber &middot; Peter Henzi &middot; Katharine Jack &middot; Clifford Jolly &middot; Andreas Koenig &middot; Kara Leimberger &middot; Rebecca Lewis &middot; Katie MacKinnon &middot; Amely Martins &middot; Monica McDonald &middot; Amanda Melin &middot; Mike Montague &middot; Stephanie Musgrave &middot; Joseph Orkin &middot; Katie Ortiz &middot; Steve Phelps &middot; Crickette Sanz &middot; Clara Scarry &middot; Christopher Schmitt &middot; Christopher Shaffer &middot; Joan Silk &middot; Karen Strier &middot; Robert Sussman &middot; Stacey Tecot &middot; Claudia Valeggia &middot; Sarie Van Belle &middot; Anna Weyher</p></li>
 						<li><strong>National Science Foundation</strong> <span class="smalltext"> SMA 1338524 &middot; SMA 1338467 &middot; SMA 1338452</span></li>
 					</ul>
+				</section>
+				<section>
+					<h1><a href="index2.html">Ethoinformatics II</a></h1>
 				</section>
 			</div>
 		</div>

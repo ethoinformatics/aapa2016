@@ -272,15 +272,16 @@ html.img-right div.slide-background.present {
 	}
 	.custom .vs-table > tbody > tr > td {
 		text-align:center;
-		font-size:1.2em;
+		font-size:1em;
 		border-bottom: 0px solid;
 	}
 	.custom .triple-table {
+		width:80%;
 		border:2px solid black;
 	}
 	.custom .triple-table > tbody > tr > td {
-		font-family: Inconsolata, Consolas, monospace;
-		font-size:1em;
+		font-family: Consolas, Inconsolata, monospace;
+		font-size:0.67em;
 		text-align:center;
 		border-bottom: 0px solid;
 	}
@@ -326,4 +327,38 @@ html.img-right div.slide-background.present {
     .custom .giant-point {
     	font-size:3em;
     	font-weight:bold;
+    }
+    .custom .dist-dogs {
+    	background-color:lightyellow;
+    }
+    .custom .dist-genbank {
+    	background-color:lightgreen;
+    }
+    .custom .dist-primates {
+    	background-color:lightblue;
+    }
+    .custom .dist-morpho {
+    	background-color:lightpink;
+    }
+    .custom .dist-birds {
+    	background-color:antiquewhite;
+    }
+    .custom .dist-dogbehavior {
+    	background-color:lavender;
+    }
+    .custom table#distributed-data {
+    	margin-bottom:1em;
+    }
+    .custom table#distributed-data td {
+    	text-align:center;
+    	vertical-align:middle;
+    	width:5em;
+    	height:3em;
+    }
+    .custom table#distributed-data th {
+    	text-align:center;
+    	vertical-align:middle;
+    }
+    .custom .prefix {
+    	color:#f66;
     }

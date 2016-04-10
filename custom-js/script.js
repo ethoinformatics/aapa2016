@@ -94,6 +94,43 @@ function jsonRow(n,on) {
 	}
 }
 
+var uris = [{
+	"Subject" : "http://example.org/Rafiki",
+	"Predicate" : "http://purl.org/dc/terms/type",
+	"Object" : "http://rs.tdwg.org/dwc/terms/Organism"
+},{
+	"Subject" : "http://example.org/Rafiki",
+	"Predicate" : "http://rs.tdwg.org/dwc/terms/organismID",
+	"Object" : "&quot;1&quot;"
+},{
+	"Subject" : "http://example.org/Rafiki",
+	"Predicate" : "http://rs.tdwg.org/dwc/terms/organismName",
+	"Object" : "&quot;Rafiki&quot;"
+},{
+	"Subject" : "http://example.org/Rafiki",
+	"Predicate" : "http://example.org/hasTaxon",
+	"Object" : "http://example.org/Mandrill"
+},{
+	"Subject" : "http://example.org/Mandrill",
+	"Predicate" : "http://purl.org/dc/terms/type",
+	"Object" : "http://rs.tdwg.org/dwc/terms/Taxon"
+},{
+	"Subject" : "http://example.org/Mandrill",
+	"Predicate" : "http://rs.tdwg.org/dwc/terms/vernacularName",
+	"Object" : "&quot;mandrill&quot;"
+}]
+
+function tripleInfo(id,what,which) {
+	cell = document.getElementById('triple'+id+which);
+	display = document.getElementById('tripleDisplay');
+	if (what) {
+		cell.style.backgroundColor = '#9BBCE1';
+		display.innerHTML = uris[which][id];
+	} else {
+		cell.style.backgroundColor = null;
+		display.innerHTML = '&nbsp;';
+	}
+}
 
 
 

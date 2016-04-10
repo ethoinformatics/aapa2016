@@ -1,4 +1,4 @@
-var uris = [{
+/*var uris = [{
 	"Subject" : "http://notrealdata.com/resources/record1",
 	"Predicate" : "http://notrealterms.org/terms/isOrganism",
 	"Object" : "http://dbpedia.org/resource/Bat"
@@ -31,3 +31,4 @@ function tripleInfo(id,what,which) {
 		display.innerHTML = '&nbsp;';
 	}
 }
+*/
