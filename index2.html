@@ -28,7 +28,7 @@
 		<script src="lib/js/dazzleSketch.js"></script>
 
 		<!-- Slide-specific scripts -->
-		<script type="text/javascript" src="custom-js/fossil-hominins.js"></script>
+		<script type="text/javascript" src="custom-js/columns.js"></script>
 		<script type="text/javascript" src="custom-js/xml-hominins.js"></script>
 		<script type="text/javascript" src="custom-js/json-hominins.js"></script>
 		<script type="text/javascript" src="custom-js/url-info.js"></script>
@@ -69,23 +69,26 @@
 					</section>
 					<section id="intro">
 						<section>
-							<h2>What's Currently Available</h2>
-								<ul>
-									<li>Noldus Observer</li>
-									<li>HanDBase</li>
-									<li>Mangold Obansys</li>
-									<li>prime8</li>
-									<li>Various database + data form apps for structured note taking</li>
-								</ul>
+							<h2>What's Currently Available?</h2>
+							<figure>
+								<img src="images/software.png" style="height:600px; border:0px;" />
+							</figure>
+							<li>Plus various database + form apps for structured notetaking</li>
 						</section>
 						<section>
 							<h2>Limitations?</h2>
 								<ul>
-									<li>Many are proprietary</li>
+									<li>Most are proprietary</li>
 									<li>Limited data streams</li>
 									<li>No emphasis on using standard ontologies</li>
 									<li>Not automatically geotagged</li>
+									<li>Not cross-platform</li>
 								</ul>
+								<p>
+									<img src="images/oses.png" style="height:150px; border:0px;" />
+								</p>
+
+
 						</section>
 					</section>
 					<section id="the app">
@@ -174,8 +177,120 @@
 										<li>associated with</li>
 									</ul>
 							</section>
-						</section>
+							<section>
+								<h2>EthoCore Terms: http://ethoinformatics.org/ethocore/</h2>
+								<p>148 Terms Belonging to 10 Classes</p>
+									<ul>
+										<li>Record-Level Terms: Darwin Core (DWC)</li>
+										<li>Activity (Etho Core)</li>
+										<li>Animal (Etho Core – in lieu of DWC: Organism)</li>
+										<li>Event (DWC)</li>																				<li>Identification (DWC)</li>
+										<li>Location (DWC – extended)</li>
+										<li>MaterialSample (DWC – extended)</li>
+										<li>MeasurementOrObservation (Etho Core - in lieu of DWC: MeasurementOrFact</1i>
+										<li>Patch (Etho Core)</li>
+										<li>Taxon (DWC)</li>
+										<li>ResourceRelationship (DWC)</li>
+									</ul>
+							</section>
+							<section>
+								<h2>What’s good about documents...?</h2>
+								<ul>
+									<li>They are basically just text files (though they can include pointers to associated files, like photos or recordings)</li>
+									<li>Standard protocols exist for transferring them quickly and efficiently over the web (e.g., HTTP)</li>
+									<li>Programmatically accessible (APIs) by a wide range of useful technologies (such as in the web)</li>
+									<li>Standard formats exist for “document” data that are at once human *and* machine readable (e.g., JSON, XML)</li>
+								<ul>
+							</section>
+							<section>
+								<h2><span onmouseover="row(0,1)" onmouseout="row(0,0)">EthoCore Classes</span></h2>
+								<table id="ethocore-classes" class="example-table">
+									<tr class="row0">
+										<th class="col1" onmouseover="col(1,1)" onmouseout="col(1,0)">ID</th>
+										<th class="col2" onmouseover="col(2,1)" onmouseout="col(2,0)">DarwinCore</th>
+										<th class="col3" onmouseover="col(3,1)" onmouseout="col(3,0)">EthoCore</th>
+									</tr>
+									<tr class="row1">
+										<td class="col1" onmouseover="row(1,1)" onmouseout="row(1,0)">1</td>
+										<td class="col2">Event</td>
+										<td class="col3"><span class="etho-core">Activity</span></td>
+									</tr>
+									<tr class="row2">
+										<td class="col1" onmouseover="row(2,1)" onmouseout="row(2,0)">2</td>
+										<td class="col2">Identification </td>
+										<td class="col3"><span class="etho-core">Animal</span></td>
+									</tr>
+									<tr class="row3">
+										<td class="col1" onmouseover="row(3,1)" onmouseout="row(3,0)">3</td>
+										<td class="col2">Location++</td>
+										<td class="col3"><span class="etho-core">MeasurementOrObservation</span></td>
+									</tr>
+									<tr class="row4">
+										<td class="col1" onmouseover="row(4,1)" onmouseout="row(4,0)">4</td>
+										<td class="col2">MaterialSample++</td>
+										<td class="col3"><span class="etho-core">Patch</span></td>
+									</tr>
+									<tr class="row5">
+										<td class="col1" onmouseover="row(5,1)" onmouseout="row(5,0)">5</td>
+										<td class="col2">Taxon</td>
+										<td class="col3"><span class="etho-core"></span></td>
+									</tr>
+									<tr class="row6">
+										<td class="col1" onmouseover="row(6,1)" onmouseout="row(6,0)">6</td>
+										<td class="col2">ResourceRelationship</td>
+										<td class="col3"><span class="etho-core"></span></td>
+									</tr>
+								</table>
 
+								<pre id="array-view" style="display:none; word-wrap:break-word; white-space:pre-wrap;"><code id="array-code"></code></pre>
+							</section>
+
+						</section>
+					<section id="ethogrammar-data-model">
+						<section>
+							<h1>The Etho Grammar Data Model</h1>
+							<h2>1. Data consist of documents (a.k.a. resources)</h2>
+							<ul>
+								<li>Documents group together a set of terms that are drawn from 1 or more classes</li>
+								<li>Documents correspond (roughly) to the rows or records in a tabular database, except that each is a separate resource</li>
+								<li>Many of the terms used are metadata terms</li>
+								<li>Not all terms comprising the classes that make up a document need be stored in any given document (i.e., the equivalent of empty fields in a record can be omitted)</li>
+							</ul>
+						</section>
+						<section>
+							<h1>The Etho Grammar Data Model</h1>
+							<h2>2. There are different types of documents</h2>
+							<ul>
+								<li>We think many of these are likely to be standard across projects (e.g., “contacts”, “focal samples”, “biological samples”, “roll call census”) but projects need not use them all and may extend the list of document types</li>
+							</ul>
+						</section>
+						<section>
+							<h1>The Etho Grammar Data Model</h1>
+							<h2>3. Documents can be related to other documents</h2>
+							<ul>
+								<li>Some of those relationships are required (e.g., “focal observations” must be linked to a “focal sample”)</li>
+								<li>Many relationships among documents are flexible and can differ among or within projects</li>
+							</ul>
+						</section>
+						<section>
+							<h1>The Etho Grammar Data Model</h1>
+							<h2>4. Relationships between documents constitute separate resources, also stored as documents</h2>
+							<ul>
+								<li>These are somewhat like JOIN tables in a SQL-based database, but note that PRIMARY KEY-FOREIGN KEY relationships among tables are not specified</li>
+								<li>These are analogous to EDGES in a graph database</li>
+								<li>An Etho Core compliant database can be thus schema-less and can accommodate multiple schema</li>
+							</ul>
+						</section>
+					</section>
+					<section id="misc">
+						<section>
+						<figure>
+							<img src="images/couchdb.png" style="height:360px; border:0px; box-shadow:0 0 0px;" />
+							<p></p>
+							<img src="images/pouchdb.png" style="height:360px; border:0px; box-shadow:0 0 0px;" />
+						</figure>
+					</section>
+					</section>
 
 			</div>
 		</div>
