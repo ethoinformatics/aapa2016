@@ -69,7 +69,7 @@
 									<li>HanDBase</li>
 									<li>Mangold Obansys</li>
 									<li>prime8</li>
-									<li>Various database/form apps for structured note taking</li>
+									<li>Various database + data form apps for structured note taking</li>
 								</ul>
 						</section>
 						<section>
@@ -77,7 +77,7 @@
 								<ul>
 									<li>Many are proprietary</li>
 									<li>Limited data streams</li>
-									<li>No emphasis on standard ontology</li>
+									<li>No emphasis on using standard ontologies</li>
 									<li>Not automatically geotagged</li>
 								</ul>
 						</section>
@@ -102,7 +102,7 @@
 							<h2>General Idea</h2>
 								<ul>
 									<li>App generates <span class="semibold">documents</span> that are made up of EthoCore terms</li>
-									<li>Each <span class="semibold">document</span> is a resource with a URI</li>
+									<li>Each <span class="semibold">document</span> is a resource with a URI <span class="expanded-note">(uniform resource identifiers)</span></li>
 									<li>Documents can be decomposed to <span class="semibold">triple-stores</span> and used as linked data</li>
 									<li>Documents can link to one or more other documents via standard <span class="semibold">predicates</span>, each of which has a URI (taken within, belongs to, child of, associates with)</li>
 									<li>Media (pictures, audio recordings) can be linked by a predicate to one or more documents</li>
@@ -119,20 +119,20 @@
 							<section>
 								<h2>Some Design Decisions</h2>
 									<ul>
-										<li>Use HMTL, JavaScript, and CSS to create a mobile app that can be compiled and deployed on a variety of devices</li>
-										<li>Use JSON documents to configure aspects of the application</li>
-										<li>Use local storage and PouchDB on the mobile device to hold data</li>
-										<li>Data in PouchDB stores as JSON documents</li>
-										<li>Sync from PouchDB to CouchDB on a local server and sync CouchDB on local server to remote server</li>
+										<li>Use <span class="semibold">HMTL</span>, <span class="semibold">JavaScript</span>, and <span class="semibold">CSS</span> to create a mobile app that can be compiled and deployed on a variety of devices</li>
+										<li>Use <span class="semibold">JSON</span> documents to configure aspects of the application</li>
+										<li>Use local storage and <span class="semibold">PouchDB</span> on the mobile device to hold data</li>
+										<li>Data in <span class="semibold">PouchDB</span> stored as <span class="semibold">JSON</span> documents</li>
+										<li>Sync from <span class="semibold">PouchDB</span> to <span class="semibold">CouchDB</span> on a local server and from <span class="semibold">CouchDB</span> on local server to remote server</li>
 										<li>Use data from operating system's <span class="semibold">location services</span> to tag all documents with geolocation</li>
-										<li>This information can be provided by internal GPS, cell towers, external GPS</li>
-										<li>Geolocation data is recorded continuously in background</li>
+										<li><span class="expanded-note">(from internal GPS, cell towers, external GPS)</span></li>
+										<li>Geolocation data is updated recorded continuously</li>
 									</ul>
 							</section>
 							<section>
 								<h2>User Provides...</h2>
 									<ul>
-									<li>Controlled vocabularies</li>
+									<li>A set of controlled vocabularies</li>
 									<li>Design for construction of documents</li>
 									<li>Information about on how documents can be be linked</li>
 								</ul>
@@ -140,7 +140,7 @@
 							<section>
 								<h2>App Writes Data That...</h2>
 									<ul>
-									<li>Conforms to EthoCore and other community-designed data standards</li>
+									<li>Conforms to <span class="semibold">EthoCore</span> and other community-designed data standards (e.g., Darwin Core)</li>
 									<li>Stores data as documents (linked? nested?)</li>
 									<li>Stores geolocation tag and time stamp tag for all documents</li>
 								</ul>
