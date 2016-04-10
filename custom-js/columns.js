@@ -1,7 +1,7 @@
 var columndata = [
-	'ID = [\n  <span style="color:#8CCFD2;">1</span> , <span style="color:#8CCFD2;">2</span> , <span style="color:#8CCFD2;">3</span> , <span style="color:#8CCFD2;">4</span> , <span style="color:#8CCFD2;">5</span>\n]',
-	'Nickname = [\n  <span style="color:#CC9393;">"Lucy"</span> , <span style="color:#CC9393;">"Taung Child"</span> , <span style="color:#CC9393;">"Zinj"</span> , <span style="color:#CC9393;">"Nariokotome Boy"</span> , <span style="color:#CC9393;">"The Old Man"</span>\n]',
-	'ScientificName = [\n  <span style="color:#CC9393;">"Australopithecus afarensis"</span> , <span style="color:#CC9393;">"Australopithecus africanus"</span> ,\n  <span style="color:#CC9393;">"Paranthropus boisei"</span> , <span style="color:#CC9393;">"Homo ergaster"</span> , <span style="color:#CC9393;">"Homo neanderthalensis"</span>\n]'
+	'ID = [\n  <span style="color:#8CCFD2;">1</span> , <span style="color:#8CCFD2;">2</span> , <span style="color:#8CCFD2;">3</span> , <span style="color:#8CCFD2;">4</span> , <span style="color:#8CCFD2;">5</span>, <span style="color:#8CCFD2;">6</span>\n]',
+	'DarwinCore = [\n  <span style="color:#CC9393;">"Event"</span> , <span style="color:#CC9393;">"Identification"</span> , <span style="color:#CC9393;">"Location++"</span> , <span style="color:#CC9393;">"MaterialSample++"</span> , <span style="color:#CC9393;">"Taxon"</span>, <span style="color:#CC9393;">"ResourceRelationship"</span>\n]',
+	'EthoCore = [\n  <span style="color:#CC9393;">"Activity"</span> , <span style="color:#CC9393;">"Animal"</span> ,\n  <span style="color:#CC9393;">"MeasurementOrObservation"</span> , <span style="color:#CC9393;">"Patch"</span> , <span style="color:#CC9393;"></span> , <span style="color:#CC9393;"></span>\n]'
 ];
 var rowdata = [
 	'+----------------+-----------+\n| Attribute      | Type      |\n+----------------+-----------+\n| ID             | <span style="color:#8CCFD2;">integer</span>   |\n| Nickname       | <span style="color:#CC9393;">character</span> |\n| ScientificName | <span style="color:#CC9393;">character</span> |\n+----------------+-----------+',
