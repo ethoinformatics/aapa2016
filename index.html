@@ -73,14 +73,12 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 		<script src="lib/js/dazzleSketch.js"></script>
 
 		<!-- Slide-specific scripts -->
-		<script type="text/javascript" src="custom-js/fossil-hominins.js"></script>
-		<script type="text/javascript" src="custom-js/xml-hominins.js"></script>
-		<script type="text/javascript" src="custom-js/json-hominins.js"></script>
 		<script type="text/javascript" src="custom-js/url-info.js"></script>
 		<script type="text/javascript" src="custom-js/triples-info.js"></script>
 		<script type="text/javascript" src="custom-js/sql-join.js"></script>
 		<script type="text/javascript" src="custom-js/sql-schema.js"></script>
 
+		<script type="text/javascript" src="custom-js/script.js"></script>
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -118,23 +116,50 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 			<div class="slides">
 				<section id="title">
 					<h1 style="margin-top:-0.25em; margin-bottom:0em;">Ethoinformatics I</h1>
-					<p style="font-size:1.5em;">Kenneth L. Chiou &middot; Anthony Di Fiore &middot; Robyn Overstreet &middot; Mike Chevett &middot; Tom Igoe</p>
+					<p style="font-size:1.2em;">Kenneth L. Chiou &middot; Anthony Di Fiore &middot; Robyn Overstreet &middot; Mike Chevett &middot; Tom Igoe</p>
+						<figure>
+							<img src="images/wustl.png" style="height:160px; border:0px; box-shadow:0 0 0px;" />
+							<img src="images/utaustin.png" style="height:160px; border:0px; box-shadow:0 0 0px;" />
+							<img src="images/nyu.png" style="margin-left:24px; height:160px; border:0px; box-shadow:0 0 0px;" />
+							<br>
+							<embed src="images/nsf.svg" style="height:240px; margin-top:-25px;" />
+						</figure>
 				</section>
 				<section>
 					<section>
-						<h1>Imagine . . .</h1>
+						<h1>Ethoinformatics</h1>
+						<p class="project-history">To build capacity for<br><strong>data discovery</strong>, <strong>data reuse</strong>, and <strong>data comparison</strong><br>for behavioral research</p>
+						<p>(with particular emphasis on field primatology)</p>
+					</section>
+					<section>
+						<p class="biggest-point"><strong>Premise:</strong><br>primatology is comparative</p>
+					</section>
+					<section>
+						<figure style="position:absolute; left:0;">
+							<img src="images/ewg2013.jpg" style="height:440px;" />
+							<figcaption>Ethoinformatics 2013<br>Washington University in St. Louis</figcaption>
+						</figure>
+						<figure style="position:absolute; right:0;">
+							<img src="images/ewg2015.jpg" style="height:440px;" />
+							<figcaption>Ethoinformatics 2015<br>University of Texas at Austin</figcaption>
+						</figure>
+					</section>
+				</section>
+				<section>
+					<section>
+						<p class="giant-point "><strong>Imagine . . .</strong></p>
 					</section>
 					<section>
 						<!--<iframe id="imagine" class="full-frame" src="html/imagine.html"></iframe>-->
 						<iframe id="projectsportal" class="full-frame" src="html/projectsportal.html"></iframe>
 					</section>
 					<section>
-						<p style="font-weight:bold; font-size:2em;">Bad news</p>
-						<p class="fragment bigger-point">But what's in our way?</p>
+						<p class="giant-point">Bad news</p>
+						<p class="fragment bigger-point">What's in our way?</p>
 					</section>
 					<section>
-						<h2>Our data are really really complex</h2>
-						<p style="font-size:1.1em; font-weight:bold;">On a typical day, we might be concerned with:</p>
+						<h2>Primatological data are complex</h2>
+						<p class="big-point">On a typical day, we might be concerned with:</p>
 						<ul>
 							<li><span class="semibold">activities</span> and <span class="semibold">social interactions</span> of animals</li>
 							<li><span class="semibold">locations</span>, <span class="semibold">identities</span>, and <span class="semibold">availability patterns</span> of key resources</li>
@@ -146,20 +171,21 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 						</ul>
 					</section>
 					<section>
-						<h2>Technical obstacles</h2>
+						<h2>Obstacles to comparison</h2>
 						<ul>
 							<li>Research data are geographically disjunct</li>
-							<li>Datasets are organized and managed using different practices</li>
+							<li>Datasets vary in their</li>
 							<ul>
-								<li><strong>terminology</strong></strong></li>
-								<li><strong>relationships/schemas</strong></li>
-								<li><strong>software platforms</strong></li>
-								<li><strong>quality control</strong></li>
+								<li><span class="semibold">terminology</span></li>
+								<li><span class="semibold">organization</span></li>
+								<li><span class="semibold">technology</span></li>
 							</ul>
-							<li><strong>Metadata</strong> are seldom documented</li>
-							<li>A community generally trained poorly in information science</li>
+							<li><span class="semibold">Metadata</span> are seldom documented</li>
+							<li>Lack of training in information science</li>
+							<li>Concerns about <span class="semibold">data access</span> and <span class="semibold">data ownership</span></li>
 						</ul>
 					</section>
+					<!--
 					<section>
 						<h2>Cultural obstacles</h2>
 						<ul>
@@ -176,427 +202,147 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 						</ul>
 						<p class="fragment" data-fragment-index="5" style="font-size:1.2em;">"The system will be taken over by <a href="http://www.nejm.org/doi/full/10.1056/NEJMe1516564" target="_blank"><strong>research parasites</strong></a>"</p>
 					</section>
-				</section>
-				<section>
-					<section>
-						<h1>Ethoinformatics</h1>
-						<p class="bigger-point">2013-present</p>
-						<figure>
-							<img src="images/utaustin.png" style="height:160px; border:0px; box-shadow:0 0 0px;" />
-							<img src="images/wustl.png" style="height:160px; border:0px; box-shadow:0 0 0px;" />
-							<img src="images/nyu.png" style="height:160px; border:0px; box-shadow:0 0 0px;" />
-							<br>
-							<embed src="images/nsf.svg" style="height:240px; margin-top:-25px;" />
-						</figure>
-					</section>
-					<section>
-						<h1>Goal of Ethoinformatics</h1>
-						<p class="project-history">To build capacity for <strong>data discovery</strong>, <strong>data reuse</strong>, and <strong>data comparison</strong> for behavioral research</p>
-						<p>(with particular emphasis on field primatology)</p>
-					</section>
+					-->
 				</section>
 				<section>
 					<h1>Project goals</h1>
 					<ol style="font-size:1.2em;">
-						<li class="fragment" data-fragment-index="1"><span class="fragment highlight-red" data-fragment-index="6">Establish a community-derived standard vocabulary</span></li>
-						<li class="fragment" data-fragment-index="2">Create compatible database tools</li>
-						<li class="fragment" data-fragment-index="3">Create compatible data collection tools</li>
-						<li class="fragment" data-fragment-index="4">Create tools for translating existing databases</li>
-						<li class="fragment" data-fragment-index="5">Formulate a framework for long-term data archiving</li>
+						<li class="fragment" data-fragment-index="1"><span class="fragment highlight-red" data-fragment-index="6">A community-derived standard vocabulary</span></li>
+						<li class="fragment" data-fragment-index="2">Database frameworks</li>
+						<li class="fragment" data-fragment-index="3">Mobile data collection software</li>
+						<li class="fragment" data-fragment-index="4">Compatibility tools for existing data</li>
+						<li class="fragment" data-fragment-index="5">A framework for long-term data archiving</li>
 					</ol>
 				</section>
 				<section>
 					<section>
-						<h1>Summary of working group meetings findings</h1>
-						<figure>
-							<img src="images/ewg2013_panorama.jpg" style="width:1200px;" />
-							<figcaption>Ethoinformatics Working Group 2013, Olin Library, Washington University<p class="img-credit">(image credit: <a href="https://www.flickr.com/photos/tigoe/11972791073" target="_blank">Tom Igoe</a>)</p></figcaption>
-						</figure>
+						<h1>Moving Beyond the Table</h1>
 					</section>
 					<section>
-						<h2>Databases: points of difference</h2>
-						<p class="big-point">We see a lot of variation in data management and archiving practices</p>
-						<p class="big-point">Some of the variation is related to differences in <strong>foci</strong>, <strong>scale</strong>, and <strong>longevity</strong> of research projects</p>
-					</section>
-					<section>
-						<h2>Databases: points of commonality</h2>
-						<p class="big-point">Convergence in the ideas of <em>observer</em>, <em>individual</em>, and <em>group</em> as central data collection concepts</p>
-						<p class="big-point">Common data structures often emerge from analogous practices</p>
-					</section>
-					<section>
-						<p class="bigger-point">Overall, however, behavioral information are structured inconsistently and these differences are a source of shared frustration</p>
-					</section>
-					<section>
-						<h2>Tools shape our mental models</h2>
-						<p class="big-point">Our thinking about data is highly influenced by a few dominant tools with outsized influence</p>
-						<p class="fragment big-point">Our thinking about data is <strong>shaped in tables</strong></p>
-					</section>
-					<section>
-						<p class="bigger-point">It is extremely difficult for many to think about the <strong>data model</strong> independently of the <strong>database</strong></p>
-					</section>
-					<section>
-						<h2>Access</h2>
-						<p class="big-point">We are vigilant in maintaining and preserving our data, but not about documenting and providing <strong>metadata</strong></p>
-						<p class="fragment big-point">Ownership, sharing, and privacy are common sources of concern, but there are a range of perspectives within our community</p>
-					</section>
-					<section>
-						<p class="big-point">A vast majority of participants reported knowledge of or interest in learning:</p>
-						<figure><img class="fragment" src="images/R.png" style="width:200px; border:0px; box-shadow:0 0 0px;"/></figure>
-						<ul class="big-point">
-							<li>relational databases (e.g., MS Access, MySQL, PostgreSQL)</li>
-							<li>statistical computing (e.g., R, Python, Julia)</li>
-						</ul>
-					</section>
-					<section>
-						<p class="bigger-point">There is a less prevalent interest in learning Web technologies</p>
-						<p class="fragment big-point">This is creating a disconnect with rapidly maturing technologies and communities that are increasingly integrated into the Web</p>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h1>Introduction to Web technologies</h1>
-					</section>
-					<section>
-						<h1>The Internet</h1>
-					</section>
-					<section>
-						<h2>What is the Internet?</h2>
-						<ul>
-							<li>Independent local networks interlinked by a <strong>global communications infrastructure</strong></li>
-							<li>Information transfers follow the <strong>TCP/IP</strong> standard</li>
-						</ul>
-					</section>
-					<section>
-						<h2>Submarine cable map</h2>
-						<figure>
-							<img src="images/submarine-cable-map_wide.jpg" style="height:500px;" />
-							<figcaption><p class="img-credit">Image credit: <a href="http://www.submarinecablemap.com/#/" target="_blank">TeleGeography</a></p></figcaption>
-						</figure>
-					</section>
-					<section>
-						<h2>TCP/IP</h2>
-						<figure>
-							<embed src="images/tcpip.svg" style="height:540px;"></embed>
-							<figcaption>Packets move from origin to destination router by router</figcaption>
-						</figure>
-					</section>
-					<section>
-						<h2>IP addresses</h2>
-						<figure>
-							<embed src="images/ip.svg" style="height:540px;"></embed>
-							<figcaption>Networks and devices are identified by globally unique IP addresses</figcaption>
-						</figure>
-					</section>
-					<section>
-						<p class="quote"><strong>Computers</strong> are interesting, not the <em>cables</em> that connect them</p>
-					</section>
-					<section>
-						<h1>The World Wide Web</h1>
-						<figure style="height:500px;">
-							<img src="images/timbernerslee.jpg" />
-							<figcaption>Tim Berners-Lee<p class="img-credit">(image credit: <a href="https://commons.wikimedia.org/wiki/File%3ASir_Tim_Berners-Lee.jpg">Paul Clarke</a>)</p></figcaption>
-						</figure>
-					</section>
-					<section>
-						<h2>A Web of Documents</h2>
-						<figure>
-							<embed src="images/www.svg" style="height:540px;"></embed>
-							<figcaption>A web of documents connected by hyperlinks</figcaption>
-						</figure>
-					</section>
-					<section>
-						<h2>What is the Web?</h2>
-						<ul>
-							<li>Documents written in <strong>HTML</strong> <span class="expanded-note">(hypertext markup language)</span></li>
-							<li>Documents identified by <strong>URI</strong> <span class="expanded-note">(uniform resource identifiers)</span></li>
-							<li>Documents served by <strong>HTTP</strong> <span class="expanded-note">(hypertext transfer protocol)</span></li>
-						</ul>
-					</section>
-					<section>
-						<h2>Hypertext Markup Language (HTML)</h2>
-						<figure style="position:absolute; width:600px; left:0px">
-							<pre class="html" style="width:600px; height:360px; background-color:#3F4040;"><code>&lt;!doctype html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;This is a title&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;h1&gt;Primate relatives&lt;/h1&gt;
-    &lt;p&gt;Primates are closely related to:&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;colugos&lt;/li&gt;
-      &lt;li&gt;treeshrews&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/body&gt;
-&lt;/html&gt;</code></pre>
-							<figcaption>HTML code</figcaption>
-						</figure>
-						<figure style="position:absolute; width:600px; right:0px">
-							<iframe style="border:2px solid black; width:600px; height:358px; margin-top:19px; margin-bottom:5px;" src="html/example-html.html"></iframe>
-							<figcaption>HTML rendered</figcaption>
-						</figure>
-					</section>
-					<section>
-						<h2>Uniform Resource Identifiers (URI)</h2>
-						<figure>
-							<p style="background-color:lightgray; font-size:1.2em; border:1px solid black; margin:50px;">en.wikipedia.org/wiki/Anthropology</p>
-							<figcaption>Wikipedia page on "Anthropology"</figcaption>
-						</figure>
-					</section>
-					<section>
-						<h2>Uniform Resource Locator (URL)</h2>
-						<figure>
-							<p style="background-color:lightgray; font-size:1.2em; border:1px solid black; margin:50px;"><span id="wikiProtocol" onmouseover="url('wikiProtocol',1)" onmouseout="url('wikiProtocol',0)">https://</span><span id="wikiDomain" onmouseover="url('wikiDomain',1)" onmouseout="url('wikiDomain',0)">en.wikipedia.org</span><span id="wikiPath" onmouseover="url('wikiPath',1)" onmouseout="url('wikiPath',0)">/wiki/Anthropology</span></p>
-							<figcaption id="urlInfo">&nbsp;</figcaption>
-						</figure>
-					</section>
-					<section>
-						<p class="quote"><strong>Documents</strong> are interesting, not the <em>computers</em> that host them</p>
-					</section>
-					<section>
-						<h1>What's next for the Web?</h1>
-					</section>
-					<section>
-						<p class="quote"><strong>Data</strong> are interesting, not the <em>documents</em> that contain them</p>
-					</section>
-					<section>
-						<figure>
-							<img src="images/bernerslee2001.png" style="height:600px;" />
-							<figcaption class="img-reference">Berners-Lee <em>et al.</em> 2001<p class="img-credit" style="font-style:italic;"><a href="http://dx.doi.org/10.1038/scientificamerican0501-34" target="_blank">Scientific American</a></p></figcaption>
-						</figure>
-					</section>
-					<section>
-						<h2>What is the Semantic Web?</h2>
-						<ul>
-							<li>Extension of the <strong>World Wide Web</strong></li>
-							<li>Data expressed in <strong>RDF</strong> <span class="expanded-note">(resource description framework)</span></li>
-							<li>Entities and concepts identified by <strong>URI</strong> <span class="expanded-note">(uniform resource identifiers)</span></li>
-							<!--<li>Data queried by <strong>SPARQL</strong> <span class="expanded-note">(SPARQL Protocol and RDF Query Language)</span></li>-->
-						</ul>
-					</section>
-					<section>
-						<p class="bigger-point">The <strong>Semantic Web</strong> envisions that webpages serve dual roles in <span class="emph">publishing documents for humans</span> and <span class="emph">serving data for machines</span><!--The links between data will revolutionize web experience just as links between documents did in the early days of the World Wide Web.--></p>
-					</section>
-					<section>
-						<p class="bigger-point">The links between data will revolutionize web experience just as links between documents did in the early days of the World Wide Web</p>
-					</section>
-					<section>
-						<p class="bigger-point"><strong>Linked data</strong> refers to structured data shared on the Web to be read by machines</p>
-						<p class="big-point">It uses the same technologies and principles as the Semantic Web, but focuses on linking datasets</p>
-					</section>
-				</section>
-				<section>
-					<section>
-						<h1>Breaking the Table</h1>
-					</section>
-					<section>
-						<h2>Famous fossils <span onmouseover="row(0,1)" onmouseout="row(0,0)">💀</span></h2>
-						<table id="fossil-hominins" class="example-table">
-							<tr class="row0"><th class="col1" onmouseover="col(1,1)" onmouseout="col(1,0)">ID</th><th class="col2" onmouseover="col(2,1)" onmouseout="col(2,0)">Nickname</th><th class="col3" onmouseover="col(3,1)" onmouseout="col(3,0)">ScientificName</th></tr>
-							<tr class="row1"><td class="col1" onmouseover="row(1,1)" onmouseout="row(1,0)">1</td><td class="col2">Lucy</td><td class="col3"><span class="scientific-name">Australopithecus afarensis</span></td></tr>
-							<tr class="row2"><td class="col1" onmouseover="row(2,1)" onmouseout="row(2,0)">2</td><td class="col2">Taung Child</td><td class="col3"><span class="scientific-name">Australopithecus africanus</span></td></tr>
-							<tr class="row3"><td class="col1" onmouseover="row(3,1)" onmouseout="row(3,0)">3</td><td class="col2">Zinj</td><td class="col3"><span class="scientific-name">Paranthropus boisei</span></td></tr>
-							<tr class="row4"><td class="col1" onmouseover="row(4,1)" onmouseout="row(4,0)">4</td><td class="col2">Nariokotome Boy</td><td class="col3"><span class="scientific-name">Homo ergaster</span></td></tr>
-							<tr class="row5"><td class="col1" onmouseover="row(5,1)" onmouseout="row(5,0)">5</td><td class="col2">The Old Man</td><td class="col3"><span class="scientific-name">Homo neanderthalensis</span></td></tr>
+						<h2>Famous primates (fictional) <span onmouseover="fictionRow(0,1)" onmouseout="fictionRow(0,0)">🙊</span></h2>
+						<table id="fictional-primates" class="example-table">
+							<tr class="fictionRow0"><th class="fictionCol1" onmouseover="fictionCol(1,1)" onmouseout="fictionCol(1,0)">ID</th><th class="fictionCol2" onmouseover="fictionCol(2,1)" onmouseout="fictionCol(2,0)">Name</th><th class="fictionCol3" onmouseover="fictionCol(3,1)" onmouseout="fictionCol(3,0)">Species (best guess)</th></tr>
+							<tr class="fictionRow1"><td class="fictionCol1" onmouseover="fictionRow(1,1)" onmouseout="fictionRow(1,0)">1</td><td class="fictionCol2">Rafiki</td><td class="fictionCol3">mandrill</td></tr>
+							<tr class="fictionRow2"><td class="fictionCol1" onmouseover="fictionRow(2,1)" onmouseout="fictionRow(2,0)">2</td><td class="fictionCol2">Curious George</td><td class="fictionCol3">chimpanzee</td></tr>
+							<tr class="fictionRow3"><td class="fictionCol1" onmouseover="fictionRow(3,1)" onmouseout="fictionRow(3,0)">3</td><td class="fictionCol2">King Kong</td><td class="fictionCol3">gorilla</td></tr>
 						</table>
 						<pre id="array-view" style="display:none; word-wrap:break-word; white-space:pre-wrap;"><code id="array-code"></code></pre>
 					</section>
 					<section>
 						<h2>The same table in plaintext</h2>
 						<figure class="fragment fade-out" data-fragment-index="1">
-							<pre class="html"><code data-noescape>ID,Nickname,ScientificName
-1,Lucy,Australopithecus afarensis
-2,Taung Child,Australopithecus africanus
-3,Zinj,Paranthropus boisei
-4,Nariokotome Boy,Homo ergaster
-5,The Old Man,Homo neanderthalensis</code></pre>
+							<pre class="html"><code data-noescape>ID,Name,Species
+1,Rafiki,mandrill
+2,Curious George,chimpanzee
+3,King Kong,gorilla</code></pre>
 							<figcaption>Comma-separated values</figcaption>
 						</figure>
 						<figure class="fragment" data-fragment-index="1">
-							<pre class="html"><code data-noescape>ID	Nickname	ScientificName
-1	Lucy	Australopithecus afarensis
-2	Taung Child	Australopithecus africanus
-3	Zinj	Paranthropus boisei
-4	Nariokotome Boy	Homo ergaster
-5	The Old Man	Homo neanderthalensis</code></pre>
+							<pre class="html"><code data-noescape>ID	Name	Species
+1	Rafiki	mandrill
+2	Curious George	chimpanzee
+3	King Kong	gorilla</code></pre>
 							<figcaption>Tab-separated values</figcaption>
 						</figure>
 					</section>
-					<!--
 					<section>
-						<h2>Hierarchical data model in XML</h2>
-						<pre><code data-noescape>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;famous-fossils&gt;
-<span id="xml-row1">  &lt;fossil <span class="xml-col1">id=&quot;1&quot;</span>&gt;
-    <span class="xml-col2">&lt;nickname&gt;Lucy&lt;/nickname&gt;</span>
-    <span class="xml-col3">&lt;scientific-name&gt;Australopithecus afarensis&lt;/scientific-name&gt;</span>
-  &lt;/fossil&gt;
-</span><span id="xml-row2">  &lt;fossil <span class="xml-col1">id=&quot;2&quot;</span>&gt;
-    <span class="xml-col2">&lt;nickname&gt;Taung Child&lt;/nickname&gt;</span>
-    <span class="xml-col3">&lt;scientific-name&gt;Australopithecus africanus&lt;/scientific-name&gt;</span>
-  &lt;/fossil&gt;
-</span>  <span id="xml-row3">...</span>
-&lt;/famous-fossils&gt;</code></pre>
-						<table class="example-table fragment">
-							<tr id="table-row0"><th class="col1" onmouseover="xmlcol(1,1)" onmouseout="xmlcol(1,0)">ID</th><th class="col2" onmouseover="xmlcol(2,1)" onmouseout="xmlcol(2,0)">Nickname</th><th class="col3" onmouseover="xmlcol(3,1)" onmouseout="xmlcol(3,0)">ScientificName</th></tr>
-							<tr id="table-row1"><td class="col1" onmouseover="xmlrow(1,1)" onmouseout="xmlrow(1,0)">1</td><td class="col2">Lucy</td><td class="col3"><span class="scientific-name">Australopithecus afarensis</span></td></tr>
-							<tr id="table-row2"><td class="col1" onmouseover="xmlrow(2,1)" onmouseout="xmlrow(2,0)">2</td><td class="col2">Taung Child</td><td class="col3"><span class="scientific-name">Australopithecus africanus</span></td></tr>
-							<tr id="table-row3"><td onmouseover="xmlrow(3,1)" onmouseout="xmlrow(3,0)" colspan="3">...</td></tr>
+						<h2>JSON (javascript object notation)</h2>
+						<pre><code data-noescape>{ <span style="color:#CC9393;">"FictionalPrimates"</span> : [
+   <span class="json-row1">{
+     <span class="json-col1"><span style="color:#CC9393;">&quot;ID&quot;</span> : <span style="color:#8CCFD2;">1</span></span> ,
+     <span class="json-col2"><span style="color:#CC9393;">&quot;Name&quot;</span> : <span style="color:#CC9393;">&quot;Rafiki&quot;</span></span> ,
+     <span class="json-col3"><span style="color:#CC9393;">&quot;Species&quot;</span> : <span style="color:#CC9393;">&quot;mandrill&quot;</span></span>
+   }</span> , <span class="json-row2">{
+     <span class="json-col1"><span style="color:#CC9393;">&quot;ID&quot;</span> : <span style="color:#8CCFD2;">2</span></span> ,
+     <span class="json-col2"><span style="color:#CC9393;">&quot;Name&quot;</span> : <span style="color:#CC9393;">&quot;Curious George&quot;</span></span> ,
+     <span class="json-col3"><span style="color:#CC9393;">&quot;Species&quot;</span> : <span style="color:#CC9393;">&quot;chimpanzee&quot;</span></span>
+   }</span> , <span class="json-row3">{
+     <span class="json-col1"><span style="color:#CC9393;">&quot;ID&quot;</span> : <span style="color:#8CCFD2;">3</span></span> ,
+     <span class="json-col2"><span style="color:#CC9393;">&quot;Name&quot;</span> : <span style="color:#CC9393;">&quot;King Kong&quot;</span></span> ,
+     <span class="json-col3"><span style="color:#CC9393;">&quot;Species&quot;</span> : <span style="color:#CC9393;">&quot;gorilla&quot;</span></span>
+   }</span>
+]}</code></pre>
+						<table class="example-table">
+							<tr class="table-row0"><th class="col1" onmouseover="jsonCol(1,1)" onmouseout="jsonCol(1,0)">ID</th><th class="col2" onmouseover="jsonCol(2,1)" onmouseout="jsonCol(2,0)">Name</th><th class="col3" onmouseover="jsonCol(3,1)" onmouseout="jsonCol(3,0)">Species</th></tr>
+							<tr class="table-row1"><td class="col1" onmouseover="jsonRow(1,1)" onmouseout="jsonRow(1,0)">1</td><td class="col2">Rafiki</td><td class="col3">mandrill</td></tr>
+							<tr class="table-row2"><td class="col1" onmouseover="jsonRow(2,1)" onmouseout="jsonRow(2,0)">2</td><td class="col2">Curious George</td><td class="col3">chimpanzee</td></tr>
+							<tr class="table-row3"><td class="col1" onmouseover="jsonRow(3,1)" onmouseout="jsonRow(3,0)">3</td><td class="col2">King Kong</td><td class="col3">gorilla</td></tr>
 						</table>
 					</section>
-					-->
 					<section>
-						<h2>Hierarchical data model in JSON</h2>
-						<pre><code data-noescape>{
-  "fossils" : [
-    <span id="json-row1">{
-      <span class="json-col1">"id" : 1</span>,
-      <span class="json-col2">"nickname" : "Lucy"</span>,
-      <span class="json-col3">"scientificName" : "Australopithecus afarensis"</span>
-    }</span>,<span id="json-row2">{
-      <span class="json-col1">"id" : 2</span>,
-      <span class="json-col2">"nickname" : "Taung Child"</span>,
-      <span class="json-col3">"scientificName" : "Australopithecus africanus"</span>
-    }</span>,<span id="json-row3">{
-      ...
+						<table class="example-table">
+							<tr><th>ID</th><th>Name</th><th>Species</th><th>Source</th><th>Location</th></tr>
+							<tr><td>1</td><td>Rafiki</td><td>mandrill?</td><td>Lion King (1994 film)</td><td>Pride Lands</td></tr>
+							<tr><td>2</td><td>Curious George</td><td>chimpanzee?????</td><td>Curious George (book series)</td><td>Africa</td></tr>
+							<tr><td>3</td><td>King Kong</td><td>gorilla????</td><td>King Kong (1933 film)</td><td>Skull Island</td></tr>
+						</table>
+					</section>
+					<section>
+						<table class="example-table">
+							<tr><th>ID</th><th>Name</th><th>CommonName</th><th>Qualifier</th><th>Film</th><th style="width:7.5em;">Book</th><th>Year</th><th>Locality</th><th>Continent</th></tr>
+							<tr><td>1</td><td>Rafiki</td><td>mandrill</td><td>?</td><td>Lion King</td><td></td><td>1994</td><td>Pride Lands</td><td>Africa</td></tr>
+							<tr><td>2</td><td>Curious George</td><td>chimpanzee</td><td>?????</td><td></td><td><span class="lit">Curious George</span>,<br><span class="lit">... Takes a Job</span>,<br><span class="lit">... Rides a Bike</span>,<br><span class="lit">... Gets a Medal</span>,<br>etc.</td><td>1941<br>1947<br>1952<br>1957</td><td></td><td>Africa</td></tr>
+							<tr><td>3</td><td>King Kong</td><td>gorilla</td><td>????</td><td>King Kong</td><td></td><td>1933</td><td>Skull Island</td><td></td></tr>
+						</table>
+					</section>
+					<section>
+						<pre style="position:absolute; top:0; left:0; width:33%;"><code data-noescape><span class="json-row1">{
+  <span class="json-col1">&quot;ID&quot; : 1</span> ,
+  <span class="json-col2">&quot;Name&quot; : &quot;Rafiki&quot;</span> ,
+  <span class="json-col3">&quot;Species&quot; : {
+    <span class="json-col6">&quot;CommonName&quot; : &quot;mandrill&quot;</span> ,
+    <span class="json-col7">&quot;Qualifier&quot; : &quot;?&quot;</span> }</span> ,
+  <span class="json-col4">&quot;Source&quot; : {
+    <span class="json-col8">&quot;Film&quot; : &quot;Lion King&quot;</span> ,
+    <span class="json-col10">&quot;Year&quot; : 1994</span> }</span> ,
+  <span class="json-col5">&quot;Location&quot; : {
+    <span class="json-col11">&quot;Locality&quot; : &quot;Pride Lands&quot;</span> ,
+    <span class="json-col12">&quot;Continent&quot; : &quot;Africa&quot;</span> }</span>
+}</span> , ...</code></pre>
+						<pre style="position:absolute; top:0; left:33.5%; width:33%;"><code data-noescape>... , <span class="json-row2">{
+  <span class="json-col1">&quot;ID&quot; : 2</span> ,
+  <span class="json-col2">&quot;Name&quot; : &quot;Curious George&quot;</span> ,
+  <span class="json-col3">&quot;Species&quot; : {
+    <span class="json-col6">&quot;CommonName&quot; : &quot;chimpanzee&quot;</span> ,
+    <span class="json-col7">&quot;Qualifier&quot; : &quot;?????&quot;</span> }</span> ,
+  <span class="json-col4">&quot;Source&quot; : {
+    <span class="json-col9">&quot;Book&quot; : [ &quot;Curious George&quot; , &quot;... Takes a Job&quot; , &quot;... Rides a Bike&quot; , &quot;... Gets a Medal&quot; ]</span> ,
+    <span class="json-col10">&quot;Year&quot; : [ 1941 , 1947 , 1952 , 1957 ]</span> }</span> ,
+  <span class="json-col5">&quot;Location&quot; : {
+
+    <span class="json-col12">&quot;Continent&quot; : &quot;Africa&quot;</span> }</span>
+}</span> , ...</code></pre>
+						<pre style="position:absolute; top:0em; right:0; width:33%;"><code data-noescape>... , <span class="json-row3">{
+  <span class="json-col1">&quot;ID&quot; : 3</span> ,
+  <span class="json-col2">&quot;Name&quot; : &quot;King Kong&quot;</span> ,
+  <span class="json-col3">&quot;Species&quot; : {
+    <span class="json-col6">&quot;CommonName&quot; : &quot;gorilla&quot;</span> ,
+    <span class="json-col7">&quot;Qualifier&quot; : &quot;????&quot;</span> }</span> ,
+  <span class="json-col4">&quot;Source&quot; : {
+    <span class="json-col8">&quot;Film&quot; : &quot;King Kong&quot;</span> ,
+    <span class="json-col10">&quot;Year&quot; : 1933</span> }</span> ,
+  <span class="json-col5">&quot;Location&quot; : {
+    <span class="json-col11">&quot;Locality&quot; : &quot;Skull Island&quot;</span>
     }</span>
-  ]
-}</code></pre>
-						<table class="example-table fragment">
-							<tr id="table-row0"><th class="col1" onmouseover="jsoncol(1,1)" onmouseout="jsoncol(1,0)">ID</th><th class="col2" onmouseover="jsoncol(2,1)" onmouseout="jsoncol(2,0)">Nickname</th><th class="col3" onmouseover="jsoncol(3,1)" onmouseout="jsoncol(3,0)">ScientificName</th></tr>
-							<tr id="table-row1"><td class="col1" onmouseover="jsonrow(1,1)" onmouseout="jsonrow(1,0)">1</td><td class="col2">Lucy</td><td class="col3"><span class="scientific-name">Australopithecus afarensis</span></td></tr>
-							<tr id="table-row2"><td class="col1" onmouseover="jsonrow(2,1)" onmouseout="jsonrow(2,0)">2</td><td class="col2">Taung Child</td><td class="col3"><span class="scientific-name">Australopithecus africanus</span></td></tr>
-							<tr id="table-row3"><td onmouseover="jsonrow(3,1)" onmouseout="jsonrow(3,0)" colspan="3">...</td></tr>
-						</table>
-					</section>
-					<!--
-					<section>
-						<h2>Merging data: an example</h2>
-						<div style="position:absolute; width:560px; left:0px; height:400px;">
-							<h3 style="font-variant:normal;">Lucy</h3>
-							<ul>
-								<li class="factoid">Belongs to <strong><em>Australopithecus afarensis</em></strong></p>
-								<li class="factoid">Discovered by <strong>Donald Johanson</strong> at <strong>Hadar</strong> (<strong>Ethiopia</strong>)</p>
-								<li class="factoid">Named after <strong>Beatles</strong> song</p>
-							</ul>
-						</div>
-						<div style="position:absolute; width:560px; right:0px; height:400px;">
-							<h3 style="font-variant:normal;">Taung Child</h3>
-							<ul>
-								<li class="factoid">Belongs to <strong><em>Australopithecus africanus</em></strong></p>
-								<li class="factoid">Discovered in <strong>1924</strong></p>
-								<li class="factoid">Resides at the <strong>University of the Witwatersrand</strong></p>
-							</ul>
-						</div>
-					</section>
-					<section>
-						<h2>Represented as a table</h2>
-						<table class="example-table-small">
-							<tr><th>ID</th><th>Nickname</th><th>ScientificName</th><th>DisoveredBy</th><th>DiscoveredWhere</th><th>DiscoveredCountry</th><th>DiscoveredYear</th><th>NamedBy</th><th>Residence</th></tr>
-							<tr><td style="border-bottom:0px;">1</td><td style="border-bottom:0px;">Lucy</td><td style="border-bottom:0px;"><em>Australopithecus afarensis</em></td><td style="border-bottom:0px;">Donald Johanson</td><td style="border-bottom:0px;">Hadar</td><td style="border-bottom:0px;">Ethiopia</td><td style="border-bottom:0px;"></td><td style="border-bottom:0px;">Beatles</td><td style="border-bottom:0px;"></td></tr>
-							<tr><td style="border-bottom:0px;">2</td><td style="border-bottom:0px;">Taung Child</td><td style="border-bottom:0px;"><em>Australopithecus africanus</em></td><td style="border-bottom:0px;"></td><td style="border-bottom:0px;"></td><td style="border-bottom:0px;"></td><td style="border-bottom:0px;">1924</td><td style="border-bottom:0px;"></td><td style="border-bottom:0px;">University of the Witwatersrand</td></tr>
-						</table>
-					</section>
-					<section>
-						<h2>Represented as JSON</h2>
-						<pre style="font-size:0.48em;"><code data-noescape>{
-  "fossils" : [
-    {
-      "id" : 1,
-      "nickname" : "Lucy",
-      "scientificName" : "Australopithecus afarensis",
-      "discoveredBy" : "Donald Johanson",
-      "discoveredWhere" : "Hadar",
-      "discoveredCountry" : "Ethiopia",
-      "namedBy" : "Beatles"
-    },{
-      "id" : 2,
-      "nickname" : "Taung Child",
-      "scientificName" : "Australopithecus africanus",
-      "discoveredYear" : 1924,
-      "residence" : "University of the Witwatersrand"
-    }
-  ]
-}</code></pre>
-					</section>
-					<section>
-						<h2>Represented as XML</h2>
-						<pre style="font-size:0.52em;"><code data-noescape>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;famous-fossils&gt;
-<span id="xml-row1">  &lt;fossil <span class="xml-col1">id=&quot;1&quot;</span>&gt;
-    <span class="xml-col2">&lt;nickname&gt;Lucy&lt;/nickname&gt;</span>
-    <span class="xml-col3">&lt;scientific-name&gt;Australopithecus afarensis&lt;/scientific-name&gt;</span>
-    <span class="xml-col4">&lt;discovered-by&gt;Donald Johanson&lt;/discovered-by&gt;</span>
-    <span class="xml-col5">&lt;discovered-where&gt;Hadar&lt;/discovered-where&gt;</span>
-    <span class="xml-col6">&lt;discovered-country&gt;Ethiopia&lt;/discovered-country&gt;</span>
-    <span class="xml-col8">&lt;named-by&gt;Beatles&lt;/named-by&gt;</span>
-  &lt;/fossil&gt;
-</span><span id="xml-row2">  &lt;fossil <span class="xml-col1">id=&quot;2&quot;</span>&gt;
-    <span class="xml-col2">&lt;nickname&gt;Taung Child&lt;/nickname&gt;</span>
-    <span class="xml-col3">&lt;scientific-name&gt;Australopithecus africanus&lt;/scientific-name&gt;</span>
-    <span class="xml-col7">&lt;discovered-year&gt;1924&lt;/discovered-year&gt;</span>
-    <span class="xml-col9">&lt;residence&gt;University of the Witwatersrand&lt;/residence&gt;</span>
-  &lt;/fossil&gt;
-</span>&lt;/famous-fossils&gt;</code></pre>
-					</section>
-					-->
-					<!--
-					<section>
-						<h2>Relational Databases</h2>
-						<div style="position:absolute; width:560px; left:0px; height:400px;">
-							<table>
-								<h3>Evolutionary biologists</h3>
-								<tr><th>ID</th><th>Scientist</th></tr>
-								<tr><td style="border-bottom:0px;">1</td><td style="border-bottom:0px;">Marie Curie</td></tr>
-								<tr><td style="border-bottom:0px;">2</td><td style="border-bottom:0px;">Charles Darwin</td></tr>
-								<tr><td style="border-bottom:0px;">1</td><td style="border-bottom:0px;">Marie Curie</td></tr>
+}</span></code></pre>
+							<table class="example-table" style="margin-top:14em; font-size:0.67em;">
+								<tr class="table-row0"><th class="col1" onmouseover="jsonCol(1,1)" onmouseout="jsonCol(1,0)">ID</th><th class="col2" onmouseover="jsonCol(2,1)" onmouseout="jsonCol(2,0)">Name</th><th class="col3" onmouseover="jsonCol(3,1)" onmouseout="jsonCol(3,0)" colspan="2">Species</th><th class="col4" onmouseover="jsonCol(4,1)" onmouseout="jsonCol(4,0)" colspan="3">Source</th><th class="col5" onmouseover="jsonCol(5,1)" onmouseout="jsonCol(5,0)" colspan="2">Location</th></tr>
+								<tr class="table-row1"><td class="col1" onmouseover="jsonRow(1,1)" onmouseout="jsonRow(1,0)">1</td><td class="col2">Rafiki</td><td class="col3" colspan="2">mandrill?</td><td class="col4" colspan="3">Lion King (1994 film)</td><td class="col5" colspan="2">Pride Lands</td></tr>
+								<tr class="table-row2"><td class="col1" onmouseover="jsonRow(2,1)" onmouseout="jsonRow(2,0)">2</td><td class="col2">Curious George</td><td class="col3" colspan="2">chimpanzee?????</td><td class="col4" colspan="3">Curious George (book series)</td><td class="col5" colspan="2">Africa</td></tr>
+								<tr class="table-row3"><td class="col1" onmouseover="jsonRow(3,1)" onmouseout="jsonRow(3,0)" style="border-bottom:0;">3</td><td class="col2" style="border-bottom:0;">King Kong</td><td class="col3" colspan="2" style="border-bottom:0;">gorilla????</td><td class="col4" colspan="3" style="border-bottom:0;">King Kong (1933 film)</td><td class="col5" colspan="2" style="border-bottom:0;">Skull Island</td></tr>
+								<tr><td colspan="9" style="border:0; padding:0.5em 0;"></td></tr>
+								<tr><th class="col1" onmouseover="jsonCol(1,1)" onmouseout="jsonCol(1,0)">ID</th><th class="col2" onmouseover="jsonCol(2,1)" onmouseout="jsonCol(2,0)">Name</th><th class="col6 col3" onmouseover="jsonCol(6,1)" onmouseout="jsonCol(6,0)">CommonName</th><th class="col7 col3" onmouseover="jsonCol(7,1)" onmouseout="jsonCol(7,0)">Qualifier</th><th class="col8 col4" onmouseover="jsonCol(8,1)" onmouseout="jsonCol(8,0)">Film</th><th class="col9 col4" onmouseover="jsonCol(9,1)" onmouseout="jsonCol(9,0)">Book</th><th class="col10 col4" onmouseover="jsonCol(10,1)" onmouseout="jsonCol(10,0)">Year</th><th class="col11 col5" onmouseover="jsonCol(11,1)" onmouseout="jsonCol(11,0)">Locality</th><th class="col12 col5" onmouseover="jsonCol(12,1)" onmouseout="jsonCol(12,0)">Continent</th></tr>
+								<tr><td class="col1">1</td><td class="col2">Rafiki</td><td class="col6 col3">mandrill</td><td class="col7 col3">?</td><td class="col8 col4">Lion King</td><td class="col9 col4"></td><td class="col10 col4">1994</td><td class="col11 col5">Pride Lands</td><td class="col12 col5">Africa</td></tr>
+								<tr><td colspan="9">...</td></tr>
 							</table>
-						</div>
-						<div style="position:absolute; width:560px; right:0px; height:400px;">
-							
-						</div>
-					</section>
-					-->
-					<section>
-						<h2>The relational database</h2>
-						<ul>
-							<li>Data are stored in tables, also called "relations"</li>
-							<li>Data conform to strict types and constraints</li>
-							<li>Data can be queried, most often using <strong>structured query language</strong> (SQL)</li>
-							<li>Indexing and querying follow relational logic</li>
-							<li>Records can be joined together using queries</li>
-						</ul>
 					</section>
 					<section>
-						<h2>SQL queries</h2>
-						<input id="sql-input" type="text" style="width:1024px; font-size:0.75em;" onkeyup="sql()" onkeydown="enter(event)"/>
-						<button style="font-size:0.75em;" onclick="join()">Run</button>
-						<br>
-						<div style="height:250px;">
-						<table id="specimens" class="example-table" style="position:absolute; left:5%; width:500px; border:4px solid white;">
-							<tr><th>specimen_id</th><th class="nickname">nickname</th><th class="taxon_id">taxon_id</th></tr>
-							<tr><td>1</td><td class="nickname">Lucy</td><td class="id_one">1</td></tr>
-							<tr><td>6</td><td class="nickname">Mrs. Ples</td><td class="id_two">2</td></tr>
-							<tr><td style="border-bottom:0px;">8</td><td class="nickname" style="border-bottom:0px;">Little Foot</td><td class="id_two" style="border-bottom:0px;">2</td></tr>
-							<tr><td colspan="3" style=" text-align:center; font-size:1.2em;"><strong>specimens</strong></td></tr>
-						</table>
-						<table id="taxa" class="example-table" style="position:absolute; right:5%; width:500px; border:4px solid white;">
-							<tr><th class="taxon_id">taxon_id</th><th class="scientific_name">scientific_name</th></tr>
-							<tr><td class="id_one">1</td><td class="scientific_name"><em>Australopithecus afarensis</em></td></tr>
-							<tr><td class="id_two" style="border-bottom:0px;">2</td><td class="scientific_name" style="border-bottom:0px;"><em>Australopithecus africanus</em></td></tr>
-							<tr><td colspan="2" style="border-bottom:0px;">&nbsp;</td></tr>
-							<tr><td colspan="2" style="border-bottom:0px; text-align:center; font-size:1.2em;"><strong>taxa</strong></td></tr>
-						</table>
-						</div>
-						<div id="join-container" style="margin-top:0.5em; height:200px; border: 2px solid white;"></div>
-						<div id="join-results" style="margin-top:0.5em; height:200px; border:2px solid black; display:none;">
-							<table class="example-table" style="">
-								<tr><th>specimen_id</th><th>nickname</th><th>taxon_id</th><th>scientific_name</th></tr>
-								<tr><td>1</td><td>Lucy</td><td style="background-color:#00ffff;">1</td><td><em>Australopithecus afarensis</em></td></tr>
-								<tr><td>6</td><td>Mrs. Ples</td><td style="background-color:#ff00ff;">2</td><td><em>Australopithecus africanus</em></td></tr>
-								<tr><td style="border-bottom:0px;">8</td><td style="border-bottom:0px;">Little Foot</td><td style="background-color:#ff00ff;">2</td><td style="border-bottom:0px;"><em>Australopithecus africanus</em></td></tr>
-							</table>
-						</div>
+						<p>Key-value data are well-suited for distributed data</p>
+					</section>
+					<section>
+						<figure>
+							<table></table>
+						</figure>
 					</section>
 					<section>
 						<figure>

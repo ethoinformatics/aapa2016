@@ -239,7 +239,7 @@ html.img-right div.slide-background.present {
 	table.example-table-small {
 		font-size:0.5em;
 	}
-	span.scientific-name {
+	span.scientific-name, span.lit {
 		font-style:italic;
 	}
 	span.affiliation {
@@ -279,7 +279,7 @@ html.img-right div.slide-background.present {
 		border:2px solid black;
 	}
 	.custom .triple-table > tbody > tr > td {
-		font-family:Consolas, Inconsolata, monospace;
+		font-family: Inconsolata, Consolas, monospace;
 		font-size:1em;
 		text-align:center;
 		border-bottom: 0px solid;
@@ -307,8 +307,8 @@ html.img-right div.slide-background.present {
     }
     .custom span.semibold {
     	/* font-style:italic; */
-    	font-family:Myriad Pro, Droid Sans, sans-serif;
-		font-size:0.8em;
+    	font-family:Droid Sans, sans-serif;
+		font-size:0.9em;
 		font-weight:bold;
     }
     .custom .big-point {
@@ -322,4 +322,8 @@ html.img-right div.slide-background.present {
     }
     .custom .biggest-point {
     	font-size:2em;
+    }
+    .custom .giant-point {
+    	font-size:3em;
+    	font-weight:bold;
     }
