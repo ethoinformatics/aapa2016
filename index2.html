@@ -58,136 +58,74 @@
 			<div class="slides">
 					<section id="title">
 						<h1 style="margin-top:-0.5em; margin-bottom:0em;">Ethoinformatics II</h1>
-						<h2 style="margin-top:+0.25em; margin-bottom:0em; color:rgb(0, 115, 230);">Developing Open-Source Digital Data Services for Behavioral Field Research</h2>
-						<p style="font-size:+1.5em;">Anthony Di Fiore &middot; Kenneth L. Chiou &middot; Mike Chevett &middot; Robyn Overstreet &middot; Tom Igoe</p>
+						<h2 style="margin-top:+0.25em; margin-bottom:0em; color:rgb(51, 51, 204)">Developing Open-Source Digital Data Services for Behavioral Field Research</h2>
+						<p style="font-size:+1.25em;">Anthony Di Fiore &middot; Kenneth L. Chiou &middot; Mike Chevett &middot; Robyn Overstreet &middot; Tom Igoe</p>
 						<figure>
 							<img src="images/wustl.png" style="height:100px; border:0px; box-shadow:0 0 0px;" />
 							<img src="images/utaustin.png" style="height:100px; border:0px; box-shadow:0 0 0px;" />
 							<img src="images/nyu.png" style="margin-left:24px; height:100px; border:0px; box-shadow:0 0 0px;" />
 							<br>
-							<embed src="images/nsf.svg" style="height:120px; margin-top:-25px;" />
+							<embed src="images/nsf.svg" style="height:100px; margin-top:-25px;" />
 						</figure>
 					</section>
 					<section id="current-apps">
 						<section>
-							<h1>Handheld Apps</h1>
-							<h2>What's Currently Available?</h2>
+							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Handheld Apps</h1>
+							<h3>What's Currently Available?</h2>
 							<figure>
-								<img src="images/software.png" style="height:500px; border:0px;" />
+								<img src="images/software.png" style="height:500px; border:0px; box-shadow:0 0 0px;" />
 							</figure>
 							<li>Plus various database + form apps for structured notetaking</li>
 						</section>
 						<section>
-							<h1>Handheld Apps</h1>
-							<h2>Limitations?</h2>
+							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Handheld Apps</h1>
+							<h3>Limitations?</h2>
 								<ul>
 									<li>Most are proprietary</li>
 									<li>Deal with limited data streams</li>
+									<li>Limited customizability</li>
 									<li>No emphasis on using standard ontologies</li>
 									<li>Not automatically geotagged</li>
 									<li>Not cross-platform</li>
 								</ul>
 								<p>
-									<img src="images/oses.png" style="height:150px; border:0px;" />
+									<img src="images/oses.png" style="height:150px; border:0px; box-shadow:0 0 0px;" />
 								</p>
-
 
 						</section>
 					</section>
 					<section id="digital-data-services">
 						<section>
-							<h1>Goals</h1>
-							<h2>A handheld app that is...</h2>
+							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Goals</h1>
+							<h3>A handheld app that is...</h2>
 								<ul>
 									<li>Built on open source and standard web technologies</li>
-									<li>Modular, configurable, and allows multiple data streams</li>
-									<li>Runs on multiple platforms and older devices</li>
-									<li>Does not require continuous internet coverage</li>
-									<li>Automatic geotagging and time stamping</li>
-									<li>Supports multiple schemas</li>
-									<li>Standards compliant and linked data friendly</li>
+									<li class="fragment">Modular, configurable, and allows multiple data streams</li>
+									<li class="fragment">Runs on multiple platforms and older devices</li>
+									<li class="fragment">Supports multiple schemas</li>
+									<li class="fragment">Automatic geotagging and time stamping</li>
+									<li class="fragment">Does not require continuous internet coverage</li>
+									<li class="fragment">Standards compliant and linked data friendly</li>
 								</ul>
 						</section>
+
 						<section>
-							<h1>Goals</h1>
-							<h2>A browser-based admin panel that is...</h2>
+							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Goals</h1>
+							<h3>A browser-based admin tool that is...</h2>
 								<ul>
-									<li>Built on open source and standard web technologies</li>
-									<li>Allows and integrates multiple users per project</li>
-									<li>Makes sharing of data easy</li>
+									<li> Built on open source and standard web technologies</li>
+									<li class="fragment">Allows and integrates multiple users per project</li>
+									<li class="fragment">Makes sharing of data easy</li>
 								</ul>
 						</section>
+
 						<section>
-							<h2>General Idea</h2>
-								<ul>
-									<li>App generates <span class="semibold">documents</span> that are made up of EthoCore terms</li>
-									<li>Each <span class="semibold">document</span> is a resource with a URI <span class="expanded-note">(uniform resource identifiers)</span></li>
-									<li>Documents can be decomposed to <span class="semibold">triple-stores</span> and used as linked data</li>
-									<li>Documents can link to one or more other documents via standard <span class="semibold">predicates</span>, each of which has a URI (taken within, belongs to, child of, associates with)</li>
-									<li>Media (pictures, audio recordings) can be linked by a predicate to one or more documents</li>
-									<li>Every document has key <span class="semibold">metadata</span></li>
-										<ul>
-											<li>Who made it</li>
-											<li>When it was created</li>
-											<li>Time (point or series)</li>
-											<li>Geolocation (point or series)</li>
-										</ul>
-									<li>History of <span class="semibold">revisions</span> of documents is preserved</li>
-								</ul>
-							</section>
-							<section>
-								<h2>Some Design Decisions</h2>
-									<ul>
-										<li>Use <span class="semibold">HMTL</span>, <span class="semibold">JavaScript</span>, and <span class="semibold">CSS</span> to create a mobile app that can be compiled and deployed on a variety of devices</li>
-										<li>Use <span class="semibold">JSON</span> documents to configure aspects of the application</li>
-										<li>Use local storage and <span class="semibold">PouchDB</span> on the mobile device to hold data</li>
-										<li>Data in <span class="semibold">PouchDB</span> stored as <span class="semibold">JSON</span> documents</li>
-										<li>Sync from <span class="semibold">PouchDB</span> to <span class="semibold">CouchDB</span> on a local server and from <span class="semibold">CouchDB</span> on local server to remote server</li>
-										<li>Use data from operating system's <span class="semibold">location services</span> to tag all documents with geolocation</li>
-										<li><span class="expanded-note">(from internal GPS, cell towers, external GPS)</span></li>
-										<li>Geolocation data is updated recorded continuously</li>
-									</ul>
-							</section>
-							<section>
-								<h2>User Provides...</h2>
-									<ul>
-									<li>A set of controlled vocabularies</li>
-									<li>Design for construction of documents</li>
-									<li>Information about on how documents can be be linked</li>
-								</ul>
-							</section>
-							<section>
-								<h2>App Writes Data That...</h2>
-									<ul>
-									<li>Conforms to <span class="semibold">EthoCore</span> and other community-designed data standards (e.g., Darwin Core)</li>
-									<li>Stores data as documents (linked? nested?)</li>
-									<li>Stores geolocation tag and time stamp tag for all documents</li>
-								</ul>
-							</section>
-							<section>
-								<h2>Suggested Document Types</h2>
-									<ul>
-										<li>diary</li>
-										<li>contact</li>
-										<li>focal sample</li>
-										<li>focal behavior record</li>
-										<li>scan sample</li>
-										<li>scan behavior record</li>
-										<li>ad lib behavior record</li>
-										<li>patch</li>
-										<li>biological samples</li>
-									</ul>
-							</section>
-							<section>
-								<h2>Suggested Predicates</h2>
-									<ul>
-										<li>taken within</li>
-										<li>belongs to</li>
-										<li>child of</li>
-										<li>associated with</li>
-									</ul>
-							</section>
-							<section>
+							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Caveat</h1>
+							<h3>We're not (yet!) concerned with designing a slick interface for behavioral data entry...</h3>
+							<h3 class="fragment" style="color:rgb(51, 51, 204);">...instead, we're focusing on designing a modular, customizable framework for collecting multiple data streams using a single app and device</h2>
+						</section>
+
+						<section>
 								<h2>EthoCore Terms: http://ethoinformatics.org/ethocore/</h2>
 								<p>148 Terms Belonging to 10 Classes</p>
 									<ul>
@@ -202,15 +140,6 @@
 										<li>Taxon (DWC)</li>
 										<li>ResourceRelationship (DWC)</li>
 									</ul>
-							</section>
-							<section>
-								<h2>What’s good about documents...?</h2>
-								<ul>
-									<li>They are basically just text files (though they can include pointers to associated files, like photos or recordings)</li>
-									<li>Standard protocols exist for transferring them quickly and efficiently over the web (e.g., HTTP)</li>
-									<li>Programmatically accessible (APIs) by a wide range of useful technologies (such as in the web)</li>
-									<li>Standard formats exist for “document” data that are at once human *and* machine readable (e.g., JSON, XML)</li>
-								<ul>
 							</section>
 							<section>
 								<h2><span onmouseover="row(0,1)" onmouseout="row(0,0)">EthoCore Classes</span></h2>
@@ -258,48 +187,126 @@
 						</section>
 					<section id="ethogrammar-data-model">
 						<section>
-							<h1>The Etho Grammar Data Model</h1>
-							<h2>1. Data consist of documents (a.k.a. resources)</h2>
-							<ul>
-								<li>Documents group together a set of terms that are drawn from 1 or more classes</li>
-								<li>Documents correspond (roughly) to the rows or records in a tabular database, except that each is a separate resource</li>
-								<li>Many of the terms used are metadata terms</li>
-								<li>Not all terms comprising the classes that make up a document need be stored in any given document (i.e., the equivalent of empty fields in a record can be omitted)</li>
-							</ul>
+							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Design Principles</h1>
+							<h3>1. Information that goes together is packaged into  documents (a.k.a. resources)</h2>
+							<aside class="notes">
+								<ul>
+									<li>Documents are made up from a set of standard TERMS which fall into CLASSES based on DarwinCore (DWC) and DublinCore (DC) and the EthoCore (EC) extension to these two standards.</li>
+									<li>Documents are (roughly) equivalent to the rows or records in a tabular/relational database except that each is a separate entity</li>
+									<li>The are very similar, too, to the nodes in a graph database.
+									<li>Many of the terms used to make up a document are metadata terms</li>
+									<li>Every document is a resource with a URI</li>
+									<li>Documents are represented in JSON format in a document oriented database.</li>
+								</ul>
+							</aside>
 						</section>
 						<section>
-							<h1>The Etho Grammar Data Model</h1>
-							<h2>2. There are different types of documents</h2>
-							<ul>
-								<li>We think many of these are likely to be standard across projects (e.g., “contacts”, “focal samples”, “biological samples”, “roll call census”) but projects need not use them all and may extend the list of document types</li>
-							</ul>
+							<figure>
+								<img src="images/contactdoc.png" style="height:600px; border:0px; box-shadow:0 0 0px;" />
+							</figure>
 						</section>
 						<section>
-							<h1>The Etho Grammar Data Model</h1>
-							<h2>3. Documents can be related to other documents</h2>
-							<ul>
-								<li>Some of those relationships are required (e.g., “focal observations” must be linked to a “focal sample”)</li>
-								<li>Many relationships among documents are flexible and can differ among or within projects</li>
-							</ul>
+							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Design Principles</h1>
+							<h3>2. Documents are flexible data structures</h2>
+							<aside class="notes">
+								<ul>
+									<li>Documents are project-specific "data structures" built by packaging together information from one or more class</li>
+									<li>Not all terms contained in the classes that make up a document need be stored in any given document (i.e., the equivalent of empty fields in a record can be omitted)</li>
+									<li>We think many of these are likely to be standard across projects (e.g., “contacts”, “focal samples”, “biological samples”, “feeding trees”), but projects need not use them all and may extend the list of document types</li>
+								</ul>
+							</aside>
 						</section>
 						<section>
-							<h1>The Etho Grammar Data Model</h1>
-							<h2>4. Relationships between documents constitute separate resources, also stored as documents</h2>
-							<ul>
-								<li>These are somewhat like JOIN tables in a SQL-based database, but note that PRIMARY KEY-FOREIGN KEY relationships among tables are not specified</li>
-								<li>These are analogous to EDGES in a graph database</li>
-								<li>An Etho Core compliant database can be thus schema-less and can accommodate multiple schema</li>
-							</ul>
+							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Design Principles</h1>
+							<h3>3. Documents can be linked to one or more other documents</h2>
+							<aside class="notes">
+								<ul>
+									<li>These links are also resources, also have URIs, and are also stored as documents</li>
+									<li>Some relationships are required (e.g., “focal observations” must be linked to a “focal sample”)</li>
+									<li>Many relationships among documents are flexible and can differ among or within projects</li>
+									<li>These are somewhat like JOIN tables in a SQL-based database, but note that PRIMARY KEY-FOREIGN KEY relationships among tables are not specified</li>
+									<li>These are analogous to EDGES in a graph database and to the predicates in an RDF data store</li>
+									<li>An Etho Core compliant database can be thus schema-less and can accommodate multiple schema</li>
+								</ul>
+							</aside>
+						</section>
+						<section>
+							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Design Principles</h1>
+							<h3>4. Every document is associated with key metadata</h2>
+							<aside class="notes">
+								<ul>
+									<li>Who made it</li>
+									<li>When it was created</li>
+									<li>Time (point or series)</li>
+									<li>Geolocation (point or series)</li>
+								</ul>
+							</aside>
+						</section>
+						<section>
+							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Design Principles</h1>
+							<h3>5. History of revision of documents is preserved</h2>
+							<aside class="notes">
+								<ul>
+								</ul>
+							</aside>
 						</section>
 					</section>
-					<section id="misc">
+
+					<section id="implementation">
 						<section>
-						<figure>
-							<img src="images/couchdb.png" style="height:360px; border:0px; box-shadow:0 0 0px;" />
-							<p></p>
-							<img src="images/pouchdb.png" style="height:360px; border:0px; box-shadow:0 0 0px;" />
-						</figure>
-					</section>
+							<h2>Implementation</h1>
+								<img src="images/html5_css3_javascript.png" style="height:100px; margin-top:25px; border:0px; box-shadow:0 0 0px;" />
+								<figcaption>for mobile application</figcaption>
+								<img src="images/JSON.png" style="height:100px; margin-top:25px; border:0px; box-shadow:0 0 0px;" />
+								<figcaption>for documents and custom configurations</figcaption>
+								<img src="images/pouchdb.png" style="height:120px; margin-top:25px;  border:0px; box-shadow:0 0 0px;" />
+								<figcaption>for local data storage</figcaption>
+								<img src="images/couchdb.png" style="height:100px; margin-top:25px;  border:0px; box-shadow:0 0 0px;" />
+								<figcaption>for sync and remote data storage</figcaption>
+							<aside class="notes">
+								<ul>
+									<li>Mobile application framework built in HMTL, JavaScript, and CSS that can be compiled and deployed on a variety of devices</li>
+									<li>JSON used to store documents and to configure aspects of the application</li>
+									<li>PouchDB, a mobile, document-based NoSQL database, used for local storage</li>
+									<li>Sync from PouchDB to CouchDB on a local server and from CouchDB on local server to remote server</li>
+								</ul>
+							</aside>
+						</section>
+						<section>
+							<h2>Implementation</h1>
+							<ul>
+								<li>Use data from operating system's <span class="semibold">location services</span> to tag all documents with geolocation (from internal GPS, cell towers, external GPS)</li>
+								<li>Geolocation data is updated and recorded continuously</li>
+								<li>Web-based <span class="semibold">admin tool</span> to synchronize back-end database with multiple handheld devices</li>
+							</ul>
+							<aside class="notes">
+								<ul>
+								</ul>
+							</aside>
+						</section>
+						<section>
+							<h2>User Provides...</h2>
+								<ul>
+									<li class="fragment">Document types and design for their construction</li>
+									<li class="fragment">Information about on how documents can be be linked</li>
+									<li class="fragment">A set of controlled vocabularies</li>
+							</ul>
+							<br>
+							<br>
+							<h2>App produces documents that...</h2>
+								<ul>
+									<li>Conform to <span class="semibold">EthoCore</span> and other community-designed data standards (e.g., Darwin Core)</li>
+							</ul>
+							<aside class="notes">
+								<ul>
+									<li>We imagine some document types will be common across projects, e.g., contact, focal sample, focal behavior record, ad lib behavior, feeding tree, biological sample</li>
+									<li>Likewise, we imagine that some link between documents or resources may be standard, e.g., parent of, child of, taken within, belongs to, associated with</li>
+								</ul>
+						</section>
+
+						<section>
+
+						</section>
 					</section>
 
 			</div>
