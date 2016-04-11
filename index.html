@@ -117,7 +117,7 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 				<section id="title">
 					<img src="images/banner1.png" style="border:none;" />
 					<h1 style="margin-top:-0.25em; margin-bottom:0em;">Ethoinformatics I</h1>
-					<p class="subtitle">Developing a Standard Vocabulary and Data Model for Behavioral Field Research</p>
+					<p class="subtitle">Developing a standard vocabulary and data model for behavioral field research</p>
 					<p class="authors">Kenneth L. Chiou &middot; Anthony Di Fiore &middot; Robyn Overstreet &middot; Mike Chevett &middot; Tom Igoe</p>
 						<figure>
 							<img src="images/wustl.png" style="height:120px; border:0px; box-shadow:0 0 0px;" />
@@ -134,16 +134,17 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 						<p>(with particular emphasis on field primatology)</p>
 					</section>
 					<section>
-						<p class="biggest-point"><strong>Premise:</strong><br>primatology is comparative</p>
+						<p class="biggest-point">Primatology by nature is comparative</p>
 					</section>
 					<section>
+						<h2>Ethoinformatics Working Group</h2>
 						<figure style="position:absolute; left:0;">
 							<img src="images/ewg2013.jpg" style="height:444px; width:592px;" />
-							<figcaption>Ethoinformatics 2013<br>Washington University in St. Louis</figcaption>
+							<figcaption>Washington University in St. Louis<br>November 2013</figcaption>
 						</figure>
 						<figure style="position:absolute; right:0;">
 							<img src="images/ewg2015.jpg" style="height:444px; width:592px;" />
-							<figcaption>Ethoinformatics 2015<br>University of Texas at Austin</figcaption>
+							<figcaption>University of Texas at Austin<br>May 2015</figcaption>
 						</figure>
 					</section>
 				</section>
@@ -229,6 +230,7 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 						</table>
 						<pre id="array-view" style="display:none; word-wrap:break-word; white-space:pre-wrap;"><code id="array-code"></code></pre>
 					</section>
+					<!--
 					<section>
 						<h2>The same table in plaintext</h2>
 						<figure>
@@ -237,14 +239,14 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 <span class="json-row2"><span class="json-col1">2</span>,<span class="json-col2">Curious George</span>,<span class="json-col3">chimpanzee</span></span>
 <span class="json-row3"><span class="json-col1">3</span>,<span class="json-col2">King Kong</span>,<span class="json-col3">gorilla</span></span></code></pre>
 							<figcaption>Comma-separated values</figcaption>
-						</figure><!--
+						</figure>
 						<figure class="fragment" data-fragment-index="1">
 							<pre class="html"><code data-noescape>ID	Name	Species
 1	Rafiki	mandrill
 2	Curious George	chimpanzee
 3	King Kong	gorilla</code></pre>
 							<figcaption>Tab-separated values</figcaption>
-						</figure>-->
+						</figure>
 <br>
 						<table class="example-table">
 							<tr class="table-row0"><th class="col1" onmouseover="jsonCol(1,1)" onmouseout="jsonCol(1,0)">ID</th><th class="col2" onmouseover="jsonCol(2,1)" onmouseout="jsonCol(2,0)">Name</th><th class="col3" onmouseover="jsonCol(3,1)" onmouseout="jsonCol(3,0)">Species</th></tr>
@@ -253,6 +255,7 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 							<tr class="table-row3"><td class="col1" onmouseover="jsonRow(3,1)" onmouseout="jsonRow(3,0)">3</td><td class="col2">King Kong</td><td class="col3">gorilla</td></tr>
 						</table>
 					</section>
+					-->
 					<section>
 						<h2>JSON (javascript object notation)</h2>
 						<pre><code data-noescape>{ <span style="color:#CC9393;">"FictionalPrimates"</span> : [
@@ -508,26 +511,31 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 					</section>
 					<section>
 						<h2>Etho Core</h2>
-						<p style="font-size:1.2em;">Metadata initiative for behavior modeled on Darwin Core</p>
+						<p style="font-size:1.2em;">Standard vocabulary for behavior modeled on Darwin Core</p>
 					</section>
 					<section>
 						<h2>Darwin Core</h2>
 						<ul>
-							<li>Metadata initiative for biodiversity informatics</li>
+							<li>Standard vocabulary for biodiversity science</li>
 							<li>maintained by <strong>Biodiversity Information Standards</strong> (TDWG)</li>
-							<li>extension of <strong>Dublin Core</strong></li>
+							<li>itself an extension of <strong>Dublin Core</strong>, which maintains metadata standards across the web.</li>
 						</ul>
 					</section>
 					<section>
 						<h2>EthoCore</h2>
-						<p style="font-size:1.2em;">Currently 148 metadata terms in ten classes</p>
+						<p style="font-size:1.2em;">Currently 166 metadata terms in eleven classes</p>
+					</section>
+					<section>
+						<p>Maintains a standard vocabulary for behavior</p>
+						<p>These terms may be flexibly used in a variety of contexts including as table columns, key-value attributes, and triple components</p>
 					</section>
 					<section>
 						<h2>EthoCore classes</h2>
 						<div style="height:7.6em;">
 						<ul class="two-columns" style="width:1200px;">
-							<li>MeasurementOrObservation</li>
-							<li>Animal</li>
+							<li>Observation</li>
+							<li>Measurement</li>
+							<li>Organism</li>
 							<li>Patch</li>
 							<li>MaterialSample</li>
 							<li>Event</li>
