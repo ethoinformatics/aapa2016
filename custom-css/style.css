@@ -163,6 +163,13 @@ html.img-right div.slide-background.present {
 		text-transform:none;
 		font-variant:small-caps;
 	}
+	.custom p.subtitle {
+		font-family:Futura, Droid Sans, Open Sans, sans-serif;
+		margin-top:0em;
+	}
+	.custom p.authors {
+		font-size:0.85em;
+	}
 	.custom figure {
 		margin-left:auto;
 		margin-right:auto;
@@ -295,7 +302,7 @@ html.img-right div.slide-background.present {
 		width:200px;
 	}
 	.custom ul.two-columns {
-		height:7.2em;
+		height:8.64em;
 		width:960px;
 		list-style-type: disc;
 		columns: 2;
@@ -329,7 +336,7 @@ html.img-right div.slide-background.present {
     	font-weight:bold;
     }
     .custom .dist-dogs {
-    	background-color:lightyellow;
+    	background-color:lightpink;
     }
     .custom .dist-genbank {
     	background-color:lightgreen;
@@ -338,13 +345,13 @@ html.img-right div.slide-background.present {
     	background-color:lightblue;
     }
     .custom .dist-morpho {
-    	background-color:lightpink;
+    	background-color:#AA8E80;
     }
     .custom .dist-birds {
-    	background-color:antiquewhite;
+    	background-color:#FEF182;
     }
-    .custom .dist-dogbehavior {
-    	background-color:lavender;
+    .custom .dist-none {
+    	background-color:#fff;
     }
     .custom table#distributed-data {
     	margin-bottom:1em;
@@ -352,8 +359,9 @@ html.img-right div.slide-background.present {
     .custom table#distributed-data td {
     	text-align:center;
     	vertical-align:middle;
-    	width:5em;
-    	height:3em;
+    	width:4em;
+    	height:4em;
+    	border:0;
     }
     .custom table#distributed-data th {
     	text-align:center;
