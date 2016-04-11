@@ -115,14 +115,16 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section id="title">
+					<img src="images/banner1.png" style="border:none;" />
 					<h1 style="margin-top:-0.25em; margin-bottom:0em;">Ethoinformatics I</h1>
-					<p style="font-size:1.2em;">Kenneth L. Chiou &middot; Anthony Di Fiore &middot; Robyn Overstreet &middot; Mike Chevett &middot; Tom Igoe</p>
+					<p class="subtitle">Developing a Standard Vocabulary and Data Model for Behavioral Field Research</p>
+					<p class="authors">Kenneth L. Chiou &middot; Anthony Di Fiore &middot; Robyn Overstreet &middot; Mike Chevett &middot; Tom Igoe</p>
 						<figure>
-							<img src="images/wustl.png" style="height:160px; border:0px; box-shadow:0 0 0px;" />
-							<img src="images/utaustin.png" style="height:160px; border:0px; box-shadow:0 0 0px;" />
-							<img src="images/nyu.png" style="margin-left:24px; height:160px; border:0px; box-shadow:0 0 0px;" />
+							<img src="images/wustl.png" style="height:120px; border:0px; box-shadow:0 0 0px;" />
+							<img src="images/utaustin.png" style="height:120px; border:0px; box-shadow:0 0 0px;" />
+							<img src="images/nyu.png" style="margin-left:18px; height:120px; border:0px; box-shadow:0 0 0px;" />
+							<embed src="images/nsf.svg" style="height:160px; margin-left:20px;" />
 							<br>
-							<embed src="images/nsf.svg" style="height:240px; margin-top:-25px;" />
 						</figure>
 				</section>
 				<section>
@@ -180,7 +182,7 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 								<li><span class="semibold">organization</span></li>
 								<li><span class="semibold">technology</span></li>
 							</ul>
-							<li><span class="semibold">Metadata</span> are seldom documented</li>
+							<li><span class="semibold">Metadata</span> (data about data) are seldom documented</li>
 							<li>Lack of training in information science</li>
 							<li>Concerns about <span class="semibold">data access</span> and <span class="semibold">data ownership</span></li>
 						</ul>
@@ -207,16 +209,15 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 				<section>
 					<h1>Project goals</h1>
 					<ol style="font-size:1.2em;">
-						<li class="fragment" data-fragment-index="1"><span class="fragment highlight-red" data-fragment-index="6">A community-derived standard vocabulary</span></li>
-						<li class="fragment" data-fragment-index="2">Database frameworks</li>
-						<li class="fragment" data-fragment-index="3">Mobile data collection software</li>
-						<li class="fragment" data-fragment-index="4">Compatibility tools for existing data</li>
-						<li class="fragment" data-fragment-index="5">A framework for long-term data archiving</li>
+						<li><span class="fragment highlight-red" data-fragment-index="6">A community-derived standard vocabulary</span></li>
+						<li>Mobile data collection and support software</li>
+						<li>Compatibility tools for existing data</li>
+						<li>A framework for long-term data archiving</li>
 					</ol>
 				</section>
 				<section>
 					<section>
-						<h1>Moving Beyond the Table</h1>
+						<h1>Breaking the Table</h1>
 					</section>
 					<section>
 						<h2>Famous primates (fictional) <span onmouseover="fictionRow(0,1)" onmouseout="fictionRow(0,0)">🙊</span></h2>
@@ -230,20 +231,27 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 					</section>
 					<section>
 						<h2>The same table in plaintext</h2>
-						<figure class="fragment fade-out" data-fragment-index="1">
-							<pre class="html"><code data-noescape>ID,Name,Species
-1,Rafiki,mandrill
-2,Curious George,chimpanzee
-3,King Kong,gorilla</code></pre>
+						<figure>
+							<pre class="html"><code data-noescape><span class="json-col1">ID</span>,<span class="json-col2">Name</span>,<span class="json-col3">Species</span>
+<span class="json-row1"><span class="json-col1">1</span>,<span class="json-col2">Rafiki</span>,<span class="json-col3">mandrill</span></span>
+<span class="json-row2"><span class="json-col1">2</span>,<span class="json-col2">Curious George</span>,<span class="json-col3">chimpanzee</span></span>
+<span class="json-row3"><span class="json-col1">3</span>,<span class="json-col2">King Kong</span>,<span class="json-col3">gorilla</span></span></code></pre>
 							<figcaption>Comma-separated values</figcaption>
-						</figure>
+						</figure><!--
 						<figure class="fragment" data-fragment-index="1">
 							<pre class="html"><code data-noescape>ID	Name	Species
 1	Rafiki	mandrill
 2	Curious George	chimpanzee
 3	King Kong	gorilla</code></pre>
 							<figcaption>Tab-separated values</figcaption>
-						</figure>
+						</figure>-->
+<br>
+						<table class="example-table">
+							<tr class="table-row0"><th class="col1" onmouseover="jsonCol(1,1)" onmouseout="jsonCol(1,0)">ID</th><th class="col2" onmouseover="jsonCol(2,1)" onmouseout="jsonCol(2,0)">Name</th><th class="col3" onmouseover="jsonCol(3,1)" onmouseout="jsonCol(3,0)">Species</th></tr>
+							<tr class="table-row1"><td class="col1" onmouseover="jsonRow(1,1)" onmouseout="jsonRow(1,0)">1</td><td class="col2">Rafiki</td><td class="col3">mandrill</td></tr>
+							<tr class="table-row2"><td class="col1" onmouseover="jsonRow(2,1)" onmouseout="jsonRow(2,0)">2</td><td class="col2">Curious George</td><td class="col3">chimpanzee</td></tr>
+							<tr class="table-row3"><td class="col1" onmouseover="jsonRow(3,1)" onmouseout="jsonRow(3,0)">3</td><td class="col2">King Kong</td><td class="col3">gorilla</td></tr>
+						</table>
 					</section>
 					<section>
 						<h2>JSON (javascript object notation)</h2>
@@ -272,68 +280,71 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 					<section>
 						<table class="example-table">
 							<tr><th>ID</th><th>Name</th><th>Species</th><th>Source</th><th>Location</th></tr>
-							<tr><td>1</td><td>Rafiki</td><td>mandrill?</td><td>Lion King (1994 film)</td><td>Pride Lands</td></tr>
-							<tr><td>2</td><td>Curious George</td><td>chimpanzee?????</td><td>Curious George (book series)</td><td>Africa</td></tr>
-							<tr><td>3</td><td>King Kong</td><td>gorilla????</td><td>King Kong (1933 film)</td><td>Skull Island</td></tr>
+							<tr><td>1</td><td>Rafiki</td><td>mandrill</td><td>Lion King (1994 film)</td><td>Pride Lands</td></tr>
+							<tr><td>2</td><td>Curious George</td><td>chimpanzee</td><td>Curious George (book series)</td><td>Africa</td></tr>
+							<tr><td>3</td><td>King Kong</td><td>gorilla</td><td>King Kong (1933 film)</td><td>Skull Island</td></tr>
 						</table>
 					</section>
 					<section>
 						<table class="example-table">
-							<tr><th>ID</th><th>Name</th><th>CommonName</th><th>Qualifier</th><th>Film</th><th style="width:7.5em;">Book</th><th>Year</th><th>Locality</th><th>Continent</th></tr>
-							<tr><td>1</td><td>Rafiki</td><td>mandrill</td><td>?</td><td>Lion King</td><td></td><td>1994</td><td>Pride Lands</td><td>Africa</td></tr>
-							<tr><td>2</td><td>Curious George</td><td>chimpanzee</td><td>?????</td><td></td><td><span class="lit">Curious George</span>,<br><span class="lit">... Takes a Job</span>,<br><span class="lit">... Rides a Bike</span>,<br><span class="lit">... Gets a Medal</span>,<br>etc.</td><td>1941<br>1947<br>1952<br>1957</td><td></td><td>Africa</td></tr>
-							<tr><td>3</td><td>King Kong</td><td>gorilla</td><td>????</td><td>King Kong</td><td></td><td>1933</td><td>Skull Island</td><td></td></tr>
+							<tr><th>ID</th><th>Name</th><th>Species</th><th>Film</th><th style="width:7.5em;">Book</th><th>Year</th><th>Locality</th><th>Continent</th></tr>
+							<tr><td>1</td><td>Rafiki</td><td>mandrill</td><td>Lion King</td><td></td><td>1994</td><td>Pride Lands</td><td>Africa</td></tr>
+							<tr><td>2</td><td>Curious George</td><td>chimpanzee</td><td></td><td><span class="lit">Curious George</span>,<br><span class="lit">... Takes a Job</span>,<br><span class="lit">... Rides a Bike</span>,<br><span class="lit">... Gets a Medal</span>,<br>etc.</td><td>1941,<br>1947,<br>1952,<br>1957,<br>etc.</td><td></td><td>Africa</td></tr>
+							<tr><td>3</td><td>King Kong</td><td>gorilla</td><td>King Kong</td><td></td><td>1933</td><td>Skull Island</td><td></td></tr>
 						</table>
 					</section>
 					<section>
 						<pre style="position:absolute; top:0; left:0; width:33%;"><code data-noescape><span class="json-row1">{
   <span class="json-col1">&quot;ID&quot; : 1</span> ,
   <span class="json-col2">&quot;Name&quot; : &quot;Rafiki&quot;</span> ,
-  <span class="json-col3">&quot;Species&quot; : {
-    <span class="json-col6">&quot;CommonName&quot; : &quot;mandrill&quot;</span> ,
-    <span class="json-col7">&quot;Qualifier&quot; : &quot;?&quot;</span> }</span> ,
+  <span class="json-col3">&quot;Species&quot; : &quot;mandrill&quot;</span> ,
   <span class="json-col4">&quot;Source&quot; : {
     <span class="json-col8">&quot;Film&quot; : &quot;Lion King&quot;</span> ,
-    <span class="json-col10">&quot;Year&quot; : 1994</span> }</span> ,
+    <span class="json-col10">&quot;Year&quot; : 1994</span>
+  }</span> ,
   <span class="json-col5">&quot;Location&quot; : {
     <span class="json-col11">&quot;Locality&quot; : &quot;Pride Lands&quot;</span> ,
-    <span class="json-col12">&quot;Continent&quot; : &quot;Africa&quot;</span> }</span>
+    <span class="json-col12">&quot;Continent&quot; : &quot;Africa&quot;</span>
+  }</span>
 }</span> , ...</code></pre>
 						<pre style="position:absolute; top:0; left:33.5%; width:33%;"><code data-noescape>... , <span class="json-row2">{
   <span class="json-col1">&quot;ID&quot; : 2</span> ,
   <span class="json-col2">&quot;Name&quot; : &quot;Curious George&quot;</span> ,
-  <span class="json-col3">&quot;Species&quot; : {
-    <span class="json-col6">&quot;CommonName&quot; : &quot;chimpanzee&quot;</span> ,
-    <span class="json-col7">&quot;Qualifier&quot; : &quot;?????&quot;</span> }</span> ,
+  <span class="json-col3">&quot;Species&quot; : &quot;chimpanzee&quot;</span> ,
   <span class="json-col4">&quot;Source&quot; : {
     <span class="json-col9">&quot;Book&quot; : [ &quot;Curious George&quot; , &quot;... Takes a Job&quot; , &quot;... Rides a Bike&quot; , &quot;... Gets a Medal&quot; ]</span> ,
-    <span class="json-col10">&quot;Year&quot; : [ 1941 , 1947 , 1952 , 1957 ]</span> }</span> ,
+    <span class="json-col10">&quot;Year&quot; : [ 1941 , 1947 , 1952 , 1957 ]</span>
+  }</span> ,
   <span class="json-col5">&quot;Location&quot; : {
-
-    <span class="json-col12">&quot;Continent&quot; : &quot;Africa&quot;</span> }</span>
-}</span> , ...</code></pre>
+    <span class="json-col12">&quot;Continent&quot; : &quot;Africa&quot;</span>
+  }</span>
+}</span> , ...
+ </code></pre>
 						<pre style="position:absolute; top:0em; right:0; width:33%;"><code data-noescape>... , <span class="json-row3">{
   <span class="json-col1">&quot;ID&quot; : 3</span> ,
   <span class="json-col2">&quot;Name&quot; : &quot;King Kong&quot;</span> ,
-  <span class="json-col3">&quot;Species&quot; : {
-    <span class="json-col6">&quot;CommonName&quot; : &quot;gorilla&quot;</span> ,
-    <span class="json-col7">&quot;Qualifier&quot; : &quot;????&quot;</span> }</span> ,
+  <span class="json-col3">&quot;Species&quot; : &quot;gorilla&quot;</span> ,
   <span class="json-col4">&quot;Source&quot; : {
     <span class="json-col8">&quot;Film&quot; : &quot;King Kong&quot;</span> ,
-    <span class="json-col10">&quot;Year&quot; : 1933</span> }</span> ,
+    <span class="json-col10">&quot;Year&quot; : 1933</span>
+  }</span> ,
   <span class="json-col5">&quot;Location&quot; : {
     <span class="json-col11">&quot;Locality&quot; : &quot;Skull Island&quot;</span>
-    }</span>
-}</span></code></pre>
+  }</span>
+}</span>
+ </code></pre>
 							<table class="example-table" style="margin-top:14em; font-size:0.67em;">
-								<tr class="table-row0"><th class="col1" onmouseover="jsonCol(1,1)" onmouseout="jsonCol(1,0)">ID</th><th class="col2" onmouseover="jsonCol(2,1)" onmouseout="jsonCol(2,0)">Name</th><th class="col3" onmouseover="jsonCol(3,1)" onmouseout="jsonCol(3,0)" colspan="2">Species</th><th class="col4" onmouseover="jsonCol(4,1)" onmouseout="jsonCol(4,0)" colspan="3">Source</th><th class="col5" onmouseover="jsonCol(5,1)" onmouseout="jsonCol(5,0)" colspan="2">Location</th></tr>
-								<tr class="table-row1"><td class="col1" onmouseover="jsonRow(1,1)" onmouseout="jsonRow(1,0)">1</td><td class="col2">Rafiki</td><td class="col3" colspan="2">mandrill?</td><td class="col4" colspan="3">Lion King (1994 film)</td><td class="col5" colspan="2">Pride Lands</td></tr>
-								<tr class="table-row2"><td class="col1" onmouseover="jsonRow(2,1)" onmouseout="jsonRow(2,0)">2</td><td class="col2">Curious George</td><td class="col3" colspan="2">chimpanzee?????</td><td class="col4" colspan="3">Curious George (book series)</td><td class="col5" colspan="2">Africa</td></tr>
-								<tr class="table-row3"><td class="col1" onmouseover="jsonRow(3,1)" onmouseout="jsonRow(3,0)" style="border-bottom:0;">3</td><td class="col2" style="border-bottom:0;">King Kong</td><td class="col3" colspan="2" style="border-bottom:0;">gorilla????</td><td class="col4" colspan="3" style="border-bottom:0;">King Kong (1933 film)</td><td class="col5" colspan="2" style="border-bottom:0;">Skull Island</td></tr>
-								<tr><td colspan="9" style="border:0; padding:0.5em 0;"></td></tr>
-								<tr><th class="col1" onmouseover="jsonCol(1,1)" onmouseout="jsonCol(1,0)">ID</th><th class="col2" onmouseover="jsonCol(2,1)" onmouseout="jsonCol(2,0)">Name</th><th class="col6 col3" onmouseover="jsonCol(6,1)" onmouseout="jsonCol(6,0)">CommonName</th><th class="col7 col3" onmouseover="jsonCol(7,1)" onmouseout="jsonCol(7,0)">Qualifier</th><th class="col8 col4" onmouseover="jsonCol(8,1)" onmouseout="jsonCol(8,0)">Film</th><th class="col9 col4" onmouseover="jsonCol(9,1)" onmouseout="jsonCol(9,0)">Book</th><th class="col10 col4" onmouseover="jsonCol(10,1)" onmouseout="jsonCol(10,0)">Year</th><th class="col11 col5" onmouseover="jsonCol(11,1)" onmouseout="jsonCol(11,0)">Locality</th><th class="col12 col5" onmouseover="jsonCol(12,1)" onmouseout="jsonCol(12,0)">Continent</th></tr>
-								<tr><td class="col1">1</td><td class="col2">Rafiki</td><td class="col6 col3">mandrill</td><td class="col7 col3">?</td><td class="col8 col4">Lion King</td><td class="col9 col4"></td><td class="col10 col4">1994</td><td class="col11 col5">Pride Lands</td><td class="col12 col5">Africa</td></tr>
-								<tr><td colspan="9">...</td></tr>
+								<!--
+								<tr class="table-row0"><th class="col1" onmouseover="jsonCol(1,1)" onmouseout="jsonCol(1,0)">ID</th><th class="col2" onmouseover="jsonCol(2,1)" onmouseout="jsonCol(2,0)">Name</th><th class="col3" onmouseover="jsonCol(3,1)" onmouseout="jsonCol(3,0)">Species</th><th class="col4" onmouseover="jsonCol(4,1)" onmouseout="jsonCol(4,0)" colspan="3">Source</th><th class="col5" onmouseover="jsonCol(5,1)" onmouseout="jsonCol(5,0)" colspan="2">Location</th></tr>
+								<tr class="table-row1"><td class="col1" onmouseover="jsonRow(1,1)" onmouseout="jsonRow(1,0)">1</td><td class="col2">Rafiki</td><td class="col3">mandrill</td><td class="col4" colspan="3">Lion King (1994 film)</td><td class="col5" colspan="2">Pride Lands</td></tr>
+								<tr class="table-row2"><td class="col1" onmouseover="jsonRow(2,1)" onmouseout="jsonRow(2,0)">2</td><td class="col2">Curious George</td><td class="col3">chimpanzee</td><td class="col4" colspan="3">Curious George (book series)</td><td class="col5" colspan="2">Africa</td></tr>
+								<tr class="table-row3"><td class="col1" onmouseover="jsonRow(3,1)" onmouseout="jsonRow(3,0)" style="border-bottom:0;">3</td><td class="col2" style="border-bottom:0;">King Kong</td><td class="col3" style="border-bottom:0;">gorilla</td><td class="col4" colspan="3" style="border-bottom:0;">King Kong (1933 film)</td><td class="col5" colspan="2" style="border-bottom:0;">Skull Island</td></tr>
+								<tr><td colspan="8" style="border:0; padding:0.5em 0;"></td></tr>
+								-->
+								<tr class="table-row0"><th class="col1" onmouseover="jsonCol(1,1)" onmouseout="jsonCol(1,0)">ID</th><th class="col2" onmouseover="jsonCol(2,1)" onmouseout="jsonCol(2,0)">Name</th><th class="col6 col3" onmouseover="jsonCol(3,1)" onmouseout="jsonCol(3,0)">Species</th><th class="col8 col4" onmouseover="jsonCol(8,1)" onmouseout="jsonCol(8,0)">Film</th><th class="col9 col4" onmouseover="jsonCol(9,1)" onmouseout="jsonCol(9,0)">Book</th><th class="col10 col4" onmouseover="jsonCol(10,1)" onmouseout="jsonCol(10,0)">Year</th><th class="col11 col5" onmouseover="jsonCol(11,1)" onmouseout="jsonCol(11,0)">Locality</th><th class="col12 col5" onmouseover="jsonCol(12,1)" onmouseout="jsonCol(12,0)">Continent</th></tr>
+								<tr class="table-row1"><td class="col1" onmouseover="jsonRow(1,1)" onmouseout="jsonRow(1,0)">1</td><td class="col2">Rafiki</td><td class="col6 col3">mandrill</td><td class="col8 col4">Lion King</td><td class="col9 col4"></td><td class="col10 col4">1994</td><td class="col11 col5">Pride Lands</td><td class="col12 col5">Africa</td></tr>
+								<tr class="table-row2"><td class="col1" onmouseover="jsonRow(2,1)" onmouseout="jsonRow(2,0)">2</td><td class="col2">Curious George</td><td class="col6 col3">chimpanzee</td><td class="col8 col4"></td><td class="col9 col4"><span class="lit">Curious George</span>,<br><span class="lit">... Takes a Job</span>,<br>etc.</td><td class="col10 col4">1941,<br>1947,<br>etc.</td><td class="col11 col5"></td><td class="col12 col5">Africa</td></tr>
+								<tr class="table-row3"><td class="col1" onmouseover="jsonRow(3,1)" onmouseout="jsonRow(3,0)" style="border-bottom:0;">3</td><td class="col2">King Kong</td><td class="col3">gorilla</td><td class="col8 col4">King Kong</td><td class="col9 col4"></td><td class="col10 col4">1933</td><td class="col11 col5">Skull Island</td><td class="col12 col5"></td></tr>
 							</table>
 					</section>
 					<section>
@@ -343,11 +354,10 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 						<figure>
 							<table id="distributed-data" class="example-table">
 								<tr>
-									<th style="border-right:1px solid black;">Organism</th><th>Behavior</th><th>Ecology</th><th>Life History</th><th>Anatomy</th><th>Genetics</th>
+									<th style="border-right:1px solid black;">Organism</th><th>Behavior</th><th>Ecology</th><th>Anatomy</th><th>Genetics</th>
 								</tr>
 								<tr>
 									<td style="border-right:1px solid black;">Lemurs</td>
-									<td class="dist-primates"></td>
 									<td class="dist-primates"></td>
 									<td class="dist-primates"></td>
 									<td class="dist-morpho"></td>
@@ -357,15 +367,13 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 									<td style="border-right:1px solid black;">Gorillas</td>
 									<td class="dist-primates"></td>
 									<td class="dist-primates"></td>
-									<td class="dist-primates"></td>
 									<td class="dist-morpho"></td>
 									<td class="dist-genbank"></td>
 								</tr>
 								<tr>
 									<td style="border-right:1px solid black;">Dogs</td>
-									<td class="dist-dogbehavior"></td>
 									<td class="dist-dogs"></td>
-									<td class="dist-dogs"></td>
+									<td class="dist-none"></td>
 									<td class="dist-dogs"></td>
 									<td class="dist-genbank"></td>
 								</tr>
@@ -374,7 +382,6 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 									<td class="dist-birds"></td>
 									<td class="dist-birds"></td>
 									<td class="dist-birds"></td>
-									<td class="dist-morpho"></td>
 									<td class="dist-genbank"></td>
 								</tr>
 							</table>
@@ -397,8 +404,8 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 					-->
 					<section>
 						<h2>NoSQL</h2>
-						<p class="big-point"><strong>NoSQL</strong> ("not only SQL") rejects the dominance of the relational data model</p>
-						<p class="big-point"><strong>Key-value databases</strong> are one class of NoSQL technologies, but there are others including <strong>document-based</strong> and <strong>graph databases</strong></p>
+						<p class="big-point">The <strong>key-value</strong> model is central to several NoSQL technologies that transcent the limitations of tables, but there are others</p>
+						<p class="big-point"><strong>NoSQL</strong> ("not only SQL") databases reject the dominance of the table-based relational data model</p>
 					</section>
 					<section>
 						<p class="bigger-point">NoSQL databases are built for the Web and generally embrace web technologies such as <strong>HTTP/REST</strong>, <strong>JavaScript</strong>, and <strong>URIs/URLs</strong></p>
@@ -449,7 +456,7 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 						<figure style="height:600px;">
 							<table class="triple-table">
 								<tr><td style="border-bottom:0px;">Rafiki</td><td style="border-bottom:0px;">type</td><td style="border-bottom:0px;">Organism</td></tr>
-								<tr><td style="border-bottom:0px;">Rafiki</td><td style="border-bottom:0px;">organismID</td><td style="border-bottom:0px;">1</td></tr>
+								<tr><td style="border-bottom:0px;">Rafiki</td><td style="border-bottom:0px;">organismID</td><td style="border-bottom:0px;">"1"</td></tr>
 								<tr><td style="border-bottom:0px;">Rafiki</td><td style="border-bottom:0px;">organismName</td><td style="border-bottom:0px;">"Rafiki"</td></tr>
 								<tr><td style="border-bottom:0px;">Rafiki</td><td style="border-bottom:0px;">hasTaxon</td><td style="border-bottom:0px;">Mandrill</td></tr>
 								<tr><td style="border-bottom:0px;">Mandrill</td><td style="border-bottom:0px;">type</td><td style="border-bottom:0px;">Taxon</td></tr>
