@@ -169,7 +169,7 @@
 						</section>
 
 					</section>
-					<section id="ethogrammar-data-model">
+					<section id="data-model">
 						<section>
 							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Design Philosophy</h2>
 							<p class="subtitle" style="margin-top:1em;">Custom data structures</p>
@@ -179,11 +179,10 @@
 							</ul>
 							<aside class="notes">
 								<ul>
+									<li>Documents are project-specific "data structures" built by packaging together information from one or more class</li>
+									<li>Not all terms contained in the classes that make up a document need be stored in any given document (i.e., the equivalent of empty fields in a record can be omitted)</li>
 									<li>Documents are (roughly) equivalent to the rows or records in a tabular/relational database except that each is a separate entity</li>
 									<li>The are very similar, too, to the nodes in a graph database.
-									<li>Many of the terms used to make up a document are metadata terms</li>
-									<li>Every document is a resource with a URI</li>
-									<li>Documents are represented in JSON format in a document oriented database.</li>
 								</ul>
 							</aside>
 						</section>
@@ -200,19 +199,31 @@
 							</figure>
 						</section>
 						<section>
-							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Design Principles</h1>
-							<h3>2. Documents are flexible data structures</h2>
+							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Design Philosophy</h2>
+							<p class="subtitle" style="margin-top:1em;">Structure of documents</p>
+							<ul>
+								<li>Contain a URI</li>
+								<li>Contain metadata</li>
+								<ul>
+									<li>Who made it</li>
+									<li>When it was created</li>
+									<li>Time (point or series)</li>
+									<li>Geolocation (point or series)</li>
+								</ul>
+								<li>Represented in structured text format (JSON)</li>
+							</ul>
 							<aside class="notes">
 								<ul>
-									<li>Documents are project-specific "data structures" built by packaging together information from one or more class</li>
-									<li>Not all terms contained in the classes that make up a document need be stored in any given document (i.e., the equivalent of empty fields in a record can be omitted)</li>
+									<li>Many of the terms used to make up a document are metadata terms</li>
+									<li>Every document is a resource with a URI</li>
+									<li>Documents are represented in JSON format in a document oriented database.</li>
 									<li>We think many of these are likely to be standard across projects (e.g., “contacts”, “focal samples”, “biological samples”, “feeding trees”), but projects need not use them all and may extend the list of document types</li>
 								</ul>
 							</aside>
 						</section>
 						<section>
-							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Design Principles</h1>
-							<h3>3. Documents can be linked to one or more other documents</h2>
+							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Design Philosophy</h2>
+							<p class="subtitle" style="margin-top:1em;">Documents can be linked to one or more other documents</p>
 							<aside class="notes">
 								<ul>
 									<li>These links are also resources, also have URIs, and are also stored as documents</li>
@@ -225,23 +236,9 @@
 							</aside>
 						</section>
 						<section>
-							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Design Principles</h1>
-							<h3>4. Every document is associated with key metadata</h2>
+							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Design Philosophy</h2>
+							<p class="subtitle" style="margin-top:1em;">History of revision of documents is preserved</p>
 							<aside class="notes">
-								<ul>
-									<li>Who made it</li>
-									<li>When it was created</li>
-									<li>Time (point or series)</li>
-									<li>Geolocation (point or series)</li>
-								</ul>
-							</aside>
-						</section>
-						<section>
-							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Design Principles</h1>
-							<h3>5. History of revision of documents is preserved</h2>
-							<aside class="notes">
-								<ul>
-								</ul>
 							</aside>
 						</section>
 					</section>
