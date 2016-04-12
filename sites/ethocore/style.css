@@ -1,0 +1,173 @@
+/*
+ Theme Name:     ethoinformatics.org (child theme of Hostmarks)
+ Theme URI:      http://ethoinformatics.org/
+ Description:    ethoinformatics.org (child theme of Hostmarks)
+ Author:         Robyn Overstreet & Kenny Chiou
+ Author URI:     http://robynoverstreet.com
+ Template:       hostmarks
+ Version:        1.0.1
+*/
+
+@import url("../hostmarks/style.css");
+
+/* =Theme customization starts here
+-------------------------------------------------------------- */
+
+#site-heading{
+	width: 100%;
+	padding:0;
+}
+#site-title {
+	font-size: 2rem;
+}
+#site-title a {
+	color: #408ad2;
+}
+nav[role=navigation] {
+	width: 100%;
+	padding-top:0;
+}
+nav[role=navigation] .menu ul li a:hover {
+
+}
+nav[role=navigation] .menu ul li:hover{
+	background-color:#1E4265;
+
+}
+.copy-blue-box strong{
+	font-weight: inherit;
+	font-size: 1.5em;
+}
+.copy-blue-box h1.entry-title {
+	font-size: 6rem;
+	/*font-style: italic;*/
+}
+.copy-blue-box p{
+	font-size:1.1em;
+}
+.widget {
+	border: 1px solid #333;
+	border-radius: 3px;
+	background-color: #efefef;
+}
+
+
+
+.termsinfo {
+		text-align:left;
+		overflow:visible;
+}
+
+table.termsinfo > tbody > tr:nth-child(2) > td:first-child {
+	width:8em;
+}
+
+table.termsinfo > tbody > tr:nth-child(2) > td:nth-child(2) {
+	width:32em;
+}
+
+#terms-table-section {
+	width:100%;
+	overflow:scroll;
+	word-wrap:break-word;
+}
+
+table.terms-dictionary {
+	width:100%;
+	table-layout:fixed;
+}
+
+table.terms-dictionary th {
+	padding-top:0.5em;
+	padding-bottom:0em;
+}
+
+table.terms-dictionary > tbody> tr:nth-child(1) {
+	margin-top:0em;
+	margin-bottom:0em;
+}
+
+table.terms-dictionary > tbody> tr:nth-child(1) > td:first-child {
+	border-bottom:none;
+	width:12.5%;
+}
+
+table.terms-dictionary > tbody> tr:nth-child(1) > td:nth-child(2) {
+	border-bottom:none;
+	width:87.5%;
+}
+
+.back-to-menu {
+		font-size:0.9em;
+		font-style:italic;
+}
+
+/*
+.terms-dictionary table,
+.terms-dictionary thead,
+.terms-dictionary tbody,
+.terms-dictionary tfoot,
+.terms-dictionary tr,
+.terms-dictionary th,
+.terms-dictionary td {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-collapse: inherit;
+    border-spacing: 0;
+    border-color: inherit;
+    vertical-align: inherit;
+    text-align: left;
+    font-weight: inherit;
+    -webkit-border-horizontal-spacing: 0;
+    -webkit-border-vertical-spacing: 0;
+}
+
+th, td {
+	word-wrap:break-word;
+}
+
+.terms-dictionary th {
+	font-weight:bold;
+}
+*/
+
+.terms-toc h2 {
+	font-weight:bold;
+	font-size:1.2em;
+	margin-top:1em;
+	margin-bottom:1em;
+}
+
+#sidebar .widget-title {
+	border-radius: 0;
+}
+/*#sidebar .widget_pages .widget-title {
+	display:none;
+}
+#sidebar .widget_pages{
+	padding-top: 2em;
+	padding-bottom: 2em;
+}*/
+#sidebar .widget ul{
+	padding: 0 2em;
+}
+
+.parentdomain {
+	font-size:1.25em;
+}
+/* Separator between content and comments */
+.sep {
+	margin-bottom:4em;
+}
+
+.subtitle {
+	font-size:0.75em;
+	font-style:italic;
+}
+.subtitle a:link {text-decoration: none; color: #666666;}
+.subtitle a:visited {text-decoration: none; color: #666666;}
+.subtitle a:hover {text-decoration: underline; color: #000000;}
+.subtitle a:active {text-decoration: underline; color: #000000;}

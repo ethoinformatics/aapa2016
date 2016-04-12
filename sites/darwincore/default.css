@@ -17,8 +17,14 @@ body, body div, body p, body th, body td, body li, body dd {
 	/* Intended value for better browsers. */
 }
 html>body, html>body div, html>body p, html>body th, html>body td, html>body li, html>body dd {
-	font-size: small;
+	font-size: 1em;
 	/* Be nice to Opera. */
+}
+div#zoom p, div#zoom th, div#zoom td, div#zoom li, div#zoom dd {
+	font-size:1.2em;
+}
+div#zoom h3 {
+	font-size:1.4em;
 }
 /* END Todd Fahrner's keyword hack for IE. */
 
@@ -135,7 +141,7 @@ div.rss-description p { margin: 0; padding: 4px 0 6px 0; }
 	width:190px;
 	float:left;
 	padding-bottom:20px;
-	background:#617694 url(../images/menu_bottom.jpg) bottom right no-repeat;
+	background:#617694 bottom right no-repeat;
 }
 	#menu div, #menu p, #menu th, #menu td {
 		font: 14px/1.4 Tahoma, Tahoma, "Times New Roman", sans-serif;

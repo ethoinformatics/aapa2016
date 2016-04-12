@@ -446,4 +446,10 @@ function finish() {
 	
 }
 
+function vizlisten() {
+	if (event.keyCode == 13) {
+		visualize();
+	}
+}
+
 

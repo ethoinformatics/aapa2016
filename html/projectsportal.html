@@ -132,7 +132,7 @@
       </div>
       <div id="records" style="display:none;">
       	<h2><span id="results-title">Merged records (preview)</span> <span class="download">[<a class="fake">Download</a>]<span id="download-options"><a class="fake">CSV</a> &middot; <a class="fake">XML</a> &middot; <a class="fake">JSON</a> &middot; <a class="fake">RDF</a> &middot; <a class="fake">HTML</a> &middot; <a class="fake">LaTeX</a> &middot; <a class="fake">Excel</a></span></span></h2>
-		<p class="help-text form-inline">Visualize by <select id="visualize-by" class="form-control input-xs" style="height:80%;"><option>genus</option><option>species</option></select> and <select id="visualize-and" class="form-control input-xs" style="height:80%;"><option></option><option>sex</option><option>life stage</option></select> <button class="btn btn-default btn-xs" onclick="visualize()">Go</button></p>
+		<p class="help-text form-inline">Visualize by <select id="visualize-by" class="form-control input-xs" style="height:80%;" onkeydown="vizlisten()"><option>genus</option><option>species</option></select> and <select id="visualize-and" class="form-control input-xs" style="height:80%;" onkeydown="vizlisten()"><option></option><option>sex</option><option>life stage</option></select> <button class="btn btn-default btn-xs" onclick="visualize()">Go</button></p>
 		<table id="merged-records" class="table custom-size1 outer-table1">
 			<tr><th>ScientificName</th><th>Locality</th><th>Sex</th><th>LifeStage</th><th>MeasurementType</th><th>MeasurementValue</th><th>MeasurementMethod</th><th>Host</th><th>Details</th></tr>
 			<tr><td colspan="9" style="padding:0;"><div class="inner-div1"><table class="custom-size1 inner-table1">

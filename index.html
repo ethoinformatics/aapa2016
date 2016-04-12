@@ -31,7 +31,7 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 
 ## Background on RDF and linked data
 
-## Introduction to the Etho Core vocabulary
+## Introduction to the EthoCore vocabulary
 
 * Event: data are temporal
 
@@ -278,6 +278,7 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 							<tr class="table-row3"><td class="col1" onmouseover="jsonRow(3,1)" onmouseout="jsonRow(3,0)">3</td><td class="col2">King Kong</td><td class="col3">gorilla</td></tr>
 						</table>
 					</section>
+					<!--
 					<section>
 						<table class="example-table">
 							<tr><th>ID</th><th>Name</th><th>Species</th><th>Source</th><th>Location</th></tr>
@@ -286,6 +287,7 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 							<tr><td>3</td><td>King Kong</td><td>gorilla</td><td>King Kong (1933 film)</td><td>Skull Island</td></tr>
 						</table>
 					</section>
+					-->
 					<section>
 						<table class="example-table">
 							<tr><th>ID</th><th>Name</th><th>Species</th><th>Film</th><th style="width:7.5em;">Book</th><th>Year</th><th>Locality</th><th>Continent</th></tr>
@@ -349,13 +351,21 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 							</table>
 					</section>
 					<section>
-						<figure>
-							<embed src="images/jsonmarbles.svg" style="width:880px;"></embed>
-						</figure>
+						<div style="height:24em;">
+							<figure style="position:absolute; left:0;">
+								<embed src="images/jsonmarbles.svg" style="width:18em;"></embed>
+								<figcaption>key:value design</figcaption>
+							</figure>
+							<figure style="position:absolute; right:0;">
+								<embed src="images/tablemarbles.svg" style="width:18em;"></embed>
+								<figcaption>table design</figcaption>
+							</figure>
+						</div>
 					</section>
 					<section>
 						<p class="bigger-point"><strong>Key-value data</strong> are well-suited for distributed data challenges</p>
 					</section>
+					<!--
 					<section>
 						<figure>
 							<table id="distributed-data" class="example-table">
@@ -394,48 +404,29 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 							<figcaption>Possible data distribution across domains</figcaption>
 						</figure>
 					</section>
-					<!--
-					<section>
-						<figure>
-							<img src="images/rdbms.png" style="height:600px;" />
-							<figcaption class="img-reference">Relational database management systems</figcaption>
-						</figure>
-					</section>
-					<section>
-						<figure>
-							<img src="images/nosql.png" style="height:600px;" />
-							<figcaption class="img-reference">NoSQL database systems</figcaption>
-						</figure>
-					</section>
 					-->
-					<section>
-						<h2>NoSQL</h2>
-						<p class="big-point">The <strong>key-value</strong> model is central to several NoSQL technologies that transcent the limitations of tables, but there are others</p>
-						<p class="big-point"><strong>NoSQL</strong> ("not only SQL") databases reject the dominance of the table-based relational data model</p>
-					</section>
-					<section>
-						<p class="bigger-point">NoSQL databases are built for the Web and generally embrace web technologies such as <strong>HTTP/REST</strong>, <strong>JavaScript</strong>, and <strong>URIs/URLs</strong></p>
-					</section>
 					<section>
 						<p class="bigger-point">The key-value model is sufficiently flexible for generalization across datasets</p>
 					</section>
 					<section>
 						<p class="bigger-point">The missing ingredient hindering data comparison is an ability to encode <strong>semantics</strong></p>
+						<!--
 						<table class="vs-table fragment">
 							<tr><th>Syntax</th><th rowspan="2"><span>vs.</span></th><th>Semantics</th></tr>
 							<tr><td>concerned with symbols and structure</td><td>concerned with meaning</td></tr>
 						</table>
 						<p class="bigger-point fragment">For that, we need to follow <strong>linked data</strong> principles</p>
+						-->
+					</section>
+					<section>
+						<h2>Linked data</h2>
+						<ul>
+							<li>Facts about anything can be represented as triples</li>
+							<li style="text-align:center; margin:1em 0;"><span style="font-size:1.2em;">sky &#8227; isColored &#8227; blue</span></li>
+							<li>All components can be named as URIs so that usage is consistent and meaning is unambiguous</li>
+						</ul>
 					</section>
 				</section>
-
-<!--
-
-Linked data: all entities, concepts, terms, etc. can be identified by URI
-All data take the form of a subject, an object, and a relationship between the two
-The subject, the object, and the relationship can all be defined on the web via URLs so they can unambiguously used
-
--->
 
 <!--
 				<section>
@@ -524,112 +515,146 @@ The subject, the object, and the relationship can all be defined on the web via 
 						<p class="biggest-point">A standard vocabulary for behavioral field research</p>
 					</section>
 					<section>
-						<h2>Etho Core</h2>
+						<h2>EthoCore</h2>
 						<p style="font-size:1.2em;">Standard vocabulary for behavior modeled on Darwin Core</p>
 					</section>
 					<section>
 						<h2>Darwin Core</h2>
 						<ul>
 							<li>Standard vocabulary for biodiversity science</li>
-							<li>maintained by <strong>Biodiversity Information Standards</strong> (TDWG)</li>
-							<li>itself an extension of <strong>Dublin Core</strong>, which maintains metadata standards across the web.</li>
+							<li>Maintained by <strong>Biodiversity Information Standards</strong> (TDWG)</li>
+							<li>Itself an extension of <strong>Dublin Core</strong>, which maintains metadata standards across the web.</li>
 						</ul>
 					</section>
 					<section>
-<!--
-
-Concepts are organized into classes in research domains
-
-Then show location
-
--->
 						<h2>EthoCore</h2>
-						<p style="font-size:1.2em;">Currently 166 metadata terms in eleven classes</p>
+						<p style="font-size:1.2em;">Currently 166 terms in eleven classes</p>
 					</section>
 					<section>
-						<p>Maintains a standard vocabulary for behavior</p>
-						<p>This vocabulary may be flexibly used in a variety of contexts including as columns in a table, keys in key-value pairs, and entities or concepts in linked data statements</p>
-<!--
-There is value in community-derived vocabularies for community usage because it ensures people talking about the same things
-
-
-Show location
-
-iframe of darwin core
--->
+						<p>Maintains a standard vocabulary for the behavioral community</p>
+						<p>There is value in a community-derived vocabulary for community usage because it facilitates communication and comparison</p>
 					</section>
 					<section>
-						<h2>Etho Core classes</h2>
-						<div style="height:7.6em;">
+						<p>This vocabulary may be flexibly utilized in a variety of contexts including as</p>
+						<ul>
+							<li>columns in a table</li>
+							<li>keys in key-value pairs</li>
+							<li>components of a linked data triple</li>
+						</ul>
+					</section>
+					<section>
+						<figure>
+							<iframe name="dwc-frame" src="sites/darwincore/quickreference.html" style="width:1100px; height:560px; border:4px solid black;"></iframe>
+							<figcaption><a onclick="skipToClass('dwc-frame','ClassLocation')" style="color:black; cursor:pointer;">Location (Darwin Core)</a></figcaption>
+						</figure>
+						<!--<p class="subtle-menu"> <a onclick="skipToClass('dwc-frame','ClassOccurrence')">Occurrence</a> &middot; <a onclick="skipToClass('dwc-frame','ClassOrganism')">Organism</a> &middot; <a onclick="skipToClass('dwc-frame','ClassMaterialSample')">MaterialSample</a> &middot; <a onclick="skipToClass('dwc-frame','ClassEvent')">Event</a> &middot; <a onclick="skipToClass('dwc-frame','ClassLocation')">Location</a> &middot; <a onclick="skipToClass('dwc-frame','ClassGeologicalContext')">GeologicalContext</a> &middot; <a onclick="skipToClass('dwc-frame','ClassIdentification')">Activity</a> &middot; <a onclick="skipToClass('dwc-frame','ClassTaxon')">Taxon</a> &middot; <a onclick="skipToClass('dwc-frame','ClassMeasurementOrFact')">MeasurementOrFact</a> &middot; <a onclick="skipToClass('dwc-frame','ClassResourceRelationship')">ResourceRelationship</a> </p>-->
+					</section>
+					<section>
+						<h2>EthoCore classes</h2>
+						<div style="height:7.2em;">
 						<ul class="two-columns" style="width:1200px;">
-							<li>Observation</li>
-							<li>Measurement</li>
-							<li>Organism</li>
-							<li>Patch</li>
-							<li>MaterialSample</li>
-							<li>Event</li>
-							<li>Activity</li>
-							<li>Location</li>
-							<li>Identification</li>
-							<li>Taxon</li>
-							<li>ResourceRelationship</li>
+							<li class="status-new">Observation</li>
+							<li class="status-new">Measurement</li>
+							<li class="status-modified">Organism</li>
+							<li class="status-new">Patch</li>
+							<li class="status-modified">MaterialSample</li>
+							<li class="status-modified">Event</li>
+							<li class="status-new">Activity</li>
+							<li class="status-modified">Location</li>
+							<li class="status-unchanged">Identification</li>
+							<li class="status-unchanged">Taxon</li>
+							<li class="status-unchanged">ResourceRelationship</li>
 <!--
-
-color code
-
-with a key
-
-
-
-
-
-
 
 we welcome comments 
 
 -->
 						</ul>
 						</div>
+						<embed src="images/ethocore_key.svg" style="margin-top:1em;" />
+					</section>
+					<section>
+						<h2>Design principles</h2>
+						<p class="big-point">Complex data structures can be deconstructed into atomic elements</p>
+						<p class="big-point">Applications still require a "packaging" of atomic elements into data structures</p>
+						<p class="big-point">This is where common constraints reflecting a shared model of the world are useful</p>
+					</section>
+					<section>
+						<h2>Document model</h2>
+							<figure>
+								<embed src="images/documentmarbles.svg"></embed>
+								<figcaption>document-oriented design</figcaption>
+							</figure>
+					</section>
+
+
+					<section>
+						<h2>Observation</h2>
+						<p>New class designed specially for observational research</p>
+						<p class="inconspicuous">observationID | <span class="conspicuous">observationType</span> | <span class="conspicuous">observationValue</span> | observationAccuracy | observationUnit | observationDeterminedBy | observationMethod | observationRemarks</p>
+					</section>
+
+					<section>
+						<h2>Observation documents</h2>
+							<figure>
+								<embed src="images/observationmarbles.svg" style="width:1050px;"></embed>
+							</figure>
+					</section>
+
+					<section>
+						<h2>ResourceRelationship</h2>
+						<p>Darwin Core class for describing relationships between resources</p>
+						<p class="inconspicuous">resourceRelationshipID | <span class="conspicuous">resourceID</span> | <span class="conspicuous">relatedResourceID</span> | <span class="conspicuous">relationshipOfResource</span> | relationshipAccordingTo | relationshipEstablishedDate | relationshipRemarks</p>
+					</section>
+
+					<section>
+						<h2>ResourceRelationship documents</h2>
+							<figure>
+								<embed src="images/resourcerelationships.svg" style="width:1050px;"></embed>
+							</figure>
 					</section>
 					<section>
 						<figure>
-							<iframe src="http://ethoinformatics.org/ethocore" style="width:1100px; height:560px; border:4px solid black;">EthoCore</iframe>
+							<iframe name="ethocore-frame" src="sites/ethocore/ethocore.html" style="width:1100px; height:560px; border:4px solid black;">EthoCore</iframe>
 							<figcaption><a href="http://ethoinformatics.org/ethocore" target="_blank">http://ethoinformatics.org/ethocore</a></figcaption>
 						</figure>
-					</section>
-					<section>
-						<h2>MeasurementOrObservation</h2>
-						<p>Measurements or observations have a <strong>type</strong> and a <strong>value</strong></p>
-					</section>
-					<section>
-						<h2>Morphometric examples</h2>
-						<ul>
-							<li>Weight</li>
-							<li>Minimum Girth</li>
-							<li>Glabella-Opisthocranion</li>
-						</ul>
-					</section>
-					<section>
-						<embed src="images/measurements.svg" style="height:640px;"></embed>
-					</section>
-					<section>
-						<h2>Behavioral examples</h2>
-						<ul>
-							<li>Nearest neighbor observation</li>
-							<li>Focal observation</li>
-						</ul>
-					</section>
-					<section>
-						<embed src="images/observations1.svg" style="height:700px;"></embed>
-					</section>
-					<section>
-						<embed src="images/observations2.svg" style="height:700px;"></embed>
-					</section>
-					<section>
-						<embed src="images/fullweb.svg" style="height:640px;"></embed>
+						<p class="subtle-menu"> <a onclick="skipToClass('ethocore-frame','ClassObservation')">Observation</a> &middot; <a onclick="skipToClass('ethocore-frame','ClassMeasurement')">Measurement</a> &middot; <a onclick="skipToClass('ethocore-frame','ClassOrganism')">Organism</a> &middot; <a onclick="skipToClass('ethocore-frame','ClassPatch')">Patch</a> &middot; <a onclick="skipToClass('ethocore-frame','ClassMaterialSample')">MaterialSample</a> &middot; <a onclick="skipToClass('ethocore-frame','ClassEvent')">Event</a> &middot; <a onclick="skipToClass('ethocore-frame','ClassActivity')">Activity</a> &middot; <a onclick="skipToClass('ethocore-frame','ClassLocation')">Location</a> &middot; <a onclick="skipToClass('ethocore-frame','ClassIdentification')">Identification</a> &middot; <a onclick="skipToClass('ethocore-frame','ClassTaxon')">Taxon</a> &middot; <a onclick="skipToClass('ethocore-frame','ClassResourceRelationship')">ResourceRelationship</a> </p>
 					</section>
 				</section>
 				<section>
+					<section>
+						<h1>Closing thoughts</h1>
+					</section>
+					<section>
+						<h2>Tables</h2>
+						<p>Tables have a place and relational databases are still valuable tools</p>
+						<p>The table paradigm, however, gets in the way of comparison</p>
+						<p>As a community, we need to break free of the table layer and think about commonalities in our underlying data models</p>
+					</section>
+					<section>
+						<p>We are not alone in this effort...</p>
+					</section>
+					<section>
+						<h2>NoSQL</h2>
+						<p class="big-point">The <strong>key-value</strong> model is central to several NoSQL technologies that transcend the limitations of tables, but there are others</p>
+						<p class="big-point"><strong>NoSQL</strong> ("not only SQL") databases reject the dominance of the table-based relational data model</p>
+					</section>
+					<section>
+						<p class="bigger-point">NoSQL databases are built for the Web and generally embrace web technologies such as <strong>HTTP/REST</strong>, <strong>JavaScript</strong>, and <strong>URIs/URLs</strong></p>
+					</section>
+					<section>
+						<p>For us, the document-oriented design is a reasonable intermediary from our tables to, eventually, the global linked data ecosystem on the web</p>
+					</section>
+					<section>
+						<p class="big-point">Developing an infrastructure for the larger anthropological community</p>
+						<p class="fragment" style="font-size:3em;">AnthroCore</p>
+						<p class="fragment">(PaleoCore + Ethoinformatics + TARL)</p>
+						<p class="fragment">Focus on geospatial database tools, linked data, and outreach</p>
+					</section>
+					<section>
+						<p>About ownership and access . . .</p>
+					</section>
+<!--
 					<section>
 						<h1>Roadmap</h1>
 					</section>
@@ -683,18 +708,6 @@ we welcome comments
 							<figcaption><p class="img-credit">Image credits: <a href="https://www.flickr.com/photos/33037982@N04/3452674727/" target="_blank">Leonora Enking</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Gombe_Stream_NP_Mutter_und_Kind.jpg" target="_blank">Ikiwaner</a> &middot; <a href="https://www.flickr.com/photos/amaynez/3332049655/" target="_blank">Armando Maynez</a> &middot; <a href="https://www.flickr.com/photos/7631803@N04/445038264/" target="_blank">Mike LaBarbera</a> &middot; <a href="https://commons.wikimedia.org/wiki/File:Brachyteles_hypoxanthus2.jpg" target="_blank">Paulo Chaves</a></p></figcaption>
 						</figure>
 						<p class="big-point fragment">Link data, analyze data, address a question, publish as a consortium</p>
-					</section>
-					<section>
-						<p class="big-point">Developing open source data collection software</p>
-						<figure style="height:520px;">
-							<!--
-							<iframe src="http://localhost:8001" style="position:absolute; right:640px; width:338px; height:600px; border:2px solid black;"></iframe>
-							-->
-							<ul style="position:absolute; width:300px; left:640px; top:200px;">
-								<li class="fragment" data-fragment-index="2">uses a standard framework that is extensible and customizable</li>
-								<li class="fragment" data-fragment-index="3">building specialized (project-specific) modules</li>
-							</ul>
-						</figure>
 					</section>
 					<section>
 						<p class="big-point">Developing an infrastructure for the larger anthropological community</p>
@@ -757,6 +770,7 @@ we welcome comments
 					<section>
 						<p class="biggerer-point">But when the benefits materialize, the culture will change</p>
 					</section>
+-->
 <!--
 
 Data published for human consumption limits machine function, which limits reuse
@@ -769,11 +783,6 @@ Data published for human consumption limits machine function, which limits reuse
 						<p>Technologies are moving into the Web and into the Cloud</p>
 					</section>
 -->
-						<!--
-							Trends in Web Tech
-							Internet of Things
-							Cloud technology
-						-->
 						<!--
 							non judgmental attitude
 							promote web and data literacy

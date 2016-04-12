@@ -132,5 +132,12 @@ function tripleInfo(id,what,which) {
 	}
 }
 
+function skipToClass(frame,id) {
+	var frames = {
+		'ethocore-frame' : 'sites/ethocore/ethocore.html',
+		'dwc-frame' : 'sites/darwincore/quickreference.html'
+	}
 
+	window.frames[frame].location.hash = id;
+}
 

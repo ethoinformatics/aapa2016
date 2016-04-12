@@ -6,79 +6,79 @@ html.img-right div.slide-background.present {
 */
 	@font-face {
 		font-family: Open Sans;
-		src: url(../lib/font/muli/OpenSans-Regular.ttf) format('truetype');
+		src: url(../lib/font/open-sans/OpenSans-Regular.ttf) format('truetype');
 		font-weight: normal;
 		font-style: normal;
 	}
 	@font-face {
 		font-family: Open Sans;
-		src: url(../lib/font/muli/OpenSans-Italic.ttf) format('truetype');
+		src: url(../lib/font/open-sans/OpenSans-Italic.ttf) format('truetype');
 		font-weight: normal;
 		font-style: italic;
 	}
 	@font-face {
 		font-family: Open Sans;
-		src: url(../lib/font/muli/OpenSans-Bold.ttf) format('truetype');
+		src: url(../lib/font/open-sans/OpenSans-Bold.ttf) format('truetype');
 		font-weight: 700;
 		font-style: normal;
 	}
 	@font-face {
 		font-family: Open Sans;
-		src: url(../lib/font/muli/OpenSans-BoldItalic.ttf) format('truetype');
+		src: url(../lib/font/open-sans/OpenSans-BoldItalic.ttf) format('truetype');
 		font-weight: 700;
 		font-style: italic;
 	}
 	@font-face {
 		font-family: Open Sans;
-		src: url(../lib/font/muli/OpenSans-Light.ttf) format('truetype');
+		src: url(../lib/font/open-sans/OpenSans-Light.ttf) format('truetype');
 		font-weight: 300;
 		font-style: normal;
 	}
 	@font-face {
 		font-family: Open Sans;
-		src: url(../lib/font/muli/OpenSans-LightItalic.ttf) format('truetype');
+		src: url(../lib/font/open-sans/OpenSans-LightItalic.ttf) format('truetype');
 		font-weight: 300;
 		font-style: italic;
 	}
 	@font-face {
 		font-family: Open Sans;
-		src: url(../lib/font/muli/OpenSans-Semibold.ttf) format('truetype');
+		src: url(../lib/font/open-sans/OpenSans-Semibold.ttf) format('truetype');
 		font-weight: 600;
 		font-style: normal;
 	}
 	@font-face {
 		font-family: Open Sans;
-		src: url(../lib/font/muli/OpenSans-SemiboldItalic.ttf) format('truetype');
+		src: url(../lib/font/open-sans/OpenSans-SemiboldItalic.ttf) format('truetype');
 		font-weight: 600;
 		font-style: italic;
 	}
 	@font-face {
 		font-family: Open Sans;
-		src: url(../lib/font/muli/OpenSans-ExtraBold.ttf) format('truetype');
+		src: url(../lib/font/open-sans/OpenSans-ExtraBold.ttf) format('truetype');
 		font-weight: 800;
 		font-style: normal;
 	}
 	@font-face {
 		font-family: Open Sans;
-		src: url(../lib/font/muli/OpenSans-ExtraBoldItalic.ttf) format('truetype');
+		src: url(../lib/font/open-sans/OpenSans-ExtraBoldItalic.ttf) format('truetype');
 		font-weight: 800;
 		font-style: italic;
 	}
 	@font-face {
 		font-family: Open Sans Condensed;
-		src: url(../lib/font/muli/OpenSans-CondBold.ttf) format('truetype');
+		src: url(../lib/font/open-sans/OpenSans-CondBold.ttf) format('truetype');
 		font-weight: 700;
 		font-style: normal;
 	}
 	@font-face {
 		font-family: Open Sans Condensed;
-		src: url(../lib/font/muli/OpenSans-CondLight.ttf) format('truetype');
+		src: url(../lib/font/open-sans/OpenSans-CondLight.ttf) format('truetype');
 		font-weight: 300;
 		font-style: normal;
 	}
 	@font-face {
 		font-family: Open Sans Condensed;
-		src: url(../lib/font/muli/OpenSans-CondLightItalic.ttf) format('truetype');
+		src: url(../lib/font/open-sans/OpenSans-CondLightItalic.ttf) format('truetype');
 		font-weight: 300;
 		font-style: italic;
 	}
@@ -178,6 +178,9 @@ html.img-right div.slide-background.present {
 		font-family:Helvetica, Arial, sans-serif;
 		font-size:0.8em;
 		margin-top:-0.5em;
+	}
+	.custom a.fake {
+		cursor:pointer;
 	}
 	.custom img.opaque {
 		background-color:#FFFFFF;
@@ -301,7 +304,7 @@ html.img-right div.slide-background.present {
 	.custom .triple-table > tbody > tr > td:nth-child(3) {
 		width:200px;
 	}
-	.custom ul.two-columns {
+	ul.two-columns {
 		height:8.64em;
 		width:960px;
 		list-style-type: disc;
@@ -370,3 +373,21 @@ html.img-right div.slide-background.present {
     .custom .prefix {
     	color:#f66;
     }
+	p.subtle-menu {
+		margin-top:2em;
+		font-family:Helvetica, Arial, sans-serif;
+		text-align:center;
+		font-size:0.6em;
+	}
+	p.subtle-menu a {
+		color:black;
+		cursor:pointer;
+	}
+	p.subtle-menu a:link {color: black;}
+	p.subtle-menu a:visited {color: black;}
+	p.subtle-menu a:hover {color: grey;}
+	.status-unchanged { color:#1b9e77; }
+	.status-modified { color:#d95f02; }
+	.status-new { color:#7570b3; }
+	.inconspicuous { color:#ccc;}
+	span.conspicuous { color: #f00; font-weight:bold; }
