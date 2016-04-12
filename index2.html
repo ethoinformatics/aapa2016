@@ -171,11 +171,14 @@
 					</section>
 					<section id="ethogrammar-data-model">
 						<section>
-							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Design Principles</h2>
-							<p class="subtitle">1. Custom data structures. Information that goes together is flexible packaged into user-structured "documents" (a.k.a. resources)<span style="color:blue"></span></p>
+							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Design Philosophy</h2>
+							<p class="subtitle" style="margin-top:1em;">Custom data structures</p>
+							<ul>
+								<li>Information that goes together (metadata + data) is flexibly packaged into user-defined data structures "documents" (a.k.a. resources)</li>
+								<li>Documents are made up from a set of <code>key:value</code> pairs, where keys are standard terms that belong to EthoCore classes</li>
+							</ul>
 							<aside class="notes">
 								<ul>
-									<li>Documents are made up from a set of standard TERMS which fall into CLASSES based on DarwinCore (DWC) and DublinCore (DC) and the EthoCore (EC) extension to these two standards.</li>
 									<li>Documents are (roughly) equivalent to the rows or records in a tabular/relational database except that each is a separate entity</li>
 									<li>The are very similar, too, to the nodes in a graph database.
 									<li>Many of the terms used to make up a document are metadata terms</li>
@@ -185,8 +188,15 @@
 							</aside>
 						</section>
 						<section>
+							<p>Example: "A contact"
 							<figure>
 								<img src="images/contactdoc.png" style="height:600px; border:0px; box-shadow:0 0 0px;" />
+							</figure>
+						</section>
+						<section>
+							<p>Example: "A sample collection"
+							<figure>
+								<img src="" style="height:600px; border:0px; box-shadow:0 0 0px;" />
 							</figure>
 						</section>
 						<section>
@@ -306,9 +316,19 @@
 								<div style="background-color:#cccccc; position:absolute; left:407px; top:46px; width:375px; height:600px; border:4px solid #666; z-index:-1;"></div>
 								<iframe src="http://localhost:8001" style="position:absolute; left:411px; top:50px; width:375px; height:600px;">EthoCore</iframe>
 							</figure>
-					</section>
-
-
+						</section>
+						<section id="acknowledgments">
+							<section>
+								<h1>Acknowledgments</h1>
+								<ul>
+									<li><strong>Nick Sears</strong> & <strong>Jonathan Cousins</strong> <span class="affiliation">Cousins & Sears Creative Technologists</span></li>
+									<li><strong>Jennifer Moore</strong>, <strong>Cynthia Hudson</strong>, & <strong>Aaron Addison</strong> <span class="affiliation">Washington University Libraries</span></li>
+									<li><strong>Jane Phillips-Conroy</strong> <span class="affiliation">Washington University &middot; Neuroscience / Anthropology</span></li>
+									<li><strong>2013</strong> <span class="smalltext">St. Louis</span> & <strong>2015</strong> <span class="smalltext">Austin</span> <strong> working group meetings participants</strong><br><p class="acknowledgments">Laura Abondano &middot; Colin Addis &middot; Elizabeth Archie &middot; Louise Barrett &middot; Thore Bergman &middot; Maryjka Blaszczyk &middot; Damien Caillaud &middot; Shahrina Chowdhury &middot; Kelsey Ellis &middot; Gideon Erkenswick &middot; Eduardo Fernandez-Duque &middot; Steffen Foerster &middot; Paul Garber &middot; Peter Henzi &middot; Katharine Jack &middot; Clifford Jolly &middot; Andreas Koenig &middot; Kara Leimberger &middot; Rebecca Lewis &middot; Katie MacKinnon &middot; Amely Martins &middot; Monica McDonald &middot; Amanda Melin &middot; Mike Montague &middot; Stephanie Musgrave &middot; Joseph Orkin &middot; Katie Ortiz &middot; Steve Phelps &middot; Denné Reed &middot; Crickette Sanz &middot; Clara Scarry &middot; Christopher Schmitt &middot; Christopher Shaffer &middot; Joan Silk &middot; Karen Strier &middot; Robert Sussman &middot; Stacey Tecot &middot; Claudia Valeggia &middot; Sarie Van Belle &middot; Anna Weyher</p></li>
+									<li><strong>National Science Foundation</strong> <span class="smalltext"> SMA 1338524 &middot; SMA 1338467 &middot; SMA 1338452</span></li>
+								</ul>
+							</section>
+						</section>
 			</div>
 		</div>
 
