@@ -11,7 +11,70 @@ Tags: custom-menu, sticky-post, microformats, rtl-language-support, translation-
 */
 
 /******************************************************************/
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic,300);
+
+
+	@font-face {
+		font-family: Open Sans;
+		src: url(../../lib/font/open-sans/OpenSans-Regular.ttf) format('truetype');
+		font-weight: normal;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: Open Sans;
+		src: url(../../lib/font/open-sans/OpenSans-Italic.ttf) format('truetype');
+		font-weight: normal;
+		font-style: italic;
+	}
+	@font-face {
+		font-family: Open Sans;
+		src: url(../../lib/font/open-sans/OpenSans-Bold.ttf) format('truetype');
+		font-weight: 700;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: Open Sans;
+		src: url(../../lib/font/open-sans/OpenSans-BoldItalic.ttf) format('truetype');
+		font-weight: 700;
+		font-style: italic;
+	}
+	@font-face {
+		font-family: Open Sans;
+		src: url(../../lib/font/open-sans/OpenSans-Light.ttf) format('truetype');
+		font-weight: 300;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: Open Sans;
+		src: url(../../lib/font/open-sans/OpenSans-LightItalic.ttf) format('truetype');
+		font-weight: 300;
+		font-style: italic;
+	}
+	@font-face {
+		font-family: Open Sans;
+		src: url(../../lib/font/open-sans/OpenSans-Semibold.ttf) format('truetype');
+		font-weight: 600;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: Open Sans;
+		src: url(../../lib/font/open-sans/OpenSans-SemiboldItalic.ttf) format('truetype');
+		font-weight: 600;
+		font-style: italic;
+	}
+	@font-face {
+		font-family: Open Sans;
+		src: url(../../lib/font/open-sans/OpenSans-ExtraBold.ttf) format('truetype');
+		font-weight: 800;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: Open Sans;
+		src: url(../../lib/font/open-sans/OpenSans-ExtraBoldItalic.ttf) format('truetype');
+		font-weight: 800;
+		font-style: italic;
+	}
+
+
 /******************************************************************
 RESET STYLES
 ******************************************************************/
@@ -830,7 +893,7 @@ div.menu {
 		}
 			div.menu > ul > li > ul.sub-menu,
 			div.menu > ul > li > ul.children {
-				background-image: url(library/images/nav-arr.png);
+				background-image: url(nav-arr.png);
 				background-repeat: no-repeat;
 				background-position: 15px 0;
 				padding-top: 5px;
