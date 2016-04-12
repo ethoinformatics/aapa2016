@@ -86,7 +86,7 @@
 									<li>Deal with limited data streams</li>
 									<li>Limited customizability</li>
 									<li>No emphasis on using standard ontologies</li>
-									<li>Not automatically geotagged</li>
+									<li>Geolocation tagging not automatic</li>
 									<li>Not cross-platform</li>
 								</ul>
 								<p>
@@ -103,8 +103,8 @@
 									<li>Built on open source and standard web technologies</li>
 									<li class="fragment">Modular, configurable, and allows multiple data streams</li>
 									<li class="fragment">Runs on multiple platforms and older devices</li>
-									<li class="fragment">Flexible enough to supports different existing schemas</li>
-									<li class="fragment">Automatic geolocation and time stamping</li>
+									<li class="fragment">Flexible enough to support different existing schemas</li>
+									<li class="fragment">Automatic geolocation tagging and time stamping</li>
 									<li class="fragment">Does not require continuous web connection</li>
 									<li class="fragment">Standards compliant and linked data friendly</li>
 								</ul>
@@ -145,18 +145,18 @@
 								</tr>
 								<tr class="row3">
 									<td class="col1" onmouseover="row(3,1)" onmouseout="row(3,0)">3</td>
-									<td class="col2">Location++</td>
-									<td class="col3"><span class="etho-core">MeasurementOrObservation</span></td>
+									<td class="col2">Location</td>
+									<td class="col3"><span class="etho-core">Measurement</span></td>
 								</tr>
 								<tr class="row4">
 									<td class="col1" onmouseover="row(4,1)" onmouseout="row(4,0)">4</td>
-									<td class="col2">MaterialSample++</td>
-									<td class="col3"><span class="etho-core">Patch</span></td>
+									<td class="col2">MaterialSample</td>
+									<td class="col3"><span class="etho-core">Observation</span></td>
 								</tr>
 								<tr class="row5">
 									<td class="col1" onmouseover="row(5,1)" onmouseout="row(5,0)">5</td>
 									<td class="col2">Taxon</td>
-									<td class="col3"><span class="etho-core"></span></td>
+									<td class="col3"><span class="etho-core">Patch</span></td>
 								</tr>
 								<tr class="row6">
 									<td class="col1" onmouseover="row(6,1)" onmouseout="row(6,0)">6</td>
@@ -171,8 +171,8 @@
 					</section>
 					<section id="ethogrammar-data-model">
 						<section>
-							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Design Principles</h1>
-							<h3>1. Information that goes together is packaged into  documents (a.k.a. resources)</h2>
+							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Design Principles</h2>
+							<p class="subtitle">1. Custom data structures. Information that goes together is flexible packaged into user-structured "documents" (a.k.a. resources)<span style="color:blue"></span></p>
 							<aside class="notes">
 								<ul>
 									<li>Documents are made up from a set of standard TERMS which fall into CLASSES based on DarwinCore (DWC) and DublinCore (DC) and the EthoCore (EC) extension to these two standards.</li>
@@ -238,11 +238,14 @@
 
 					<section id="implementation">
 						<section>
-							<h2>Implementation</h1>
 								<img src="images/html5_css3_javascript.png" style="height:100px; margin-top:25px; border:0px; box-shadow:0 0 0px;" />
-								<figcaption>for mobile application</figcaption>
+								<figcaption>for building web application</figcaption>
+								<img src="images/node-npm.png" style="height:100px; margin-top:25px; border:0px; box-shadow:0 0 0px;" />
+								<figcaption>for bundling packages together</figcaption>
+								<img src="images/cordova_bot.png" style="height:100px; margin-top:25px; border:0px; box-shadow:0 0 0px;" />
+								<figcaption>to compile for mobile device</figcaption>
 								<img src="images/JSON.png" style="height:100px; margin-top:25px; border:0px; box-shadow:0 0 0px;" />
-								<figcaption>for documents and custom configurations</figcaption>
+								<figcaption>structured text format for documents and custom configurations</figcaption>
 								<img src="images/pouchdb.png" style="height:120px; margin-top:25px;  border:0px; box-shadow:0 0 0px;" />
 								<figcaption>for local data storage</figcaption>
 								<img src="images/couchdb.png" style="height:100px; margin-top:25px;  border:0px; box-shadow:0 0 0px;" />
@@ -279,7 +282,7 @@
 							<br>
 							<h2>App produces documents that...</h2>
 								<ul>
-									<li>Conform to <span class="semibold">EthoCore</span> and other community-designed data standards (e.g., Darwin Core)</li>
+									<li class="fragment">Conform to <span class="semibold">EthoCore</span> and other community-designed data standards (e.g., Darwin Core)</li>
 							</ul>
 							<aside class="notes">
 								<ul>
@@ -289,6 +292,11 @@
 						</section>
 
 						<section>
+
+								<figure>
+									<iframe src="http://localhost:8000" style="width:1100px; height:560px; border:4px solid black;">EthoCore</iframe>
+									<figcaption><a href="http://ethoinformatics.org/ethocore" target="_blank">http://ethoinformatics.org/ethocore</a></figcaption>
+								</figure>
 
 						</section>
 					</section>
