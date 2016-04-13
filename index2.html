@@ -1,12 +1,13 @@
 <!doctype html>
 <html lang="en">
+
 	<head>
 		<meta charset="utf-8">
 
-		<title>Ethoinformatics 2</title>
+		<title>Ethoinformatics</title>
 
 		<meta name="description" content="">
-		<meta name="author" content="tony di fiore">
+		<meta name="author" content="kenny chiou">
 
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -28,14 +29,12 @@
 		<script src="lib/js/dazzleSketch.js"></script>
 
 		<!-- Slide-specific scripts -->
-		<script type="text/javascript" src="custom-js/columns.js"></script>
-		<script type="text/javascript" src="custom-js/xml-hominins.js"></script>
-		<script type="text/javascript" src="custom-js/json-hominins.js"></script>
 		<script type="text/javascript" src="custom-js/url-info.js"></script>
 		<script type="text/javascript" src="custom-js/triples-info.js"></script>
 		<script type="text/javascript" src="custom-js/sql-join.js"></script>
 		<script type="text/javascript" src="custom-js/sql-schema.js"></script>
 
+		<script type="text/javascript" src="custom-js/script.js"></script>
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -46,9 +45,25 @@
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 
+<!--
+	ctrl-` (next to the 1) erase and turn off drawing
+	ctrl-P Switch between a white canvas and transparent canvas
+	ctrl-1 Yellow Pen
+	ctrl-2 Green Pen
+	ctrl-3 Cyan Pen
+	ctrl-4 Red Pen
+	ctrl-5 White Pen
+	ctrl-6 Blue Pen
+	ctrl-7 Magenta Pen
+	ctrl-8 Black Pen
+	ctrl-- Make pen narrower
+	ctrl-= Make pen wider
+-->
+
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
+
 	</head>
 
 	<body>
@@ -71,16 +86,16 @@
 					</section>
 					<section id="current-apps">
 						<section>
-							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Handheld Apps for Field Data Collection</h2>
-							<p class="subtitle" style="margin-top:1em;">What's Currently Available?</p>
+							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Handheld apps for field data collection</h2>
+							<p class="big-point">What's currently available?</p>
 							<figure>
 								<img src="images/software.png" style="height:350px; border:0px; box-shadow:0 0 0px;" />
 							</figure>
 							<li>Plus various database + form apps for structured notetaking</li>
 						</section>
 						<section>
-							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Handheld Apps for Field Data Collection</h2>
-							<p class="subtitle" style="margin-top:1em;">Limitations?</p>
+							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Handheld apps for field data collection</h2>
+							<p class="big-point">Significant limitations!</p>
 								<ul>
 									<li>Most are proprietary</li>
 									<li>Deal with limited data streams</li>
@@ -98,32 +113,34 @@
 					<section id="digital-data-services">
 						<section>
 							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Goals</h2>
-							<p class="subtitle" style="margin-top:1em;">A handheld app that is...</p>
+							<p class="big-point">A handheld app that is...</p>
 								<ul>
-									<li>Built on open source and standard web technologies</li>
-									<li class="fragment">Modular, configurable, and allows multiple data streams</li>
-									<li class="fragment">Runs on multiple platforms and older devices</li>
-									<li class="fragment">Flexible enough to support different existing schemas</li>
-									<li class="fragment">Automatic geolocation tagging and time stamping</li>
-									<li class="fragment">Does not require continuous web connection</li>
-									<li class="fragment">Standards compliant and linked data friendly</li>
+									<li>Built on <span class="semibold">open source</span> and standard web technologies</li>
+									<li class="fragment">Configurable, <span class="semibold">modular</span>, and allows multiple data streams</li>
+									<li class="fragment">Runs on <span class="semibold">multiple platforms</span> and older devices</li>
+									<li class="fragment">Automatic <span class="semibold">geolocation tagging</span> and time stamping</li>
+									<li class="fragment">Works <span class="semibold">offline</span> without a continuous web connection</li>
+									<p></p>
+									<li class="fragment" style="font-style:italic; color:rgb(51, 51, 204);">Flexible enough to support different existing schemas</li>
+									<li class="fragment" class="fragment" style="font-style:italic; color:rgb(51, 51, 204);">Standards compliant and linked data friendly</li>
 								</ul>
 						</section>
 
 						<section>
 							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Goals</h1>
-							<p class="subtitle" style="margin-top:1em;">A browser-based admin tool that is...</p>
+							<p class="big-point">A browser-based admin tool that is...</p>
 								<ul>
-									<li> Built on open source and standard web technologies</li>
-									<li class="fragment">Allows and integrates multiple users per project</li>
-									<li class="fragment">Makes sharing of data easy</li>
+									<li>Built on <span class="semibold">open source</span> and standard web technologies</li>
+									<li class="fragment">Allows and integrates <span class="semibold">multiple users</span> per project</li>
+									<p></p>
+									<li class="fragment" style="font-style:italic; color:rgb(51, 51, 204);">Makes sharing data easy</li>
 								</ul>
 						</section>
 
 						<section>
 							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Caveat</h2>
-							<p class="subtitle" style="margin-top:1em;">We're not (yet!) concerned with designing a slick interface for behavioral data entry...</p>
-							<h3 class="fragment" style="color:rgb(51, 51, 204);">...instead, we're focusing on designing a modular, customizable framework for collecting multiple data streams using a single app and device</h2>
+							<p class="big-point">We're not (yet!) concerned with designing a slick interface for behavioral data entry...</p>
+							<p class="big-point" style="font-style:italic;color:rgb(51, 51, 204);">...instead, we're focusing on designing a modular, customizable framework for collecting multiple data streams using a single app and device</h2>
 						</section>
 
 <!--
@@ -174,10 +191,11 @@
 					<section id="data-model">
 						<section>
 							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Design Philosophy</h2>
-							<p class="subtitle" style="margin-top:1em;">Custom data structures</p>
+							<p class="big-point">Custom data structures</p>
 							<ul>
-								<li>Information that goes together (metadata + data) is flexibly packaged into user-defined data structures "documents" (a.k.a. resources)</li>
-								<li>Documents are made up from a set of <code>key:value</code> pairs, where keys are standard terms that belong to EthoCore classes</li>
+								<li>Information that goes together (metadata + data) is flexibly packaged into user-defined data structures called <span class="semibold">documents</span>
+								</li>
+								<li class="fragment">Documents are made up from a set of <code>key:value</code> pairs, where keys either are <span class="semibold">EthoCore</span> terms or have have well-defined relationships with those terms</li>
 							</ul>
 							<aside class="notes">
 								<ul>
@@ -189,13 +207,26 @@
 							</aside>
 						</section>
 						<section>
-							<p>Example: "A contact"
+							<h2>Document model</h2>
+								<figure>
+									<embed src="images/documentmarbles.svg"></embed>
+									<figcaption>document-oriented design</figcaption>
+								</figure>
+						</section>
+						<section>
+							<p class="big-point">Example: An "observer" document
 							<figure>
-								<img src="images/contactdoc.png" style="height:600px; border:0px; box-shadow:0 0 0px;" />
+								<img src="images/document.png" style="height:450px; border:0px; box-shadow:0 0 0px;" />
 							</figure>
 						</section>
 						<section>
-							<p>Example: "A sample collection"
+							<p class="big-point">Mapping to EthoCore</p>
+							<figure>
+								<img src="images/observerToEthoCore.png" style="height:450px; border:0px; box-shadow:0 0 0px;" />
+							</figure>
+						</section>
+						<section>
+							<p class="big-point">Example: A "contact" document
 							<figure>
 								<img src="" style="height:600px; border:0px; box-shadow:0 0 0px;" />
 							</figure>
@@ -205,12 +236,12 @@
 							<p class="subtitle" style="margin-top:1em;">Structure of documents</p>
 							<ul>
 								<li>Contain a URI</li>
-								<li>Contain metadata</li>
+								<li>Contain key metadata</li>
 								<ul>
 									<li>Who made it</li>
-									<li>When it was created</li>
-									<li>Time (point or series)</li>
-									<li>Geolocation (point or series)</li>
+									<li>Datetime (point) when it was created</li>
+									<li>Datetime (point or series) to which the data pertain </li>
+									<li>Geolocation (point or series) to which the data pertain</li>
 								</ul>
 								<li>Represented in structured text format (JSON)</li>
 							</ul>
