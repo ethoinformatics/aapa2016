@@ -226,7 +226,7 @@
 							</figure>
 						</section>
 						<section>
-							<p class="big-point">Mapping to EthoCore</p>
+							<p class="big-point">Mapping to EthoCore terms</p>
 							<figure>
 								<img src="images/taxonomyToEthoCore.png" style="height:450px; border:0px; box-shadow:0 0 0px;" />
 							</figure>
@@ -243,8 +243,10 @@
 									<li>Datetime (point or series) to which the data pertain </li>
 									<li>Geolocation (point or series) to which the data pertain</li>
 								</ul>
-								<li>Represented in a de facto structured text format (called JSON) <code class="inline-code">key:value</code> </li>
+								<li>Represented in a standard format for structured <code class="inline-code">key:value</code> text</li>
 							</ul>
+							<figure>
+							<img src="images/JSON.png" style="height:100px; border:0px; box-shadow:0 0 0px;" /></figure>
 							<aside class="notes">
 								<ul>
 									<li>Many of the terms used to make up a document are metadata terms</li>
@@ -261,7 +263,7 @@
 							</figure>
 						</section>
 						<section>
-							<p class="big-point">Mapping to EthoCore</p>
+							<p class="big-point">Mapping to EthoCore terms</p>
 							<figure>
 								<img src="images/contactToEthoCore.png" style="height:450px; border:0px; box-shadow:0 0 0px;" />
 							</figure>
@@ -337,7 +339,7 @@
 							</aside>
 						</section>
 						<section>
-							<p>All documents tagged with geolocation pulled continuously from operating system's <span class="semibold">location services</span> (from internal GPS, cell towers, external GPS)</p>
+							<p>All documents tagged with geolocation, streaming continuously from a device's <span class="semibold">location services</span> (from internal GPS, cell towers, external GPS)</p>
 							<img src="images/gps.png" style="height:350px; margin-top:0px; border:0px; box-shadow:0 0 0px;" />
 						</section>
 
@@ -360,6 +362,40 @@
 								<div style="background-color:#cccccc; position:absolute; left:407px; top:46px; width:375px; height:600px; border:4px solid #666; z-index:-1;"></div>
 								<iframe id="app_frame" src="http://localhost:8001" style="position:absolute; left:411px; top:50px; width:375px; height:600px;">EthoCore</iframe>
 							</figure>
+							<aside class="notes">
+								This demo is configured using data structures specific to my projec, which includes a particular data structure I call a DIARY, one for each observer who collects data on for the project on a given day.
+
+So here we have 4 such diaries.
+
+On the left we can access a variety of app settings and either download or upload data between the device and a server.
+
+If we go into a given diary screen, say for April 8th 2016, we see a 4 tab interface: DATA, REMARKS, TIMELINE, and MAP.
+
+Here in the data tab, we can see that there are four additional data structures called CONTACTS -- these are the app's rendering of those contact data documents I mentioned earlier.
+
+Here in the data tab for a diary, we can add information on new contacts, if we want.
+
+And in the remarks tab, we can add freeform, ad libitum notes that are easy to time stamp
+
+A key design aim for the app is that it allows users to enter and interact with their data with a familiar user interface and to allow users to have visual feedback, in the field, on the temporality and spatiality of the data they are collecting.
+
+The TIMELINE and MAP tabs are what allow this.
+
+If we switch to the timeline tab, we can see how these four contacts are distributed throughout the day.
+
+And if we switch the app to the MAP view, we can see how they are distributed in space.
+
+The background of this map is drawn from publicly available open street map data.
+
+Location information is pulled continuously from the device's GPS if the app is running, whether it is active or in the background, and you can use this with an external GPS.
+
+The important thing is that spatial and temporal information is added to data you collect in real time. That is, data get tagged with (editable) spatiotemporal metadata as it is collected.</li>
+<li>Here, we see the four contact on the map, positioned where they start, and we can go and adjust these locations if needed</li>
+<li>If we then go back to the DATA for a diary and drill down int a contact, you'll see the breadcrumb at the top keep track of where we are, and switching to the map view highlighs the contact in question.</li>
+<li>Back on the data tab for a contact, you can see we have options for editing the contact and for adding additional data associated with that contact, for example, focal samples or various types of collection information.</li>
+<li>The point is, we're designing the app to be flexible, so researchers can add new data structure types, like contacts, or fecal samples, or focal samples easily and incoporate them into a customizable app for their project and field site.</li>
+</ul>
+</aside>
 						</section>
 
 						<section>
