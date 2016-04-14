@@ -257,7 +257,7 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 					</section>
 					-->
 					<section>
-						<h2>Key-value (<code>key:value</code>) data</h2>
+						<p><span class="like-h2">Key-value</span> (<code class="inline-code">key:value</code>) <span class="like-h2">data</span></p>
 						<pre><code data-noescape><span class="json-row1">{
   <span class="json-col1"><span style="color:#CC9393;">&quot;ID&quot;</span> : <span style="color:#8CCFD2;">1</span></span> ,
   <span class="json-col2"><span style="color:#CC9393;">&quot;Name&quot;</span> : <span style="color:#CC9393;">&quot;Rafiki&quot;</span></span> ,
@@ -537,16 +537,16 @@ Emphasize what is new. What new questions or analysis can be tackled? (David Str
 						<p style="font-size:1.2em;">Currently 166 terms in eleven classes</p>
 					</section>
 					<section>
-						<p class="big-text">EthoCore maintains a standard vocabulary for the primatological community</p>
-						<p class="big-text">A community-derived vocabulary for community usage is valuable and desirable because it facilitates communication and comparison</p>
+						<p class="big-point">EthoCore maintains a standard vocabulary for the primatological community</p>
+						<p class="big-point">A community-derived vocabulary for community usage is valuable and desirable because it facilitates communication and comparison</p>
 					</section>
 					<section>
-						<p>This vocabulary may be flexibly utilized in a variety of contexts including as</p>
-						<ul>
-							<li>columns in a table</li>
-							<li>keys in key-value pairs</li>
-							<li>components of a linked data triple</li>
-						</ul>
+						<p class="bigger-point">This vocabulary may be flexibly applied in a variety of contexts including as</p>
+						<p class="big-point">
+							columns in a table<br>
+							keys in key-value pairs<br>
+							components of a linked data triple
+						</p>
 					</section>
 					<section>
 						<figure>
@@ -583,7 +583,9 @@ we welcome comments
 						<h2>Design principles</h2>
 						<p class="big-point">Complex data structures can be deconstructed into atomic elements</p>
 						<p class="big-point">Applications still require a "packaging" of atomic elements into data structures</p>
-						<p class="big-point">This is where common constraints reflecting a shared model of the world are useful</p>
+					</section>
+					<section>
+						<p class="bigger-point">This is where common constraints reflecting a shared model of the world are useful</p>
 					</section>
 					<section>
 						<h2>Document model</h2>
@@ -640,18 +642,21 @@ we welcome comments
 					</section>
 					<section>
 						<p class="big-point">The table paradigm, however, gets in the way of comparison</p>
-						<p class="big-point">As a community, we need to break free of the table layer and think about commonalities in our underlying data models</p>
+						<p class="big-point fragment">As a community, we need to break free of the table layer and think about commonalities in our underlying data models</p>
 					</section>
 					<section>
 						<p class="biggest-point">We are not alone in this effort...</p>
 					</section>
 					<section>
 						<h2>NoSQL</h2>
-						<p class="big-point">The <strong>key-value</strong> model is central to several NoSQL technologies that transcend the limitations of tables, but there are others</p>
 						<p class="big-point"><strong>NoSQL</strong> ("not only SQL") databases reject the dominance of the table-based relational data model</p>
+						<figure>
+							<img src="images/nosql.png" style="width:700px;" />
+						</figure>
 					</section>
 					<section>
 						<p class="bigger-point">NoSQL databases are built for the Web and generally embrace web technologies such as <strong>HTTP/REST</strong>, <strong>JavaScript</strong>, and <strong>URIs/URLs</strong></p>
+						<p class="big-point">By employing data models such as the key-value or document models, NoSQL promises better software</p>
 					</section>
 					<section>
 						<p class="bigger-point">For us, the document-oriented design is a reasonable intermediary from our tables to, eventually, the global linked data ecosystem on the web</p>
@@ -846,7 +851,7 @@ Data published for human consumption limits machine function, which limits reuse
 				width:1200,
 				height:700,
 
-				transition: 'fade', // none/fade/slide/convex/concave/zoom
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
 				// Optional reveal.js plugins
 				dependencies: [
