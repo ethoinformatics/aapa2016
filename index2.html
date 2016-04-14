@@ -214,27 +214,15 @@
 								</figure>
 						</section>
 						<section>
-							<p class="big-point">Example: An "observer" document
+							<p class="big-point">Example: "taxonomy" document
 							<figure>
-								<img src="images/document.png" style="height:450px; border:0px; box-shadow:0 0 0px;" />
+								<img src="images/taxonomy.png" style="height:450px; border:0px; box-shadow:0 0 0px;" />
 							</figure>
 						</section>
 						<section>
 							<p class="big-point">Mapping to EthoCore</p>
 							<figure>
-								<img src="images/observerToEthoCore.png" style="height:450px; border:0px; box-shadow:0 0 0px;" />
-							</figure>
-						</section>
-						<section>
-							<p class="big-point">Example: A "contact" document
-							<figure>
-								<img src="images/contact.png" style="height:450px; border:0px; box-shadow:0 0 0px;" />
-							</figure>
-						</section>
-						<section>
-							<p class="big-point">Mapping to EthoCore</p>
-							<figure>
-								<img src="images/contactToEthoCore.png" style="height:450px; border:0px; box-shadow:0 0 0px;" />
+								<img src="images/taxonomyToEthoCore.png" style="height:450px; border:0px; box-shadow:0 0 0px;" />
 							</figure>
 						</section>
 						<section>
@@ -245,7 +233,7 @@
 								<li>Contain key metadata</li>
 								<ul>
 									<li>Who made it</li>
-									<li>Datetime (point) when it was created</li>
+									<!-- <li>Datetime (point) when it was created</li> -->
 									<li>Datetime (point or series) to which the data pertain </li>
 									<li>Geolocation (point or series) to which the data pertain</li>
 								</ul>
@@ -261,6 +249,18 @@
 							</aside>
 						</section>
 						<section>
+							<p class="big-point">Example: "contact" document
+							<figure>
+								<img src="images/contact.png" style="height:450px; border:0px; box-shadow:0 0 0px;" />
+							</figure>
+						</section>
+						<section>
+							<p class="big-point">Mapping to EthoCore</p>
+							<figure>
+								<img src="images/contactToEthoCore.png" style="height:450px; border:0px; box-shadow:0 0 0px;" />
+							</figure>
+						</section>
+						<section>
 							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Design Philosophy</h2>
 							<p class="subtitle" style="margin-top:1em;">Documents can be linked to one or more other documents</p>
 							<aside class="notes">
@@ -270,71 +270,89 @@
 									<li>Many relationships among documents are flexible and can differ among or within projects</li>
 									<li>These are somewhat like JOIN tables in a SQL-based database, but note that PRIMARY KEY-FOREIGN KEY relationships among tables are not specified</li>
 									<li>These are analogous to EDGES in a graph database and to the predicates in an RDF data store</li>
-									<li>An Etho Core compliant database can be thus schema-less and can accommodate multiple schema</li>
+									<li>An EthoCore compliant database can be thus schema-less and can accommodate multiple schema</li>
 								</ul>
 							</aside>
 						</section>
+<!--
+						<section>
+							<h2>ResourceRelationship</h2>
+							<p>Darwin Core class for describing relationships between resources</p>
+							<p class="inconspicuous">resourceRelationshipID | <span class="conspicuous2">resourceID</span> | <span class="conspicuous2">relatedResourceID</span> | <span class="conspicuous2">relationshipOfResource</span> | relationshipAccordingTo | relationshipEstablishedDate | relationshipRemarks</p>
+						</section>
+-->
+						<section>
+							<figure>
+								<img src="images/linked.png" style="height:500px; border:0px; box-shadow:0 0 0px;" />
+							</figure>
+						</section>
+
 						<section>
 							<h2 style="margin-top:-0.5em; margin-bottom:0em;">Design Philosophy</h2>
 							<p class="subtitle" style="margin-top:1em;">History of revision of documents is preserved</p>
 							<aside class="notes">
 							</aside>
 						</section>
+
+						<section>
+							<figure>
+								<img src="images/revisions.png" style="height:500px; border:0px; box-shadow:0 0 0px;" />
+							</figure>
+						</section>
 					</section>
 
 					<section id="implementation">
 						<section>
-								<img src="images/html5_css3_javascript.png" style="height:100px; margin-top:25px; border:0px; box-shadow:0 0 0px;" />
-								<figcaption>for building web application</figcaption>
-								<img src="images/node-npm.png" style="height:100px; margin-top:25px; border:0px; box-shadow:0 0 0px;" />
-								<figcaption>for bundling packages together</figcaption>
-								<img src="images/cordova_bot.png" style="height:100px; margin-top:25px; border:0px; box-shadow:0 0 0px;" />
-								<figcaption>to compile for mobile device</figcaption>
-								<img src="images/JSON.png" style="height:100px; margin-top:25px; border:0px; box-shadow:0 0 0px;" />
-								<figcaption>structured text format for documents and custom configurations</figcaption>
-								<img src="images/pouchdb.png" style="height:120px; margin-top:25px;  border:0px; box-shadow:0 0 0px;" />
-								<figcaption>for local data storage</figcaption>
-								<img src="images/couchdb.png" style="height:100px; margin-top:25px;  border:0px; box-shadow:0 0 0px;" />
-								<figcaption>for sync and remote data storage</figcaption>
+							<h2 style="margin-top:1em; margin-bottom:0em;">Implementation</h2>
+							<p>The framework of our mobile is app is built using...</p>
+							<img src="images/html5_css3_javascript.png" style="height:200px; margin-top:25px; border:0px; box-shadow:0 0 0px;" />
+							<p>...which are the primary tools used to build interactive web interfaces.</p>
 							<aside class="notes">
-								<ul>
-									<li>Mobile application framework built in HMTL, JavaScript, and CSS that can be compiled and deployed on a variety of devices</li>
-									<li>JSON used to store documents and to configure aspects of the application</li>
-									<li>PouchDB, a mobile, document-based NoSQL database, used for local storage</li>
-									<li>Sync from PouchDB to CouchDB on a local server and from CouchDB on local server to remote server</li>
-								</ul>
 							</aside>
 						</section>
 						<section>
-							<h2>Implementation</h1>
-							<ul>
-								<li>Use data from operating system's <span class="semibold">location services</span> to tag all documents with geolocation (from internal GPS, cell towers, external GPS)</li>
-								<li>Geolocation data is updated and recorded continuously</li>
-								<li>Web-based <span class="semibold">admin tool</span> to synchronize back-end database with multiple handheld devices</li>
-							</ul>
+							<p>The real programming work is done in JavaScript...</p>
+							<img src="images/node-npm.png" style="height:200px; margin-top:25px; border:0px; box-shadow:0 0 0px;" />
+							<p>... and we use the node.js framework and the node package manager npm to bundle code from various programming libraries.</p>
 							<aside class="notes">
-								<ul>
-								</ul>
 							</aside>
 						</section>
 						<section>
-							<h2>User Provides...</h2>
+							<p>We use the Cordova framework to build the user interface...</p>
+							<img src="images/cordova_bot.png" style="height:250px; margin-top:25px; border:0px; box-shadow:0 0 0px;" />
+							<p>... which lets us write <span class="semibold">one</span> application that can be used on iOS devices, Android devices, or other laptops or tablets through a browser.</p>
+							<aside class="notes">
+							</aside>
+						</section>
+						<section>
+							<p>And we use document-based NoSQL databases for data storage, both locally, in the app, and on a remote server.</p>
+							<img src="images/pouchdb.png" style="height:200px; margin-top:25px;  border:0px; box-shadow:0 0 0px;" /><span>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><img src="images/couchdb.png" style="height:200px; margin-top:25px;  border:0px; box-shadow:0 0 0px;" />
+							<aside class="notes">CouchDB is our main database, because it's powerful, yet easy to learn. It also has a mobile version, pouchDB, which integrates well with our mobile framework, Cordova. Couch and Pouch are designed to manage data sync between devices with intermittent network access, so it works well for our purposes.
+							</aside>
+						</section>
+						<section>
+							<p>All documents tagged with geolocation pulled continuously from operating system's <span class="semibold">location services</span> (from internal GPS, cell towers, external GPS)</p>
+							<img src="images/gps.png" style="height:350px; margin-top:0px; border:0px; box-shadow:0 0 0px;" />
+						</section>
+						<section>
+							<h2>The user provides...</h2>
 								<ul>
 									<li class="fragment">Document types and design for their construction</li>
 									<li class="fragment">Information about on how documents can be be linked</li>
 									<li class="fragment">A set of controlled vocabularies</li>
-							</ul>
+								</ul>
 							<br>
 							<br>
-							<h2>App produces documents that...</h2>
+							<!--
+							<h2 class="fragment">And the app produces documents that...</h2>
 								<ul>
 									<li class="fragment">Conform to <span class="semibold">EthoCore</span> and other community-designed data standards (e.g., Darwin Core)</li>
 							</ul>
-							<aside class="notes">
-								<ul>
-									<li>We imagine some document types will be common across projects, e.g., contact, focal sample, focal behavior record, ad lib behavior, feeding tree, biological sample</li>
-									<li>Likewise, we imagine that some link between documents or resources may be standard, e.g., parent of, child of, taken within, belongs to, associated with</li>
-								</ul>
+							-->
+							<ul>
+								<li class="fragment" style="font-style:italic; color:rgb(51, 51, 204);">Some document types will be common across projects (e.g., focal sample, feeding tree, biological sample)</li>
+								<li class="fragment" style="font-style:italic; color:rgb(51, 51, 204);">Some link between documents or may be standard (e.g., parent of, child of, taken within, belongs to, associated with)</li>
+							</ul>
 						</section>
 <!--
 						<section>
