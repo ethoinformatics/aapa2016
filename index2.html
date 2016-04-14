@@ -357,32 +357,33 @@
 -->
 					</section>
 					<section id="app-demo">
-						<section>
+						<section id="app">
 							<figure style="width:350px; height:640px;">
 								<embed src="images/iphone.svg" style="position:absolute; left:387.5px; top:-20px; width:425px; height:800px;  z-index:-2;" />
 								<div style="background-color:#cccccc; position:absolute; left:407px; top:46px; width:375px; height:600px; border:4px solid #666; z-index:-1;"></div>
 								<iframe id="app_frame" src="http://localhost:8001" style="position:absolute; left:411px; top:50px; width:375px; height:600px;">EthoCore</iframe>
 							</figure>
 							<aside class="notes">
+								<ul>
 								<li>This demo is configured using data structures specific to my projec, which includes a particular data structure I call a DIARY, one for each observer who collects data on for the project on a given day.</li>
 								<li>So here we have 4 such diaries.</li>
 								<li>On the left we can access a variety of app settings and either download or upload data between the device and a server.</li>
 								<li>If we go into a given diary screen, say for April 8th 2016, we see a 4 tab interface: DATA, REMARKS, TIMELINE, and MAP.</li>
 								<li>Here in the data tab, we can see that there are four additional data structures called CONTACTS -- these are the app's rendering of those contact data documents I mentioned earlier.</li>
 								<li>Here in the data tab for a diary, we can add information on new contacts, if we want.</li>
-							<li>And in the remarks tab, we can add freeform, ad libitum notes that are easy to time stamp</li>
-							<li>A key design aim for the app is that it allows users to enter and interact with their data with a familiar user interface and to allow users to have visual feedback, in the field, on the temporality and spatiality of the data they are collecting.</li>
-							<li>The TIMELINE and MAP tabs are what allow this.</li>
-							<li>If we switch to the timeline tab, we can see how these four contacts are distributed throughout the day.</li>
-							<li>And if we switch the app to the MAP view, we can see how they are distributed in space.</li>
-							<li>The background of this map is drawn from publicly available open street map data.
-							</li>
-							<li>Location information is pulled continuously from the device's GPS if the app is running, whether it is active or in the background, and you can use this with an external GPS.</li>
-							<li>The important thing is that spatial and temporal information is added to data you collect in real time. That is, data get tagged with (editable) spatiotemporal metadata as it is collected.</li>
-							<li>Here, we see the four contact on the map, positioned where they start, and we can go and adjust these locations if needed</li>
-							<li>If we then go back to the DATA for a diary and drill down int a contact, you'll see the breadcrumb at the top keep track of where we are, and switching to the map view highlighs the contact in question.</li>
-							<li>Back on the data tab for a contact, you can see we have options for editing the contact and for adding additional data associated with that contact, for example, focal samples or various types of collection information.</li>
-							<li>The point is, we're designing the app to be flexible, so researchers can add new data structure types, like contacts, or fecal samples, or focal samples easily and incoporate them into a customizable app for their project and field site.</li>
+								<li>And in the remarks tab, we can add freeform, ad libitum notes that are easy to time stamp</li>
+								<li>A key design aim for the app is that it allows users to enter and interact with their data with a familiar user interface and to allow users to have visual feedback, in the field, on the temporality and spatiality of the data they are collecting.</li>
+								<li>The TIMELINE and MAP tabs are what allow this.</li>
+								<li>If we switch to the timeline tab, we can see how these four contacts are distributed throughout the day.</li>
+								<li>And if we switch the app to the MAP view, we can see how they are distributed in space.</li>
+								<li>The background of this map is drawn from publicly available open street map data.
+								</li>
+								<li>Location information is pulled continuously from the device's GPS if the app is running, whether it is active or in the background, and you can use this with an external GPS.</li>
+								<li>The important thing is that spatial and temporal information is added to data you collect in real time. That is, data get tagged with (editable) spatiotemporal metadata as it is collected.</li>
+								<li>Here, we see the four contact on the map, positioned where they start, and we can go and adjust these locations if needed</li>
+								<li>If we then go back to the DATA for a diary and drill down int a contact, you'll see the breadcrumb at the top keep track of where we are, and switching to the map view highlighs the contact in question.</li>
+								<li>Back on the data tab for a contact, you can see we have options for editing the contact and for adding additional data associated with that contact, for example, focal samples or various types of collection information.</li>
+								<li>The point is, we're designing the app to be flexible, so researchers can add new data structure types, like contacts, or fecal samples, or focal samples easily and incoporate them into a customizable app for their project and field site.</li>
 							</ul>
 							</aside>
 						</section>
